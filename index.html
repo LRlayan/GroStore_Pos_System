@@ -190,7 +190,7 @@
         }
 
         #searchBar{
-            width: 82.2vw;
+            width: 81vw;
             height: 50px;
 
             position: absolute;
@@ -214,6 +214,13 @@
             position: absolute;
             top: 77%;
             left: 9%;
+        }
+
+        #table{
+            position: absolute;
+            top: 90%;
+            left: 9%;
+            width: 81vw;
         }
     </style>
 </head>
@@ -269,7 +276,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="container-fluid">
             <div id="searchBar" class="input-group mb-3">
                 <input id="searchInputField" type="text" class="form-control" placeholder="Search Order" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
@@ -278,6 +285,40 @@
 
         <div id="order">
             <h4>View Orders</h4>
+        </div>
+
+        <div id="table">
+            <table class="table">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="col">Order Id</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
