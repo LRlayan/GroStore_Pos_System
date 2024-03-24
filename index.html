@@ -10,239 +10,14 @@
 
     <link rel="stylesheet" href="assets/stylesheet/normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/stylesheet/cssFile.css">
     <title>Title</title>
-    <style>
-        .position{
-            position: relative;
-            left: 56%;
-            top: 12px;
-        }
 
-        .profile{
-            width: 63px;
-            height: 63px;
-
-            border-radius: 100%;
-            border: 5px solid darkblue;
-            margin: 0;
-            padding: 0;
-
-            position: relative;
-            top: -12px;
-            left: 275px;
-        }
-
-        #footer{
-            position: absolute;
-            top: 100vh;
-
-            width: 100vw;
-            height: 58vh;
-
-            background-color: #3A0044;
-        }
-
-        section>footer>div>div>h1{
-            position: relative;
-            top: 15px;
-            text-align: center;
-            font-size: 48px;
-
-            -webkit-text-fill-color: white;
-        }
-
-        section>footer>div>div>h4{
-            font-size: 23px;
-            -webkit-text-fill-color: white;
-            width: 150px;
-            position: relative;
-        }
-
-        #moreLink{
-            top: 61px;
-            left: 11%;
-        }
-
-        #primaryMenu{
-            top: 25px;
-            left: 45.5%;
-        }
-
-        #contactUs{
-            top: -11px;
-            left: 78%;
-        }
-
-        .h2Footer{
-            width: 240px;
-            -webkit-text-fill-color: white;
-            font-size: 14px;
-            position: relative;
-        }
-
-        #moreLinkContent{
-            left: 11%;
-            top: 3%;
-        }
-
-        #primaryMenuContent{
-            left: 45.5%;
-            top: -10%;
-        }
-
-        #contactUsContent{
-            left: 78%;
-            top: -40.5%;
-        }
-
-        section>footer>div>div:nth-child(2){
-            position: absolute;
-            bottom: 0;
-            width: 100vw;
-
-            -webkit-text-fill-color: white;
-            text-align: center;
-        }
-
-        #h6Footer{
-            font-size: 11px;
-            position: relative;
-            bottom: 20px;
-            width: 100vw;
-            text-align: center;
-            -webkit-text-fill-color: white;
-        }
-
-        #groStore{
-            -webkit-text-fill-color: white;
-            position: absolute;
-            right: 150px;
-            top: 288px;
-        }
-
-        #socialMediaFooter{
-            position: absolute;
-            left: 105px;
-            top: 278px;
-        }
-
-        #facebook{
-            width: 55px;
-            aspect-ratio: 1/1;
-
-            position: relative;
-        }
-
-        #instagram{
-            width: 40px;
-            aspect-ratio: 1/1;
-
-            position: relative;
-            left: 10px;
-        }
-
-        #whatsapp{
-            width: 39px;
-            aspect-ratio: 1/1;
-
-            position: relative;
-            left: 28px;
-        }
-
-        #mainDiv{
-            padding: 0;
-        }
-
-        #footerMain{
-           position: absolute;
-            bottom: 0;
-        }
-
-        #totalIncome{
-            position: absolute;
-            left: 39%;
-        }
-
-        #totalOrder{
-            position: absolute;
-            left: 9%;
-        }
-
-        #totalCustomer{
-            position: absolute;
-            left: 70%;
-        }
-
-        .cards{
-            top: 28%;
-            background-color: white;
-            -webkit-text-fill-color: purple;
-            font-weight: bold;
-            border: 0 solid white;
-            height: 150px;
-            font-size: 30px;
-            text-align: center;
-        }
-
-        .cardTitle{
-            position: relative;
-            top: 20px;
-        }
-
-        section>section{
-            display: flex;
-        }
-
-        #searchBar{
-            width: 81vw;
-            height: 50px;
-
-            position: absolute;
-            left: 122px;
-            top: 60%;
-        }
-
-        #searchInputField{
-            border-radius: 200px 0 0 200px;
-        }
-
-        .searchBtn{
-            border-radius: 200px;
-            width: 150px;
-            background-color: purple;
-            -webkit-text-fill-color: white;
-            border: 0;
-        }
-
-        #order{
-            position: absolute;
-            top: 77%;
-            left: 9%;
-        }
-
-        #table{
-            position: absolute;
-            top: 90%;
-            left: 9%;
-            width: 81vw;
-        }
-
-        .h2Posi{
-            position: relative;
-            top: 27px;
-        }
-
-        .placeOrderForm{
-            position: absolute;
-            top: 118%;
-        }
-    </style>
 </head>
 <body>
 <main>
-    <section>
-        <header>
+    <section >
+        <header id="header">
             <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded" style="background-color: #ffffff;">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -267,179 +42,230 @@
         </header>
     </section>
 
-    <section id="cardSection">
-        <div>
-            <div>
-                <div id="totalOrder" class="shadow card container-fluid cards" style="max-width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center ">00</h5>
-                        <p class="card-text cardTitle">Total Order</p>
-                    </div>
+    <section>
+        <div class="allCards ">
+            <div id="totalOrder" class="shadow card container-fluid cards front card-container">
+                <div class="card-body">
+                    <h5 class="card-title text-center ">00</h5>
+                    <p class="card-text cardTitle">Total Order</p>
                 </div>
-
-                <div id="totalIncome" class="shadow card container-fluid cards" style="max-width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center ">00.0</h5>
-                        <p class="card-text cardTitle">Total Income</p>
-                    </div>
-                </div>
-
-                <div id="totalCustomer" class="shadow card container-fluid cards" style="max-width: 18rem;">
-                    <div class="card-body">
-                            <h5 class="card-title text-center">00</h5>
-                        <p class="card-text cardTitle">Total Customers</p>
-                    </div>
-                </div>
+                <div class="back">You can check here<br> the number of orders we<br> have received so far</div>
             </div>
 
-            <div class="container-fluid">
-                <div id="searchBar" class="input-group mb-3">
-                    <input id="searchInputField" type="text" class="form-control" placeholder="Search Order" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
+            <div id="totalIncome" class="shadow card container-fluid cards front card-container">
+                <div class="card-body">
+                    <h5 class="card-title text-center ">00.0</h5>
+                    <p class="card-text cardTitle">Total Income</p>
                 </div>
+                <div class="back">You can check here<br> the income received<br> by our shop so far</div>
             </div>
 
-            <div id="order">
-                <h4>View Orders</h4>
+            <div id="totalCustomer" class="shadow card container-fluid cards front card-container">
+                <div class="card-body">
+                    <h5 class="card-title text-center">00</h5>
+                    <p class="card-text cardTitle">Total Customers</p>
+                </div>
+                <div class="back">The number of customers<br> registered in our system<br> so far can be checked here.</div>
             </div>
+        </div>
 
-            <div id="table">
-                <table class="table">
-                    <thead class="table-danger">
-                        <tr>
-                            <th scope="col">Order Id</th>
-                            <th scope="col">Customer</th>
-                            <th scope="col">Item</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Discount</th>
-                            <th scope="col">Price</th>
-                        </tr>
+        <div class="container-fluid searchBarParent">
+            <div id="searchBar" class="input-group mb-3">
+                <input id="searchInputField" type="text" class="form-control" placeholder="Search Order" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
+            </div>
+        </div>
+
+        <div id="order">
+             <h4>View Orders</h4>
+        </div>
+
+        <div class="tableDiv">
+              <table class="table">
+                    <thead>
+                          <tr>
+                               <th class="OrderTableHead " scope="col">Order Id</th>
+                               <th class="OrderTableHead" scope="col">Customer</th>
+                               <th class="OrderTableHead" scope="col">Item</th>
+                               <th class="OrderTableHead" scope="col">Quantity</th>
+                               <th class="OrderTableHead" scope="col">Discount</th>
+                               <th class="OrderTableHead" scope="col">Price</th>
+                          </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <tbody id="orderTable">
+                           <tr>
+                                <th class="orderTableBody" scope="row">1</th>
+                                <td class="orderTableBody">Mark</td>
+                                <td class="orderTableBody">Otto</td>
+                                <td class="orderTableBody">@mdo</td>
+                                <td class="orderTableBody">@mdo</td>
+                                <td class="orderTableBody">@mdo</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">2</th>
+                                <td class="orderTableBody">Jacob</td>
+                                <td class="orderTableBody">Thornton</td>
+                                <td class="orderTableBody">@fat</td>
+                                <td class="orderTableBody">@fat</td>
+                                <td class="orderTableBody">@fat</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">3</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">4</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">4</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">4</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">4</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr><tr>
+                                <th class="orderTableBody" scope="row">4</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr>
+
+                           <tr>
+                                <th class="orderTableBody" scope="row">4</th>
+                                <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                                <td class="orderTableBody">@twitter</td>
+                           </tr>
                     </tbody>
-                </table>
-                <div>
-                    <button type="button" class="btn btn-warning">Update</button>
-                    <button type="button" class="btn btn-danger">Remove</button>
-                </div>
-
-                <div>
-                    <h2 class="h2Posi">Place Your Orders</h2>
-
-                    <form class="row g-3 placeOrderForm">
-                        <div class="col-12">
-                            <label for="orderId" class="form-label">Order Id</label>
-                            <input type="text" class="form-control" id="orderId" placeholder="O001">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="customerId" class="form-label">Customer Id</label>
-                            <input type="text" class="form-control" id="customerId">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="customerName" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="customerName">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCity">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="telephone" class="form-label">Telephone</label>
-                            <input type="number" class="form-control" id="telephone">
-                        </div>
-
-                        <h4>Order Section</h4>
-
-                        <div class="col-md-4">
-                            <label for="ItemCode" class="form-label">Item Code</label>
-                            <select id="ItemCode" class="form-select">
-                                <option selected></option>
-                                <option>...</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="ItemName" class="form-label">Item Name</label>
-                            <input type="text" class="form-control" id="ItemName">
-                        </div>
+              </table>
+        </div>
+        <div id="viewOrderBtnParent">
+             <button id ="updateButtonDash" type="button" class="btn btn-warning">Update</button>
+             <button id="removeButtonDash" type="button" class="btn btn-danger">Remove</button>
+        </div>
 
 
-                        <div class="col-md-6">
-                            <label for="qtyOnHand" class="form-label">Qty On Hand</label>
-                            <input type="text" class="form-control" id="qtyOnHand">
-                        </div>
+        <!--                <div>-->
+        <!--                    <h2 class="h2Posi">Place Your Orders</h2>-->
 
-                        <div class="col-md-6">
-                            <label for="OrderQuantity" class="form-label">Order Quantity</label>
-                            <input type="text" class="form-control" id="OrderQuantity">
-                        </div>
+        <!--                    <form class="row g-3 placeOrderForm">-->
+        <!--                        <div class="col-12">-->
+        <!--                            <label for="orderId" class="form-label">Order Id</label>-->
+        <!--                            <input type="text" class="form-control" id="orderId" placeholder="O001">-->
+        <!--                        </div>-->
 
-                        <div class="col-12">
-                            <label for="price" class="form-label">Order Id</label>
-                            <input type="text" class="form-control" id="price" placeholder="rs.0.00">
-                        </div>
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="customerId" class="form-label">Customer Id</label>-->
+        <!--                            <input type="text" class="form-control" id="customerId">-->
+        <!--                        </div>-->
 
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Confirm Order</button>
-                        </div>
-                    </form>
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="customerName" class="form-label">Customer Name</label>-->
+        <!--                            <input type="text" class="form-control" id="customerName">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="inputCity" class="form-label">City</label>-->
+        <!--                            <input type="text" class="form-control" id="inputCity">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="telephone" class="form-label">Telephone</label>-->
+        <!--                            <input type="number" class="form-control" id="telephone">-->
+        <!--                        </div>-->
+
+        <!--                        <h4>Order Section</h4>-->
+
+        <!--                        <div class="col-md-4">-->
+        <!--                            <label for="ItemCode" class="form-label">Item Code</label>-->
+        <!--                            <select id="ItemCode" class="form-select">-->
+        <!--                                <option selected></option>-->
+        <!--                                <option>...</option>-->
+        <!--                            </select>-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="ItemName" class="form-label">Item Name</label>-->
+        <!--                            <input type="text" class="form-control" id="ItemName">-->
+        <!--                        </div>-->
+
+
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="qtyOnHand" class="form-label">Qty On Hand</label>-->
+        <!--                            <input type="text" class="form-control" id="qtyOnHand">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-md-6">-->
+        <!--                            <label for="OrderQuantity" class="form-label">Order Quantity</label>-->
+        <!--                            <input type="text" class="form-control" id="OrderQuantity">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-12">-->
+        <!--                            <label for="price" class="form-label">Order Id</label>-->
+        <!--                            <input type="text" class="form-control" id="price" placeholder="rs.0.00">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-12">-->
+        <!--                            <button type="submit" class="btn btn-primary">Confirm Order</button>-->
+        <!--                        </div>-->
+        <!--                    </form>-->
+        <!--                </div>-->
+        <!--            </div>-->
+    </section>
+</main>
+
+<footer id="footerMain">
+    <div id="mainDiv" class="container-fluid">
+        <div id="footer">
+            <h1>About Us</h1>
+            <h4 id="moreLink">More Link</h4>
+            <h4 id="primaryMenu"> Primary Menu</h4>
+            <h4 id="contactUs">Contact Us</h4>
+            <h2 id="moreLinkContent" class="h2Footer">Our Customers<br>View Orders</h2>
+            <h2 id="primaryMenuContent" class="h2Footer">Dashboard<br>Customer<br>Store<br>Place order<br>About us</h2>
+            <h2 id="contactUsContent" class="h2Footer">Email : rameshlayan4@gmail.com<br>Hotline : +94 76 452 365 2</h2>
+
+            <div id="footerLastDiv">
+                <h6 id="h6Footer">All Rights Reserved Ramesh Layan 2024</h6>
+                <h2 id="groStore">GroStore</h2>
+                <div id="socialMediaFooter">
+                    <img id="facebook" src="assets/image/icons8-facebook-64.png" alt="facebook" title="facebook.com">
+                    <img id="instagram" src="assets/image/icons8-instagram-50.png" alt="instagram" title="instagram.com">
+                    <img id="whatsapp" src="assets/image/icons8-whatsapp-50.png" alt="whatsapp" title="whatsapp.com">
                 </div>
             </div>
         </div>
-    </section>
-</main>
-<!--    <section>-->
-<!--        <footer id="footerMain">-->
-<!--            <div id="mainDiv" class="container-fluid">-->
-<!--                <div id="footer">-->
-<!--                     <h1>About Us</h1>-->
-<!--                     <h4 id="moreLink">More Link</h4>-->
-<!--                     <h4 id="primaryMenu"> Primary Menu</h4>-->
-<!--                     <h4 id="contactUs">Contact Us</h4>-->
-<!--                     <h2 id="moreLinkContent" class="h2Footer">Our Customers<br>View Orders</h2>-->
-<!--                     <h2 id="primaryMenuContent" class="h2Footer">Dashboard<br>Customer<br>Store<br>Place order<br>About us</h2>-->
-<!--                     <h2 id="contactUsContent" class="h2Footer">Email : rameshlayan4@gmail.com<br>Hotline : +94 76 452 365 2</h2>-->
+    </div>
+</footer>
 
-<!--                    <div>-->
-<!--                        <h6 id="h6Footer">All Rights Reserved Ramesh Layan 2024</h6>-->
-<!--                        <h2 id="groStore">GroStore</h2>-->
-<!--                        <div id="socialMediaFooter">-->
-<!--                            <img id="facebook" src="assets/image/icons8-facebook-64.png" alt="facebook" title="facebook.com">-->
-<!--                            <img id="instagram" src="assets/image/icons8-instagram-50.png" alt="instagram" title="instagram.com">-->
-<!--                            <img id="whatsapp" src="assets/image/icons8-whatsapp-50.png" alt="whatsapp" title="whatsapp.com">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </footer>-->
-<!--    </section>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
