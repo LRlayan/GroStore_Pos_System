@@ -1,0 +1,345 @@
+.position{
+    position: relative;
+    left: 56%;
+    top: 12px;
+}
+
+.profile{
+    width: 63px;
+    height: 63px;
+
+    border-radius: 100%;
+    border: 5px solid darkblue;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    top: -12px;
+    left: 275px;
+}
+
+#footer{
+    position: absolute;
+    top: 80vh;
+
+    width: 98.75vw;
+    height: 58vh;
+
+    background-color: #3A0044;
+}
+
+#h6Footer{
+    font-size: 11px;
+    position: absolute;
+    top: 312px;
+    width: 98.7vw;
+    text-align: center;
+    -webkit-text-fill-color: white;
+}
+
+footer>div>div>h1{
+    position: relative;
+    top: 15px;
+    text-align: center;
+    font-size: 48px;
+
+    -webkit-text-fill-color: white;
+}
+
+footer>div>div>h4{
+    font-size: 23px;
+    -webkit-text-fill-color: white;
+    width: 150px;
+    position: relative;
+}
+
+#moreLink{
+    top: 61px;
+    left: 11%;
+}
+
+#primaryMenu{
+    top: 25px;
+    left: 45.5%;
+}
+
+#contactUs{
+    top: -11px;
+    left: 78%;
+}
+
+.h2Footer{
+    width: 240px;
+    -webkit-text-fill-color: white;
+    font-size: 14px;
+    position: relative;
+}
+
+#moreLinkContent{
+    left: 11%;
+    top: 3%;
+}
+
+#primaryMenuContent{
+    left: 45.5%;
+    top: -10%;
+}
+
+#contactUsContent{
+    left: 78%;
+    top: -40.5%;
+}
+
+footer>div>div:nth-child(2){
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+
+    -webkit-text-fill-color: white;
+    text-align: center;
+}
+
+#groStore{
+    -webkit-text-fill-color: white;
+    position: absolute;
+    right: 150px;
+    top: 288px;
+}
+
+#socialMediaFooter{
+    position: absolute;
+    left: 105px;
+    top: 278px;
+}
+
+#facebook{
+    width: 55px;
+    aspect-ratio: 1/1;
+
+    position: relative;
+}
+
+#instagram{
+    width: 40px;
+    aspect-ratio: 1/1;
+
+    position: relative;
+    left: 10px;
+}
+
+#whatsapp{
+    width: 39px;
+    aspect-ratio: 1/1;
+
+    position: relative;
+    left: 28px;
+}
+
+#mainDiv{
+    position: relative;
+    padding: 0;
+}
+
+#footerMain{
+    position: relative;
+}
+
+#totalIncome{
+    position: absolute;
+    top: 10%;
+    left: 39%;
+}
+
+#totalOrder{
+    position: absolute;
+    top: 10%;
+    left: 9%;
+}
+
+#totalCustomer{
+    position: absolute;
+    top: 10%;
+    left: 70%;
+}
+
+.cards{
+    top: 28%;
+    background-color: white;
+    -webkit-text-fill-color: purple;
+    font-weight: bold;
+    border: 0 solid white;
+    height: 150px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.cardTitle{
+    position: relative;
+    top: 20px;
+}
+
+#searchBar{
+    width: 81vw;
+    height: 50px;
+
+    position: absolute;
+    left: 8%;
+    top: 50px;
+}
+
+#searchInputField{
+    border-radius: 200px 0 0 200px;
+}
+
+.searchBtn{
+    border-radius: 200px;
+    width: 150px;
+    background-color: purple;
+    -webkit-text-fill-color: white;
+    border: 0;
+}
+
+#order{
+    position: absolute;
+    top: 82%;
+    left: 9%;
+}
+
+.tableDiv{
+    position: absolute;
+    top: 92%;
+    left: 9%;
+    width: 81vw;
+}
+
+.tableDiv{
+    max-height: 240px; /* Set the maximum height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.tableDiv{
+    table-layout: fixed; /* Prevent the table from resizing its columns */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: scroll;
+}
+
+.OrderTableHead{
+    background-color: #590067 !important;
+    -webkit-text-fill-color: white;
+}
+
+.orderTableBody{
+    background-color: #FBDFFF!important;
+    -webkit-text-fill-color: black;
+}
+
+.orderTableBtnPosition{}
+
+#viewOrderBtnParent{
+    position: relative;
+    top: 428px;
+    left: 122px;
+    width: 95vw;
+}
+
+#updateButtonDash{
+    position: absolute;
+
+}
+
+#removeButtonDash{
+    position: absolute;
+    left: 96px;
+}
+
+.h2Posi{
+    position: relative;
+    top: 27px;
+}
+
+.placeOrderForm{
+    position: absolute;
+    top: 118%;
+}
+
+.allCards{
+    position: relative;
+    width: 1350px;
+    height: 200px;
+}
+
+.searchBarParent{
+    position: relative;
+    width: 95vw;
+    margin: 0;
+}
+
+#orderTableBtnParent{
+    position: relative;
+}
+
+#footerLastDiv{
+    position: absolute;
+    width: 98vw;
+    height: 10px;
+    top: 4%;
+}
+
+
+/*card animation*/
+
+.card-container, .front, .back {
+    width: 20rem;
+    height: 10rem;
+}
+.card-container {
+    margin: 5px;
+}
+.front, .back {
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .25);
+
+    font-family: BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.back {
+    background-image: linear-gradient(to right bottom, #590067, #590067);
+    width: 322px;
+    height: 162px;
+
+    font-size: 22px;
+    -webkit-text-fill-color: white;
+    font-weight: normal;
+    text-align: center;
+}
+
+.card-container {
+    position: relative;
+}
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: transform .8s ease;
+}
+.back {
+    transform: rotateY(180deg);
+}
+.card-container:hover .front {
+    transform: rotateY(-180deg);
+}
+.card-container:hover .back {
+    transform: rotateY(0deg);
+}
+
+.card-container {
+    perspective: 75rem;
+}
