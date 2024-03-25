@@ -1,13 +1,16 @@
 .newButton{
     background-color: #03A100;
+    margin-right: 15px;
+    width: 110px;
 }
 
-#updateButton{
-
+.updateButton{
+    margin-right: 15px;
+    width: 110px;
 }
 
-#removeButton{
-
+.removeButton{
+    width: 110px;
 }
 
 .whiteTextColor{
@@ -16,4 +19,17 @@
 
 .noBorder{
     border: 0;
+}
+
+.relativePosition{
+    position: relative;
+}
+
+.absolutePosition{
+    position: absolute;
+}
+
+#crudButton{
+    top: 108px;
+    left: 124px;
 }
