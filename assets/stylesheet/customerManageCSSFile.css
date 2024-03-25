@@ -32,4 +32,24 @@
 #crudButton{
     top: 108px;
     left: 124px;
+
+    width:600px;
+}
+
+/*customer table*/
+
+.viewCustomerTitle{
+    position: relative;
+    top: 151px;
+    left: 66rem;
+
+    width: fit-content;
+}
+
+.customerTable{
+    position: relative;
+    top: 198px;
+
+    margin: auto;
+    width: 82vw;
 }
