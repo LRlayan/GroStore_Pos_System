@@ -1,21 +1,21 @@
 .headerPosition{
     position: relative;
     left: 278px;
-    top: 10px;
+    top: 15px;
 }
 
 .profile{
-    width: 63px;
-    height: 63px;
+    width: 78px;
+    height: 75px;
 
     border-radius: 100%;
-    border: 5px solid darkblue;
+    /*border: 5px solid darkblue;*/
     margin: 0;
     padding: 0;
 
     position: relative;
-    top: -12px;
-    left: 275px;
+    top: -15px;
+    left: 322px;
 }
 
 .card{
@@ -129,7 +129,7 @@
     -webkit-text-fill-color: black;
 }
 
-.tableDiv{
+.orderDetailTable{
     position: relative;
     top: 72px;
     margin: auto;
@@ -267,28 +267,32 @@ section p{
     margin: 0;
 }
 
+.padding{
+    padding: 0!important;
+}
+
 @media only screen and (max-width: 568px) {
 
     /*  Header    */
 
     .headerPosition{
         position: relative;
-        left: 194px;
-        top: 10px;
+        left: 10px;
+        top: 60px;
     }
 
     .profile{
-        width: 63px;
-        height: 63px;
+        width: 150px;
+        height: 150px;
 
         border-radius: 100%;
-        border: 5px solid darkblue;
-        margin: 0;
+        /*border: 5px solid darkblue;*/
+        margin: 8px;
         padding: 0;
 
         position: relative;
-        top: -2px;
-        left: 0;
+        top: -180px;
+        left: 190px;
     }
 
     /*    footer    */
