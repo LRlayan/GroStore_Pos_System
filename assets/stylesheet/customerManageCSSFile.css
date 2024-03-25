@@ -1,0 +1,19 @@
+.newButton{
+    background-color: #03A100;
+}
+
+#updateButton{
+
+}
+
+#removeButton{
+
+}
+
+.whiteTextColor{
+    -webkit-text-fill-color: white;
+}
+
+.noBorder{
+    border: 0;
+}
