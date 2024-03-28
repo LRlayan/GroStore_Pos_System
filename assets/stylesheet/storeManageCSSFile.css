@@ -1,7 +1,23 @@
 .viewStoreTableTitle{
     position: relative;
-    top: 178px;
-    left: 68rem;
+    top: 152px;
+    left: 69.5rem;
 
     width: fit-content;
+}
+
+.storeTable{
+    position: relative;
+    top: 161px;
+
+    margin: auto;
+    width: 82vw;
+}
+
+.tableTitleSubDiv{
+    width: 250px;
+}
+
+.tableTitleParentDiv{
+    width: 1300px;
 }
