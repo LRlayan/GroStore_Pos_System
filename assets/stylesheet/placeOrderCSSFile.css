@@ -89,7 +89,7 @@
 
 .titleBill{
     left: 38%;
-    -webkit-text-fill-color: #3A0044;
+    -webkit-text-fill-color: #590067;
 }
 
 #pricesMainDiv{
@@ -138,4 +138,8 @@
 #purchaseBtn{
     background-color: #03A100;
     border: 0;
+}
+
+.purpleTextColor{
+    -webkit-text-fill-color: #590067;
 }
