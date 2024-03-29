@@ -167,23 +167,21 @@
     </div>
 
     <div id="viewOrderBtnParent">
-        <button id ="updateButtonDash" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#orderModal" >Update</button>
-        <button id="removeButtonDash" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#orderModal">Remove</button>
+        <button id ="updateButtonDash" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateOrderModal" >Update</button>
+        <button id="removeButtonDash" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeOrderModal">Remove</button>
     </div>
 
-    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--  update order modal  -->
+    <div class="modal fade" id="updateOrderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update Order</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!--  code here  -->
                     <div class="col-12 placeOrderForm">
-                        <div class="updateTitleOrder">
-                            <h3 class="purpleTextColor">Update Your Orders</h3>
-                        </div>
                         <form class="row g-3 ">
                             <div class="col-12 margin-bottom">
                                 <label for="inputOrderId" class="form-label">Order Id :</label>
@@ -274,6 +272,56 @@
             </div>
         </div>
     </div>
+
+<!--remove order modal-->
+    <div class="modal fade" id="removeOrderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id=" exampleModalLabel">Remove Order</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--  code here  -->
+                    <div class="col-12 placeOrderForm">
+
+                        <form class="row g-3 ">
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputOrderId" class="form-label">Order Id :</label>
+                                <select id=" inputOrderId" class="form-select">
+                                    <option selected>I001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 margin-bottom">
+                                    <label for=" inputCustomerName" class="form-label ">Customer Name :</label>
+                                    <input type="text" id=" inputCustomerName" class="form-control " placeholder="customer name" aria-label="Customer Name">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 margin-bottom">
+                                    <label for=" inputItemName" class="form-label ">Item Name :</label>
+                                    <input type="text" id=" inputItemName" class="form-control " placeholder="item name" aria-label="item name">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 marginZero">
+                                <label for=" inputPrice" class="form-label">Price</label>
+                                <input type="text" class="form-control" id=" inputPrice" placeholder="price">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer class="margin padding position footer">
@@ -295,8 +343,9 @@
                     <p>Contact <Us></Us></p>
                     <p>Email : rameshlayan4@gmail.com<br>Hotline : +94 76 452 365 2</p>
                 </div>
+
                 <div id="groStore">
-                    <p class="margin">GroStore</p>
+                <p class="margin">GroStore</p>
                 </div>
                 <div id="socialMedia">
                     <img id="facebook" src="assets/image/icons8-facebook-64.png" alt="facebook" title="facebook.com">
