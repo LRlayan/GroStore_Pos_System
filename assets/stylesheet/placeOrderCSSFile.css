@@ -1,0 +1,65 @@
+.titleOrder{
+    position: absolute;
+    top: 22%;
+}
+
+#line1{
+    background-color: gray;
+    width: 29rem;
+    height: 1px;
+
+    opacity: 50%;
+
+    position: relative;
+    top: -20px;
+    left: 158px;
+}
+
+#line2{
+    background-color: gray;
+    width: 45rem;
+    height: 1px;
+
+    transform: rotate(90deg);
+
+    opacity: 50%;
+
+    position: relative;
+    left: 21rem;
+    top: -19rem;
+}
+
+.margin-bottom{
+    margin-bottom: 20px;
+}
+
+.marginZero{
+    margin: 0;
+}
+
+.inputFieldMargin{
+    margin-left: 27px;
+}
+
+.placeOrderForm{
+    padding: 50px;
+}
+
+#placeOrderConfirmBtn{
+    position: absolute;
+    left: 32.2%;
+
+}
+
+/*Billing Section*/
+
+.titleBill{
+    left: 38%;
+    -webkit-text-fill-color: #3A0044;
+}
+
+#bill{
+    position: absolute;
+    left: 50%;
+    top: 25%;
+}
