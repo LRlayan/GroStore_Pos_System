@@ -5,7 +5,7 @@
 
 .loginImage{
     width: 40vw;
-    height: 100vh;
+    height: 97.2vh;
     margin-bottom: 0;
 }
 
@@ -23,13 +23,17 @@
 #signUpParent{
     position: relative;
     top: -33rem;
-    left: 50vw;
+    left: 40rem;
 }
 
 #signUp{
     text-align: right;
-    padding-right: 20px;
     -webkit-text-fill-color: #590067;
+
+    position: absolute;
+    left: 37rem;
+    top: 10px;
+    padding-right: 8px;
 }
 
 #logoParent{
