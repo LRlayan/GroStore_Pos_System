@@ -45,9 +45,9 @@
 
     <div id="crudButton" class="relativePosition">
         <div class="absolutePosition">
-            <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#storeModal" type="button">New</button>
-            <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#storeModal" type="button">Update</button>
-            <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#storeModal" type="button">Remove</button>
+            <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#newModal" type="button">New</button>
+            <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#updateModal" type="button">Update</button>
+            <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#removeModal" type="button">Remove</button>
         </div>
     </div>
 
@@ -125,15 +125,115 @@
         </table>
     </div>
 
-    <div class="modal fade" id="storeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--  new Modal  -->
+    <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!--    code here  -->
+                    <div class="row">
+                        <div class="col-12 margin-bottom">
+                            <label for="-inputItemCode" class="form-label">Item Code :</label>
+                            <select id="-inputItemCode" class="form-select">
+                                <option selected>I001</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-12 margin-bottom">
+                            <label for="_inputItemName" class="form-label inputFieldMargin">Item Name :</label>
+                            <input type="text" id="_inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-12 margin-bottom">
+                            <label for=" inputCity" class="form-label ">QTY On Hand :</label>
+                            <input type="text" id=" inputCity" class="form-control" placeholder="select city" aria-label="City">
+                        </div>
+                        <div class="col-12 margin-bottom">
+                            <label for=" inputTelephone" class="form-label inputFieldMargin">Unit Price :</label>
+                            <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  update Modal  -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id=" exampleModalLabel">Update Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--    code here  -->
+                    <div class="row">
+                        <div class="col-12 margin-bottom">
+                            <label for=" -inputItemCode" class="form-label">Item Code :</label>
+                            <select id=" -inputItemCode" class="form-select">
+                                <option selected>I001</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-12 margin-bottom">
+                            <label for=" _inputItemName" class="form-label inputFieldMargin">Item Name :</label>
+                            <input type="text" id=" _inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 margin-bottom">
+                            <label for="inputCity" class="form-label ">QTY On Hand :</label>
+                            <input type="text" id="inputCity" class="form-control" placeholder="select city" aria-label="City">
+                        </div>
+                        <div class="col-12 margin-bottom">
+                            <label for="inputTelephone" class="form-label inputFieldMargin">Unit Price :</label>
+                            <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  remove Modal  -->
+    <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="-exampleModalLabel">Remove Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--    code here  -->
+                    <div class="row">
+                        <div class="col-12 margin-bottom">
+                            <label for="_inputItemCode" class="form-label">Item Code :</label>
+                            <select id="_inputItemCode" class="form-select">
+                                <option selected>I001</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-12 margin-bottom">
+                            <label for="-inputItemName" class="form-label inputFieldMargin">Item Name :</label>
+                            <input type="text" id="-inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
