@@ -76,10 +76,9 @@
 }
 
 #billBtn{
-    position: absolute;
+    position: relative;
     top: 40.5rem;
-    right: 0;
-    padding-right: 40px;
+    padding-left: 12rem;
 }
 
 .btnSize{
