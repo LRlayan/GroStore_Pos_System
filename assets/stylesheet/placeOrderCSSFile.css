@@ -45,9 +45,12 @@
     padding: 50px;
 }
 
-#placeOrderConfirmBtn{
+#addToCartBtn{
     position: absolute;
-    left: 32.2%;
+    right: 53.9%;
+
+    background-color: #6F0082;
+    border: 0;
 
 }
 
@@ -62,4 +65,33 @@
     position: absolute;
     left: 50%;
     top: 25%;
+}
+
+.billPrices{
+    width: fit-content;
+
+    position: absolute;
+    top: 32rem;
+    left: 40px;
+}
+
+#billBtn{
+    position: absolute;
+    top: 40.5rem;
+    right: 0;
+    padding-right: 40px;
+}
+
+.btnSize{
+    width: 150px;
+}
+
+#cancelBtn{
+    background-color: #ED6400;
+    border: 0;
+}
+
+#purchaseBtn{
+    background-color: #03A100;
+    border: 0;
 }
