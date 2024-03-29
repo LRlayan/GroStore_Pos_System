@@ -1,4 +1,21 @@
+#imageParent{
+    width: 45vw;
+    height: 545px;
+}
+
 .loginImage{
     width: 40vw;
     height: 100vh;
+    margin-bottom: 0;
+}
+
+#text{
+    -webkit-text-fill-color: white;
+    font-weight: bold;
+
+    position: relative;
+    bottom: 21rem;
+    left: 7.5rem;
+
+    opacity: 100%;
 }
