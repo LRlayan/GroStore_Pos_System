@@ -92,23 +92,37 @@
     -webkit-text-fill-color: #3A0044;
 }
 
+#pricesMainDiv{
+    position: relative;
+    top: 6rem;
+}
+
 #bill{
     position: absolute;
     left: 50%;
     top: 25%;
 }
 
-.billPrices{
+.billPricesLabel{
     width: fit-content;
 
     position: absolute;
-    top: 32rem;
+    top: 0;
     left: 40px;
+}
+
+.billPrices{
+    position: absolute;
+    right: 0;
+}
+
+.pricesContentPosition{
+    padding-right: 50px;
 }
 
 #billBtn{
     position: relative;
-    top: 40.5rem;
+    top: 14.5rem;
     padding-left: 12rem;
 }
 
