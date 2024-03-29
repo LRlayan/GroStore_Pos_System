@@ -44,9 +44,9 @@
 
         <div id="crudButton" class="relativePosition">
             <div class="absolutePosition">
-                <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#customerModal" type="button">New</button>
-                <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#customerModal" type="button">Update</button>
-                <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#customerModal" type="button">Remove</button>
+                <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#newModal" type="button">New</button>
+                <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#updateModal" type="button">Update</button>
+                <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#removeModal" type="button">Remove</button>
            </div>
         </div>
 
@@ -144,20 +144,119 @@
             </table>
         </div>
 
-        <!--modal-->
-        <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!--new modal-->
+        <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Customer</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <!--    code here  -->
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for="-inputCustomerId" class="form-label">Customer Id :</label>
+                                <select id="-inputCustomerId" class="form-select">
+                                    <option selected>C001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for="_inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
+                                <input type="text" id="_inputCustomerName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            </div>
+                        </div>
 
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputCity" class="form-label ">City :</label>
+                                <input type="text" id=" inputCity" class="form-control" placeholder="select city" aria-label="City">
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                                <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--update modal-->
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="-exampleModalLabel">Update Customer</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--    code here  -->
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputCustomerId" class="form-label">Customer Id</label>
+                                <select id=" inputCustomerId" class="form-select">
+                                    <option selected>C001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
+                                <input type="text" id=" inputCustomerName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for="inputCity" class="form-label ">City :</label>
+                                <input type="text" id="inputCity" class="form-control" placeholder="select city" aria-label="City">
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for="inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                                <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--remove modal-->
+        <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id=" exampleModalLabel">Remove Customer</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--   code here   -->
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for="inputCustomerId" class="form-label">Customer Id</label>
+                                <select id="inputCustomerId" class="form-select">
+                                    <option selected>I001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for="inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
+                                <input type="text" id="inputCustomerName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
                     </div>
                 </div>
             </div>
