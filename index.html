@@ -166,12 +166,30 @@
     </div>
 
     <div id="viewOrderBtnParent">
-        <button id ="updateButtonDash" type="button" class="btn btn-warning">Update</button>
-        <button id="removeButtonDash" type="button" class="btn btn-danger">Remove</button>
+        <button id ="updateButtonDash" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#orderModal" >Update</button>
+        <button id="removeButtonDash" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#orderModal">Remove</button>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<footer class="margin padding position">
+<footer class="margin padding position footer">
     <div class="margin padding">
         <div class="row margin padding">
             <div id="mainDivF" class="position">

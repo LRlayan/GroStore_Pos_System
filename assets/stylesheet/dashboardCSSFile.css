@@ -115,8 +115,8 @@
 
 .OrderTitle{
     position: absolute;
-    top: 78px;
-    left: 49px;
+    top: 86px;
+    left: 55px;
 }
 
 .OrderTableHead{
@@ -131,7 +131,7 @@
 
 .orderDetailTable{
     position: relative;
-    top: 72px;
+    top: 86px;
     margin: auto;
 
     width: 89vw;
@@ -151,9 +151,15 @@
 
 #viewOrderBtnParent{
     position: relative;
-    top: 78px;
+    top: 96px;
     left: 66px;
     width: fit-content;
+}
+
+.footer{
+    height: fit-content;
+    position: relative;
+    top: 8rem;
 }
 
 #mainDivF{
@@ -163,7 +169,7 @@
     background-color: #3A0044;
 
     position: relative;
-    top: 98px;
+    top: 5px;
 }
 
 #aboutUs{
