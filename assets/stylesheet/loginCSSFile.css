@@ -31,3 +31,20 @@
     padding-right: 20px;
     -webkit-text-fill-color: #590067;
 }
+
+#logoParent{
+    width: 20rem;
+    aspect-ratio: 1/1;
+
+    position: absolute;
+    top: 5rem;
+    left: 66vw;
+}
+
+#logo{
+    width: 100px;
+    aspect-ratio: 1/1;
+
+    border-radius: 100px;
+    border:2px solid #590067;
+}
