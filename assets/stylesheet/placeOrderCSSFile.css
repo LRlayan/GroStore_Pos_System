@@ -56,6 +56,37 @@
 
 /*Billing Section*/
 
+.itemsDetails{
+    /*width: 612px;*/
+    margin: 40px;
+
+    position: relative;
+    top: 7rem;
+}
+
+.itemsDetails{
+    max-height: 340px; /* Set the maximum height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.itemsDetails{
+    table-layout: fixed; /* Prevent the table from resizing its columns */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: scroll;
+}
+
+#itemPriceListMainDiv{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 38px;
+}
+
+.prices{
+    text-align: right;
+}
+
 .titleBill{
     left: 38%;
     -webkit-text-fill-color: #3A0044;
