@@ -105,20 +105,31 @@
                     <input type="text" class="form-control" id="inputPrice" placeholder="price">
                 </div>
                 <div class="col-12">
-                    <button id="placeOrderConfirmBtn" type="submit" class="btn btn-primary"> Confirm Order</button>
+                    <button id="addToCartBtn" type="submit" class="btn btn-primary btnSize"> Add To Cart</button>
                 </div>
                 <div id="line2"></div>
             </form>
 
-        <div class="col-6" id="bill">
-            <div class="titleBill titleOrder">
-                <h5>Billing Your Order</h5>
-            </div>
+            <div class="col-6 relativePosition" id="bill">
+                <div class="titleBill titleOrder">
+                    <h5>Billing Your Order</h5>
+                </div>
 
-            <div class="col-6">
+                <div class="col-6">
 
+                </div>
+
+                <div class="col-6 billPrices">
+                    <h4 class="margin-bottom">Sub Total</h4>
+                    <h4 class="margin-bottom">Discount</h4>
+                    <h4 class="margin-bottom">Balance</h4>
+                </div>
+
+                <div id="billBtn">
+                    <button id="cancelBtn" type="submit" class="btn btn-primary btnSize"> Cancel</button>
+                    <button id="purchaseBtn" type="submit" class="btn btn-primary inputFieldMargin btnSize"> Purchase</button>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 </body>
