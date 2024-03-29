@@ -53,3 +53,19 @@
     margin: auto;
     width: 82vw;
 }
+
+/*modal*/
+
+.margin-bottom{
+    margin-bottom: 10px;
+}
+
+.saveChanges{
+    background-color: #590067;
+    border: 0;
+}
+
+.close{
+    background-color: #ED6400;
+    border: 0;
+}
