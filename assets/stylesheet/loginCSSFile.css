@@ -5,7 +5,7 @@
 
 .loginImage{
     width: 40vw;
-    height: 97.2vh;
+    height: 100vh;
     margin-bottom: 0;
 }
 
@@ -22,8 +22,10 @@
 
 #signUpParent{
     position: relative;
-    top: -33rem;
-    left: 40rem;
+    top: 1rem;
+    left: 37rem;
+
+    width: 100px;
 }
 
 #signUp{
@@ -31,8 +33,8 @@
     -webkit-text-fill-color: #590067;
 
     position: absolute;
-    left: 37rem;
-    top: 10px;
+    left: 0;
+    top: 0;
     padding-right: 8px;
 }
 
@@ -41,14 +43,63 @@
     aspect-ratio: 1/1;
 
     position: absolute;
-    top: 5rem;
-    left: 66vw;
+    top: 3rem;
+    left: 17vw;
 }
 
 #logo{
-    width: 100px;
+    width: 130px;
     aspect-ratio: 1/1;
 
     border-radius: 100px;
     border:2px solid #590067;
+}
+
+#parent{
+    width: 1358px;
+    height: 589px;
+}
+
+#position{
+    position: relative;
+    top: -36rem;
+    left: 41rem;
+}
+
+#loginLabel{
+    position: absolute;
+    top: 13rem;
+    left: 16rem;
+}
+
+#username{
+    position: absolute;
+    top: 17rem;
+    left: 10px;
+}
+
+#password{
+    position: absolute;
+    top: 23rem;
+    left: 10px;
+}
+
+#forgetPassword{
+    position: absolute;
+    top: 28rem;
+    right: 103px;
+}
+
+#loginBtnParent{
+    position: absolute;
+    top: 32rem;
+    left: 15rem;
+}
+
+#loginBtn{
+    background-color: #590067;
+    -webkit-text-fill-color: white;
+    width: 150px;
+
+    border: 0;
 }
