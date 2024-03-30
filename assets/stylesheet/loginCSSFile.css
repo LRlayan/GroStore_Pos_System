@@ -90,6 +90,10 @@
     right: 103px;
 }
 
+#labelForgetPassword{
+    -webkit-text-fill-color: black;
+}
+
 #loginBtnParent{
     position: absolute;
     top: 32rem;
