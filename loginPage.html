@@ -8,22 +8,43 @@
 </head>
 <body>
     <section>
-        <div class="row">
+        <div id="parent" class="col-6">
             <div id="imageParent" class="col-6">
                 <img class="loginImage" src="assets/image/loginPage.jpg" alt="shop image" title="shop image">
                 <h2 id="text">High Quality Goods</h2>
             </div>
         </div>
-
-        <div class="col-6">
+        <div id="position" class="col-6">
             <div id="signUpParent">
-                <h4 id="signUp">Sign up</h4>
+                <h5 id="signUp">Sign up</h5>
             </div>
 
             <div id="logoParent">
                 <img id="logo" src="assets/image/logo.png" alt="logo" title="GroStore.lk">
             </div>
+
+            <div id="loginLabel">
+                <h2>Login</h2>
+            </div>
+
+            <div class="mb-3 col-10" id="username">
+                <label for="formGroupExampleInput" class="form-label">Username</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="username">
+            </div>
+            <div class="mb-3 col-10" id="password">
+                <label for="formGroupExampleInput2" class="form-label">password</label>
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="password">
+            </div>
+
+            <div id="forgetPassword">
+                <h6>forget password</h6>
+            </div>
+
+            <div id="loginBtnParent">
+                <button type="button" id="loginBtn" class="btn btn-primary btn-size">Login</button>
+            </div>
         </div>
+
     </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
