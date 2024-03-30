@@ -1,0 +1,26 @@
+#telephone{
+    position: absolute;
+    top: 29rem;
+    left: 10px;
+}
+
+#inputField{
+    position: relative;
+    top: -4rem;
+}
+
+#logoParent{
+    position: absolute;
+    left: 16rem;
+}
+
+#logo{
+    width: 90px;
+    aspect-ratio: 1/1;
+}
+
+#signupLabel{
+    position: absolute;
+    top: 10rem;
+    left: 15.5rem;
+}
