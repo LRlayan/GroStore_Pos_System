@@ -27,6 +27,7 @@
     -webkit-text-fill-color: gray;
     position: relative;
     left: 60px;
+    width: fit-content;
 }
 
 .signup{
