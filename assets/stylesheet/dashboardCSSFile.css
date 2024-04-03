@@ -37,7 +37,7 @@
 .profileDetail{
     -webkit-text-fill-color: gray;
     position: relative;
-    left: 60px;
+    left: 40px;
     width: fit-content;
 }
 
@@ -56,7 +56,7 @@
 
 .headerPosition{
     position: relative;
-    left: 180px;
+    left: 152px;
     top: 15px;
 }
 
@@ -70,10 +70,13 @@
 
     position: relative;
     top: -15px;
-    left: 160px;
+    left: 205px;
 }
 
 /*----------------------------------------------------------------------------------------------------------*/
+.fonts{
+    font-family: Raleway;
+}
 
 .card{
     width: 320px;
@@ -88,58 +91,7 @@
     text-align: center;
     -webkit-text-fill-color: purple;
     margin: 25px;
-}
-
-/*card animation*/
-
-.card-container, .front, .back {
-    width: 20rem;
-    height: 10rem;
-}
-
-.back {
-    box-sizing: border-box;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .25);
-
-    font-family: BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-}
-
-.back {
-    background-image: linear-gradient(to right bottom, #590067, #590067);
-    width: 322px;
-    height: 162px;
-
-    font-size: 22px;
-    -webkit-text-fill-color: white;
-    font-weight: normal;
-    text-align: center;
-}
-
-.back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    backface-visibility: hidden;
-    overflow: hidden;
-    transition: transform .8s ease;
-}
-.back {
-    transform: rotateY(180deg);
-}
-.card-container:hover .front {
-    transform: rotateY(-180deg);
-}
-.card-container:hover .back {
-    transform: rotateY(0deg);
-}
-
-.card-container {
-    perspective: 75rem;
+    font: 25px "Raleway";
 }
 
 /*Search bar*/
@@ -174,11 +126,14 @@
     position: absolute;
     top: 86px;
     left: 55px;
+    font: 22px Raleway;
+    font-weight: bold;
 }
 
 .OrderTableHead{
     background-color: #590067 !important;
     -webkit-text-fill-color: white;
+    font: 18px Raleway;
 }
 
 .orderTableBody{
@@ -214,6 +169,7 @@
 }
 
 .footer{
+    font-family: Raleway;
     height: fit-content;
     position: relative;
     top: 8rem;
@@ -227,13 +183,14 @@
 
     position: relative;
     top: 5px;
+    font: 18px Raleway;
 }
 
 #aboutUs{
     -webkit-text-fill-color: white;
     position: absolute;
     top: 2%;
-    left: 42%;
+    left: 44%;
 }
 
 #fDiv1{
@@ -384,7 +341,7 @@ div.container a
 {
     color: #FFF;
     text-decoration: none;
-    font: 20px Raleway;
+    font: 19px Raleway;
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;
@@ -397,7 +354,7 @@ div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
 {
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: 2px;
     background: #590067;
     content: "";
@@ -423,4 +380,58 @@ div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after
 {
     opacity: 1;
     transform: translateY(0px);
+}
+
+/*card animation*/
+
+.card-container, .front, .back {
+    width: 20rem;
+    height: 10rem;
+}
+
+.back {
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .25);
+
+    font-family: BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.back {
+    background-image: linear-gradient(to right bottom, #590067, #590067);
+    width: 322px;
+    height: 162px;
+
+    font: 22px Arial;
+    -webkit-text-fill-color: white;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: transform .8s ease;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+.card-container:hover .front {
+    transform: rotateY(-180deg);
+}
+.card-container:hover .back {
+    transform: rotateY(0deg);
+}
+
+.card-container {
+    perspective: 75rem;
 }
