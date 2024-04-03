@@ -1,5 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
+.fonts{
+    font-family: Raleway;
+}
+
 .newButton{
     background-color: #03A100;
     margin-right: 15px;
@@ -46,6 +50,7 @@
     left: 66rem;
 
     width: fit-content;
+    font: 20px Raleway;
 }
 
 .customerTable{

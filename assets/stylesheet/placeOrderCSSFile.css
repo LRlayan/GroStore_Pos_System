@@ -1,5 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
+.fonts{
+    font-family: Raleway;
+}
+
 .titleOrder{
     position: absolute;
     top: 22%;

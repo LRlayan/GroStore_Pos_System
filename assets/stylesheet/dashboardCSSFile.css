@@ -12,7 +12,7 @@
 #profileDropdown{
     width: 75px;
     position: relative;
-    left: -50px;
+    left: -10px;
 }
 
 #dropdownList{
@@ -70,7 +70,7 @@
 
     position: relative;
     top: -15px;
-    left: 205px;
+    left: 162px;
 }
 
 /*----------------------------------------------------------------------------------------------------------*/

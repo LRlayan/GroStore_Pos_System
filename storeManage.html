@@ -324,7 +324,7 @@
             #profileDropdown{
                 width: 75px;
                 position: relative;
-                left: 160px;
+                left: -10px;
             }
 
             #dropdownList{
@@ -349,7 +349,7 @@
             .profileDetail{
                 -webkit-text-fill-color: gray;
                 position: relative;
-                left: 60px;
+                left: 40px;
                 width: fit-content;
             }
 
@@ -368,8 +368,8 @@
 
             .headerPosition{
                 position: relative;
-                left: 278px;
-                top: 15px;
+                left: 152px;
+                top: 15.5px;
             }
 
             .profile{
@@ -382,16 +382,17 @@
 
                 position: relative;
                 top: -15px;
-                left: 174px;
+                left: 162px;
             }
 
         /*  -------------------------------------------------------------------------------------------------  */
             .viewStoreTableTitle{
                 position: relative;
                 top: 152px;
-                left: 69.5rem;
+                left: 69rem;
 
                 width: fit-content;
+                font: 24px Raleway;
             }
 
             .storeTable{
@@ -400,6 +401,7 @@
 
                 margin: auto;
                 width: 82vw;
+                font: 15px Raleway;
             }
 
             .tableTitleSubDiv{
@@ -410,6 +412,7 @@
                 width: 1300px;
             }
         }
+
         /* Styles for Laptop Large (1367px to 1440px) */
         @media all and (min-width: 1367px) and (max-width: 1440px) {
             /*  header profile image  */
@@ -508,13 +511,13 @@
         <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a id="GroStore" class="navbar-brand" href="#">GroStore</a>
+                    <a id="DashGroStore" class="navbar-brand" href="#">GroStore</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">
-                        <div class="navbar-nav position ">
+                        <div class="navbar-nav position container topBotomBordersIn">
                             <a class="nav-link active" aria-current="page" href="">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             <a class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             <a class="nav-link active" href="storeManage.html">Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>

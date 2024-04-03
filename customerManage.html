@@ -171,7 +171,7 @@
 
                 position: relative;
                 top: -15px;
-                left: 10.6rem;
+                left: 162px;
             }
 
             #dropdownList{
@@ -183,7 +183,7 @@
             .profileDetail{
                 -webkit-text-fill-color: gray;
                 position: relative;
-                left: 60px;
+                left: 40px;
                 width: fit-content;
             }
 
@@ -202,8 +202,16 @@
             #profileDropdown{
                 width: 75px;
                 position: relative;
-                left: 62px;
+                left: -10px;
             }
+
+            .headerPosition{
+                position: relative;
+                left: 127px;
+                top: 15.5px;
+                height: 107px;
+            }
+
 
             .signup{
                 -webkit-text-fill-color: #0066FF;
@@ -440,13 +448,13 @@
             <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a id="GroStore" class="navbar-brand" href="#">GroStore</a>
+                        <a id="DashGroStore" class="navbar-brand" href="#">GroStore</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
                         <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">
-                            <div class="navbar-nav position ">
+                            <div class="navbar-nav position container topBotomBordersIn">
                                 <a class="nav-link active" aria-current="page" href="">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                 <a class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                 <a class="nav-link active" href="storeManage.html">Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -473,7 +481,7 @@
         </header>
     </section>
 
-    <section>
+    <section class="fonts">
         <div class="container-fluid searchBarParent">
             <div id="searchBar" class="input-group mb-3">
                 <input id="searchInputField" type="text" class="form-control" placeholder="Search Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
