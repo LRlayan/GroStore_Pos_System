@@ -40,7 +40,67 @@
         }
         /* Styles for Laptop Large (1367px to 1440px) */
         @media all and (min-width: 1367px) and (max-width: 1440px) {
+            /*  header profile image  */
+            .profile{
+                width: 78px;
+                height: 75px;
 
+                border-radius: 100%;
+                margin: 0;
+                padding: 0;
+
+                position: relative;
+                top: -15px;
+                left: 8.8rem;
+            }
+
+            #dropdownList{
+                width: 248px;
+                height: 400px;
+                margin: 0;
+            }
+
+            .profileDetail{
+                -webkit-text-fill-color: gray;
+                position: relative;
+                left: 60px;
+                width: fit-content;
+            }
+
+            .position{
+                position: relative;
+                left: 1rem;
+                font-size: 19px;
+            }
+
+            #GroStore{
+                font-size: 24px;
+                -webkit-text-fill-color: purple;
+                font-weight: bold;
+            }
+
+            #profileDropdown{
+                width: 75px;
+                position: relative;
+                left: 140px;
+            }
+
+            .signup{
+                -webkit-text-fill-color: #0066FF;
+                margin-top: 20px;
+            }
+
+            .logout{
+                text-align: center;
+                -webkit-text-fill-color: #590067;
+                font-weight: bold;
+
+                margin-bottom: 20px;
+            }
+
+            .textAlignCenter{
+                text-align: center;
+            }
         }
     </style>
 
@@ -51,19 +111,31 @@
             <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">GroStore</a>
+                        <a id="GroStore" class="navbar-brand" href="#">GroStore</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
                         <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">
                             <div class="navbar-nav position ">
-                                <a class="nav-link active" aria-current="page" href="index.html">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <a class="nav-link active" aria-current="page" href="">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                 <a class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                 <a class="nav-link active" href="storeManage.html">Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                 <a class="nav-link active" href="placeOrderManage.html">Place Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                <a class="nav-link active" href="index.html">About us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                <a href="#"><img class="profile" src="assets/image/profile.jpg" alt="profile" title="profile"></a>
+                                <a class="nav-link active" href="#about">About us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+                                <div id="profileDropdown" class="dropdown">
+                                    <img class="profile btn-secondary dropdown-toggle" data-bs-toggle="dropdown" src="assets/image/profile.jpg" alt="profile" title="profile">
+
+                                    <ul id="dropdownList" class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <li><img id="dropdownImage" src="assets/image/profile.jpg" class="dropdown-item"></li>
+                                        <li id="" class="textAlignCenter"><a class="dropdown-item logout" href="loginPage.html">Logout</a></li>
+                                        <li><a class="dropdown-item profileDetail">Ramesh Layan</a></li>
+                                        <li><a class="dropdown-item profileDetail">Beruwala</a></li>
+                                        <li><a class="dropdown-item profileDetail">075 798 0223</a></li>
+                                        <li class="textAlignCenter"><a class="dropdown-item signup" href="signupPage.html">Sign Up</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
