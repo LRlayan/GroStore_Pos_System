@@ -1,3 +1,8 @@
+#DashGroStore{
+    -webkit-text-fill-color: #590067;
+    font-weight: bold;
+}
+
 #profileDropdown{
     width: 75px;
     position: relative;
@@ -61,6 +66,8 @@
     top: -15px;
     left: 174px;
 }
+
+/*----------------------------------------------------------------------------------------------------------*/
 
 .card{
     width: 320px;
