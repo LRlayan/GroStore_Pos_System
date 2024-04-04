@@ -699,18 +699,18 @@
                             <a class="nav-link active" href="placeOrderManage.html">Place Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             <a class="nav-link active" href="#about">About us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
-                            <div id="profileDropdown" class="dropdown">
-                                <img class="profile btn-secondary dropdown-toggle" data-bs-toggle="dropdown" src="assets/image/profile.jpg" alt="profile" title="profile">
+                        </div>
+                        <div id="profileDropdown" class="dropdown">
+                            <img class="profile btn-secondary dropdown-toggle" data-bs-toggle="dropdown" src="assets/image/profile.jpg" alt="profile" title="profile">
 
-                                <ul id="dropdownList" class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <li><img id="dropdownImage" src="assets/image/profile.jpg" class="dropdown-item"></li>
-                                    <li id="" class="textAlignCenter"><a class="dropdown-item logout" href="loginPage.html">Logout</a></li>
-                                    <li><a class="dropdown-item profileDetail">Ramesh Layan</a></li>
-                                    <li><a class="dropdown-item profileDetail">Beruwala</a></li>
-                                    <li><a class="dropdown-item profileDetail">075 798 0223</a></li>
-                                    <li class="textAlignCenter"><a class="dropdown-item signup" href="signupPage.html">Sign Up</a></li>
-                                </ul>
-                            </div>
+                            <ul id="dropdownList" class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><img id="dropdownImage" src="assets/image/profile.jpg" class="dropdown-item"></li>
+                                <li id="" class="textAlignCenter"><a class="dropdown-item logout" href="loginPage.html">Logout</a></li>
+                                <li><a class="dropdown-item profileDetail">Ramesh Layan</a></li>
+                                <li><a class="dropdown-item profileDetail">Beruwala</a></li>
+                                <li><a class="dropdown-item profileDetail">075 798 0223</a></li>
+                                <li class="textAlignCenter"><a class="dropdown-item signup" href="signupPage.html">Sign Up</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -731,7 +731,7 @@
 
         <div class="card shadow col-xs card-container">
             <div id="div2" class="">
-                <h2 class="cardText">00</h2>
+                <h2 class="cardText" id="customer">00</h2>
                 <h5 class="cardText">Total Customers</h5>
             </div>
             <div class="back">The number of customers<br> registered in our system<br> so far can be checked here.</div>
@@ -755,7 +755,7 @@
 
     <div class="row position viewWidth">
         <div class="row margin col-sm-4 col-xs OrderTitle">
-            <h4 class="titleSmallSize">View Order Detail</h4>
+            <h4 id="orders" class="titleSmallSize">View Order Detail</h4>
         </div>
     </div>
 
@@ -1014,11 +1014,11 @@
                 </div>
                 <div id="fDiv1" class="col-sm-4 col-xs">
                     <p>More Link</p>
-                    <p>Our Customers<br>View Orders</p>
+                    <a href="#customer"><p>Our Customers<br><a href="#orders">View Orders</a></p></a>
                 </div>
                 <div id="fDiv2" class="col-sm-4 col-xs">
                     <p>Primary Menu</p>
-                    <p>Dashboard<br>Customer<br>Store<br>Place order<br>About us</p>
+                    <p><a href="#">Dashboard</a><br><a href="customerManage.html">Customer</a><br><a href="storeManage.html">Store</a><br><a href="placeOrderManage.html">Place order</a><br>About us</p>
                 </div>
                 <div id="fDiv3" class="col-sm-4 col-xs">
                     <p>Contact <Us></Us></p>
