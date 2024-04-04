@@ -2,6 +2,7 @@
     position: absolute;
     top: 29rem;
     left: 10px;
+    font: 15px Raleway;
 }
 
 #inputField{
@@ -23,6 +24,7 @@
     position: absolute;
     top: 9rem;
     left: 15rem;
+    font: 15px Raleway;
 }
 
 #parent{
@@ -42,7 +44,7 @@
     position: absolute;
     left: 0px;
     top: 15px;
-    font-size: 25px;
+    font: 25px Raleway;
 }
 
 #loginBtn{
