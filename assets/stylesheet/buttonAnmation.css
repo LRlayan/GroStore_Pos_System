@@ -242,7 +242,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 8px;
+    right: 0px;
     bottom: 0;
     background-color:#e82902;
     box-shadow:
@@ -254,9 +254,11 @@
 }
 
 .btn-remove:hover:after {
-    width: 45.5%;
+    width: 30%;
 }
 
 .removeBtn-color{
     background-color: #e82902;
 }
+
+/*customer manage*/
