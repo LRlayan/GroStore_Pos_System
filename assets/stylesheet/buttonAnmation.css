@@ -254,11 +254,58 @@
 }
 
 .btn-remove:hover:after {
-    width: 30%;
+    width: 45.5%;
 }
 
 .removeBtn-color{
     background-color: #e82902;
 }
 
-/*customer manage*/
+/*customer manage remove*/
+.btn-remove-Customer:hover:after {
+    width: 30%;
+}
+
+/*customer manage update*/
+.btn-update-customer span:before,
+.btn-update-customer span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top:0;
+    background-color: #fcba03;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-update-customer:before,
+.btn-update-customer:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: 128px;
+    bottom: 0;
+    background-color:#fcba03;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-update-customer:hover:after {
+    width: 30%;
+}
+
+.updateBtn-color{
+    background-color: #fcba03;
+}
+
+/*customer new button*/
