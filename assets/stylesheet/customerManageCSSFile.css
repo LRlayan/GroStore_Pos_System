@@ -7,15 +7,21 @@
 .newButton{
     margin-right: 15px;
     width: 110px;
+    border-radius: 10px;
+    font: 15px Raleway;
 }
 
 .updateButton{
     margin-right: 15px;
     width: 110px;
+    border-radius: 10px;
+    font: 15px Raleway;
 }
 
 .removeButton{
     width: 110px;
+    border-radius: 10px;
+    font: 15px Raleway;
 }
 
 .whiteTextColor{
