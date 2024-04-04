@@ -324,8 +324,8 @@
             /*  --------------------------------------------------------------------------------------------------  */
 
             .titleOrder{
-                position: absolute;
-                top: 22%;
+                position: relative;
+                /*top: -50px;*/
             }
 
             #line1{
@@ -429,7 +429,7 @@
             #bill{
                 position: absolute;
                 left: 50%;
-                top: 25%;
+                top: 5%;
             }
 
             .billPricesLabel{
@@ -476,6 +476,8 @@
 
             .purpleTextColor{
                 -webkit-text-fill-color: #590067;
+                position: absolute;
+                top: 100px;
             }
         }
 
@@ -555,13 +557,14 @@
 
             .titleOrder{
                 position: absolute;
-                top: 22%;
+                top: 130px;
+                left: -12px;
                 width: fit-content;
             }
 
             #line1{
                 background-color: gray;
-                width: 19rem;
+                width: 18.3rem;
                 height: 1px;
 
                 opacity: 50%;
@@ -617,7 +620,7 @@
                 margin: 40px;
 
                 position: relative;
-                top: 7rem;
+                top: 4rem;
             }
 
             .itemsDetails{
@@ -644,6 +647,7 @@
             }
 
             .titleBill{
+                top: 50px;
                 left: 150px;
                 -webkit-text-fill-color: #590067;
                 width: 200px;
@@ -656,13 +660,13 @@
 
             #pricesMainDiv{
                 position: relative;
-                top: 6rem;
+                top: 4rem;
             }
 
             #bill{
                 position: absolute;
-                left: 50%;
-                top: 25%;
+                left: 520px;
+                top: 128px;
             }
 
             .billPricesLabel{
@@ -684,7 +688,7 @@
 
             #billBtn{
                 position: relative;
-                top: 16.7rem;
+                top: 13.5rem;
                 padding-left: 11rem;
             }
 
@@ -1213,7 +1217,7 @@
     <section>
         <div class="col-6 placeOrderForm">
             <form class="row g-3 ">
-                <div class="titleOrder col-12">
+                <div class="titleOrder container">
                     <h3 class="purpleTextColor">Place Your Orders</h3>
                 </div>
                 <div class="col-12 margin-bottom">
