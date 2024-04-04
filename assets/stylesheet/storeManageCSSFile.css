@@ -7,9 +7,10 @@
 .viewStoreTableTitle{
     position: relative;
     top: 152px;
-    left: 69.5rem;
+    left: 67.5rem;
 
     width: fit-content;
+    font: 22px Raleway;
 }
 
 .storeTable{
