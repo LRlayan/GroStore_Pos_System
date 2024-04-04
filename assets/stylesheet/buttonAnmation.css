@@ -242,7 +242,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: -1px;
+    right: 8px;
     bottom: 0;
     background-color:#e82902;
     box-shadow:
@@ -259,11 +259,6 @@
 
 .removeBtn-color{
     background-color: #e82902;
-}
-
-/*customer manage remove*/
-.btn-remove-Customer:hover:after {
-    width: 30%;
 }
 
 /*customer manage update*/
@@ -349,4 +344,48 @@
 .btn-new:hover:after {
     width: 30%;
 }
+
+/*customer remove*/
+/*remove button*/
+.btn-remove-customer span:before,
+.btn-remove-customer span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top:0;
+    background-color: #e82902;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-remove-customer:before,
+.btn-remove-customer:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: -1px;
+    bottom: 0;
+    background-color:#e82902;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-remove-customer:hover:after {
+    width: 30%;
+}
+
+.removeBtn-color{
+    background-color: #e82902;
+}
+
 
