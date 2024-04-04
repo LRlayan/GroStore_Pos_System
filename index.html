@@ -7,13 +7,9 @@
     <link rel="stylesheet" href="assets/stylesheet/dashboardCSSFile.css">
     <link rel="stylesheet" href="assets/stylesheet/placeOrderCSSFile.css">
     <link rel="stylesheet" href="assets/stylesheet/customerManageCSSFile.css">
+    <link rel="stylesheet" href="assets/stylesheet/buttonAnmation.css">
 
     <style>
-
-        @media all and (min-width: 320px) and (max-width: 768px){
-
-        }
-
         @media all and (min-width: 769px) and (max-width: 1024px){
             #DashGroStore{
                 font-size: 30px;
@@ -848,8 +844,8 @@
     </div>
 
     <div id="viewOrderBtnParent">
-        <button id ="updateButtonDash" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateOrderModal" >Update</button>
-        <button id="removeButtonDash" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeOrderModal">Remove</button>
+        <button id ="updateButtonDash" type="button" class="btn btn-all btn-update updateBtn-color btn-size" data-bs-toggle="modal" data-bs-target="#updateOrderModal" ><span>Update</span></button>
+        <button id="removeButtonDash" type="button" class="btn btn-size btn-all btn-remove removeBtn-color " data-bs-toggle="modal" data-bs-target="#removeOrderModal"><span>Remove</span></button>
     </div>
 
 <!--  update order modal  -->
