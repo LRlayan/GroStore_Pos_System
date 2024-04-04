@@ -12,7 +12,7 @@
 #profileDropdown{
     width: 75px;
     position: relative;
-    left: -10px;
+    left: -50px;
 }
 
 #dropdownList{
@@ -57,7 +57,7 @@
 .headerPosition{
     position: relative;
     left: 152px;
-    top: 15.5px;
+    top: 0px;
 }
 
 .profile{
@@ -69,8 +69,8 @@
     padding: 0;
 
     position: relative;
-    top: -15px;
-    left: 162px;
+    top: 0px;
+    left: 165px;
 }
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -366,13 +366,13 @@ div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
 
 div.topBotomBordersIn a:before
 {
-    top: -5px;
+    top: 0px;
     transform: translateY(-10px);
 }
 
 div.topBotomBordersIn a:after
 {
-    bottom: 25px;
+    bottom: 0px;
     transform: translateY(10px);
 }
 
