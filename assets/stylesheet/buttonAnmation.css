@@ -242,7 +242,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 0px;
+    right: -1px;
     bottom: 0;
     background-color:#e82902;
     box-shadow:
