@@ -174,3 +174,47 @@
 .addToCartBtn-color{
     background-color: #6F0082;
 }
+
+/*dashboard button*/
+
+/*update button*/
+.btn-update span:before,
+.btn-update span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top:0;
+    background-color: #fcba03;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-update:before,
+.btn-update:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: 102px;
+    bottom: 0;
+    background-color:#fcba03;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-update:hover:after {
+    width: 50%;
+}
+
+.updateBtn-color{
+    background-color: #fcba03;
+}
