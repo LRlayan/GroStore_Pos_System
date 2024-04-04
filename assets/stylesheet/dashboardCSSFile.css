@@ -168,6 +168,11 @@
     width: fit-content;
 }
 
+.btn-size{
+    width: 100px;
+    margin-right: 10px;
+}
+
 .footer{
     font-family: Raleway;
     height: fit-content;
