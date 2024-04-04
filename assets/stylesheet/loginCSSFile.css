@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
 #imageParent{
     width: 45vw;
     height: 545px;
@@ -36,6 +38,8 @@
     left: 0;
     top: 0;
     padding-right: 8px;
+
+    font: 15px Raleway;
 }
 
 #logoParent{
@@ -70,24 +74,28 @@
     position: absolute;
     top: 13rem;
     left: 16rem;
+    font: 15px Raleway;
 }
 
 #username{
     position: absolute;
     top: 17rem;
     left: 10px;
+    font: 15px Raleway;
 }
 
 #password{
     position: absolute;
     top: 23rem;
     left: 10px;
+    font: 15px Raleway;
 }
 
 #forgetPassword{
     position: absolute;
     top: 28rem;
     right: 103px;
+    font: 15px Raleway;
 }
 
 #labelForgetPassword{
@@ -106,4 +114,5 @@
     width: 150px;
 
     border: 0;
+    font: 20px Raleway;
 }
