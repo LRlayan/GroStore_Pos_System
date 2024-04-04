@@ -54,9 +54,8 @@
 #addToCartBtn{
     position: absolute;
     right: 53.9%;
-
-    background-color: #6F0082;
     border: 0;
+    margin-top: 15px;
 
 }
 
@@ -137,15 +136,16 @@
 }
 
 #cancelBtn{
-    background-color: #ED6400;
+    /*background-color: #ED6400;*/
     border: 0;
 }
 
 #purchaseBtn{
-    background-color: #03A100;
+    /*background-color: #03A100;*/
     border: 0;
 }
 
 .purpleTextColor{
-    -webkit-text-fill-color: #590067;
+    /*-webkit-text-fill-color: #590067;*/
+    border: 0;
 }
