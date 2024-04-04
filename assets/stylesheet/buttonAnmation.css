@@ -200,7 +200,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 102px;
+    right: 123px;
     bottom: 0;
     background-color:#fcba03;
     box-shadow:
@@ -212,9 +212,51 @@
 }
 
 .btn-update:hover:after {
-    width: 50%;
+    width: 45%;
 }
 
 .updateBtn-color{
     background-color: #fcba03;
+}
+
+/*remove button*/
+.btn-remove span:before,
+.btn-remove span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top:0;
+    background-color: #e82902;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-remove:before,
+.btn-remove:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: 8px;
+    bottom: 0;
+    background-color:#e82902;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-remove:hover:after {
+    width: 45.5%;
+}
+
+.removeBtn-color{
+    background-color: #e82902;
 }
