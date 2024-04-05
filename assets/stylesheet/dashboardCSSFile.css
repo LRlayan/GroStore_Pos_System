@@ -3,6 +3,10 @@ a:visited{
     color: #FBDFFF;
 }
 
+a:link{
+    text-decoration: none;
+}
+
 #DashGroStore{
     font-size: 30px;
 }
