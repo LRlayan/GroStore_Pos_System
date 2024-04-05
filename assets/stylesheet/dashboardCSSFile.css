@@ -1,4 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
+a:visited{
+    color: #FBDFFF;
+}
 
 #DashGroStore{
     font-size: 30px;
