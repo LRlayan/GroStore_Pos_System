@@ -16,8 +16,8 @@
     font-weight: bold;
 
     position: relative;
-    bottom: 21rem;
-    left: 7.5rem;
+    bottom: 23rem;
+    left: -2.5rem;
 
     opacity: 100%;
 }
@@ -61,7 +61,7 @@
 
 #parent{
     width: 1358px;
-    height: 589px;
+    height: 574px;
 }
 
 #position{
@@ -115,4 +115,45 @@
 
     border: 0;
     font: 20px Raleway;
+}
+
+@-webkit-keyframes rise {
+    0% {padding-top: 100%;}
+    60% {padding-top: 7%;}
+    80% {padding-top: 7%; border-bottom: 0px solid #fff; opacity: 0.5; text-shadow: 2px 2px 5px #fff;}
+    100% {padding-top: 7%; border-bottom: 0.35em solid #fff; opacity: 1; text-shadow: 0;}
+}
+
+@keyframes rise {
+    0% {padding-top: 100%;}
+    60% {padding-top: 7%;}
+    80% {padding-top: 7%; border-bottom: 0px solid #fff; opacity: 0.5; text-shadow: 2px 2px 200px rgba(255, 255, 255, 1);}
+    100% {padding-top: 7%; border-bottom: 0.12em solid  #fff;opacity: 1; text-shadow: 200px 200px 200px rgba(255, 255, 255, 0);}
+}
+
+
+.rise-text {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    opacity: 0;
+    padding-top: 100%;
+    color: #fff;
+    border-bottom: 0;
+    text-shadow: 2px 2px 5px #fff;
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+    -webkit-animation-name: rise;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+    -webkit-animaiton-fill-mode: forwards;
+    animation-name: rise;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0, 0.25, 0.55, 1);
+    animation-fill-mode: forwards;
 }
