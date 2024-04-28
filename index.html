@@ -677,7 +677,7 @@
 </head>
 <body>
 
-<!--Dashboard-->
+<!--header-->
 <section>
     <header id="header">
         <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">
@@ -691,7 +691,7 @@
                     <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">
                         <div class="navbar-nav position container topBotomBordersIn">
                             <span class="nav-link active" aria-current="page" href="">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <span class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span id="customerTab" class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <span class="nav-link active" href="storeManage.html">Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <span class="nav-link active" href="placeOrderManage.html">Place Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <span class="nav-link active" href="#about">About us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -717,7 +717,7 @@
 </section>
 
 <!--Customer-->
-<section class="fonts">
+<section id="customer-sec" class="fonts">
         <div class="container-fluid searchBarParent">
             <div class="input-group mb-3 searchBar"><!-- -->
                 <input type="text" class="searchInputField form-control" placeholder="Search Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -953,7 +953,7 @@
 <section></section>
 
 <!--dashboard-->
-<section class="">
+<section id="dash-sec" class="">
     <div class="row margin fonts">
         <div id="div1" class="card shadow col-xs card-container">
             <div>
@@ -1239,7 +1239,7 @@
     </div>
 </section>
 
-<footer class="margin padding position footer fonts">
+<footer id="footer" class="margin padding position footer fonts">
     <div class="margin padding">
         <div class="row margin padding">
             <div id="mainDivF" class="position">
@@ -1276,7 +1276,12 @@
 </footer>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script>
-
+    $('#customer-sec').css({display:'none'})
+    $('#customerTab').on('click' , () =>{
+        $('#customer-sec').css({display:'block'})
+        $('#dash-sec').css({display:'none'})
+        $('#footer').css({display: 'none'})
+    })
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
