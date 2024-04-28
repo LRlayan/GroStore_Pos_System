@@ -1627,6 +1627,13 @@
 <script>
     $('#customer-sec').css({display:'none'})
 
+    $('#dashboard-tab').on('click' , () =>{
+        $('#customer-sec').css({display:'none'})
+        $('#placeOrder-sec').css({display:'none'})
+        $('#dash-sec').css({display:'none'})
+        $('#store-sec').css({display:'none'})
+    })
+
     $('#customer-tab').on('click' , () =>{
         $('#customer-sec').css({display:'block'})
         $('#placeOrder-sec').css({display:'none'})
