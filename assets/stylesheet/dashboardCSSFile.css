@@ -347,6 +347,7 @@ div.container
     margin: 0 auto;
     padding: 1em 3em;
     text-align: center;
+    width: 800px;
 }
 
 div.container span
@@ -357,6 +358,7 @@ div.container span
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;
+    top: 0.7rem;
     z-index: 0;
     cursor: pointer;
 }
@@ -365,7 +367,7 @@ div.container span
 div.topBotomBordersIn span:before, div.topBotomBordersIn span:after
 {
     position: absolute;
-    left: 0;
+    left: 12px;
     width: 80%;
     height: 2px;
     background: #590067;
@@ -379,12 +381,13 @@ div.topBotomBordersIn span:before, div.topBotomBordersIn span:after
 div.topBotomBordersIn span:before
 {
     top: 0px;
-    transform: translateY(-10px);
+    transform: translateY(0px);
 }
 
 div.topBotomBordersIn span:after
 {
-    bottom: 0px;
+    left: 12px;
+    bottom: 20px;
     transform: translateY(10px);
 }
 
