@@ -349,7 +349,7 @@ div.container
     text-align: center;
 }
 
-div.container a
+div.container span
 {
     color: #FFF;
     text-decoration: none;
@@ -362,7 +362,7 @@ div.container a
 }
 
 /* Top and Bottom borders come in */
-div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
+div.topBotomBordersIn span:before, div.topBotomBordersIn span:after
 {
     position: absolute;
     left: 0;
@@ -376,19 +376,19 @@ div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
 
 
 
-div.topBotomBordersIn a:before
+div.topBotomBordersIn span:before
 {
     top: 0px;
     transform: translateY(-10px);
 }
 
-div.topBotomBordersIn a:after
+div.topBotomBordersIn span:after
 {
     bottom: 0px;
     transform: translateY(10px);
 }
 
-div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after
+div.topBotomBordersIn span:hover:before, div.topBotomBordersIn span:hover:after
 {
     opacity: 1;
     transform: translateY(0px);
