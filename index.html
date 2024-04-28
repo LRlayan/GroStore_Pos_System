@@ -717,7 +717,234 @@
 </section>
 
 <!--Customer-->
-<section></section>
+<section class="fonts">
+        <div class="container-fluid searchBarParent">
+            <div class="input-group mb-3 searchBar"><!-- -->
+                <input type="text" class="searchInputField form-control" placeholder="Search Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addonC">Search</button><!-- -->
+            </div>
+        </div>
+
+        <div id="crudButton" class="relativePosition">
+            <div class="absolutePosition">
+                <button class="noBorder btn newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>
+                <button class="noBorder btn updateButton btn-all btn-update-customer updateBtn-color" data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>
+                <button class="noBorder btn removeButton btn-all btn-remove btn-remove-customer removeBtn-color" data-bs-toggle="modal" data-bs-target="#removeModal" type="button"><span>Remove</span></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="d1" class="row margin col-sm-4 col-xs">
+                <h4 class="viewCustomerTitle">View Customers</h4>
+            </div>
+        </div>
+
+        <div class="tableDiv customerTable">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="OrderTableHead " scope="col">Order Id</th>
+                    <th class="OrderTableHead" scope="col">Customer</th>
+                    <th class="OrderTableHead" scope="col">Item</th>
+                    <th class="OrderTableHead" scope="col">Quantity</th>
+                    <th class="OrderTableHead" scope="col">Discount</th>
+                    <th class="OrderTableHead" scope="col">Price</th>
+                </tr>
+                </thead>
+                <tbody id="customerTable">
+                <tr>
+                    <th class="orderTableBody" scope="row">1</th>
+                    <td class="orderTableBody">Mark</td>
+                    <td class="orderTableBody">Otto</td>
+                    <td class="orderTableBody">@mdo</td>
+                    <td class="orderTableBody">@mdo</td>
+                    <td class="orderTableBody">@mdo</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">2</th>
+                    <td class="orderTableBody">Jacob</td>
+                    <td class="orderTableBody">Thornton</td>
+                    <td class="orderTableBody">@fat</td>
+                    <td class="orderTableBody">@fat</td>
+                    <td class="orderTableBody">@fat</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">3</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">4</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">4</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">4</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">4</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr><tr>
+                    <th class="orderTableBody" scope="row">4</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr>
+
+                <tr>
+                    <th class="orderTableBody" scope="row">4</th>
+                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                    <td class="orderTableBody">@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--new modal-->
+        <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalCusLabel">Add New Customer</h1><!-- -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--    code here  -->
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for="-inputCustomerId" class="form-label">Customer Id :</label>
+                                <select id="-inputCustomerId" class="form-select">
+                                    <option selected>C001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for="_inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
+                                <input type="text" id="_inputCustomerName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputCity" class="form-label ">City :</label>
+                                <input type="text" id=" inputCity" class="form-control" placeholder="select city" aria-label="City">
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                                <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--update modal-->
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="-exampleModalLabel">Update Customer</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--    code here  -->
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputCustomerId" class="form-label">Customer Id</label>
+                                <select id=" inputCustomerId" class="form-select">
+                                    <option selected>C001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for=" inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
+                                <input type="text" id=" inputCustomerName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for="inputCity" class="form-label ">City :</label>
+                                <input type="text" id="inputCity " class="form-control" placeholder="select city" aria-label="City">
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for="inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                                <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--remove modal-->
+        <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id=" exampleModalLabel">Remove Customer</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--   code here   -->
+                        <div class="row">
+                            <div class="col-12 margin-bottom">
+                                <label for="inputCustomerId" class="form-label">Customer Id</label>
+                                <select id="inputCustomerId" class="form-select">
+                                    <option selected>I001</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-12 margin-bottom">
+                                <label for="inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
+                                <input type="text" id="inputCustomerName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
 
 <!--Store-->
 <section></section>
@@ -725,7 +952,7 @@
 <!--Place order-->
 <section></section>
 
-<!--Footer-->
+<!--dashboard-->
 <section class="">
     <div class="row margin fonts">
         <div id="div1" class="card shadow col-xs card-container">
@@ -882,11 +1109,11 @@
                             <div class="row">
                                 <div class="col-5 margin-bottom">
                                     <label for="inputCustomerId" class="form-label">Customer Id :</label>
-                                    <input type="text" id="inputCustomerId" class="form-control" placeholder="customer id" aria-label="Customer city">
+                                    <input type="text" id="inputCustomerId " class="form-control" placeholder="customer id" aria-label="Customer city">
                                 </div>
                                 <div class="col-7 margin-bottom">
                                     <label for="inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
-                                    <input type="text" id="inputCustomerName" class="form-control inputFieldMargin" placeholder="customer name" aria-label="Customer Name">
+                                    <input type="text" id="inputCustomerName " class="form-control inputFieldMargin" placeholder="customer name" aria-label="Customer Name">
                                 </div>
                             </div>
 
@@ -897,7 +1124,7 @@
                                 </div>
                                 <div class="col-7 margin-bottom">
                                     <label for="inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
-                                    <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                                    <input type="text" id="inputTelephone " class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                                 </div>
                             </div>
 
@@ -966,7 +1193,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id=" exampleModalLabel">Remove Order</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel ">Remove Order</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -985,7 +1212,7 @@
                             <div class="row">
                                 <div class="col-12 margin-bottom">
                                     <label for=" inputCustomerName" class="form-label ">Customer Name :</label>
-                                    <input type="text" id=" inputCustomerName" class="form-control " placeholder="customer name" aria-label="Customer Name">
+                                    <input type="text" id=" inputCustomerName " class="form-control " placeholder="customer name" aria-label="Customer Name">
                                 </div>
                             </div>
 
