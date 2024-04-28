@@ -1625,13 +1625,15 @@
 </footer>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script>
+
     $('#customer-sec').css({display:'none'})
 
     $('#dashboard-tab').on('click' , () =>{
+        $('#dash-sec').css({display:'block'})
+        $('#footer').css({display: 'block'})
         $('#customer-sec').css({display:'none'})
-        $('#placeOrder-sec').css({display:'none'})
-        $('#dash-sec').css({display:'none'})
         $('#store-sec').css({display:'none'})
+        $('#placeOrder-sec').css({display:'none'})
     })
 
     $('#customer-tab').on('click' , () =>{
