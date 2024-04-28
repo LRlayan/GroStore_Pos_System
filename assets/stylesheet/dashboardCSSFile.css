@@ -108,7 +108,7 @@ a:link{
     margin: 0;
 }
 
-#searchBar{
+.searchBar{
     width: 81vw;
     height: 50px;
 
@@ -117,7 +117,7 @@ a:link{
     top: 20px;
 }
 
-#searchInputField{
+.searchInputField{
     border-radius: 200px 0 0 200px;
 }
 
