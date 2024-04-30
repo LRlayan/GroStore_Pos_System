@@ -79,7 +79,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 315px;
+    right: 263px;
     bottom: 0;
     background-color:#ED6400;
     box-shadow:
@@ -90,6 +90,9 @@
     transition: all 0.3s ease;
 }
 
+.btn-cancel:hover:after {
+    width: 31.5%;
+}
 
 
 /*purchase*/
@@ -100,7 +103,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 134px;
+    right: 82px;
     bottom: 0;
     background-color:#03A100;
     box-shadow:
@@ -126,7 +129,9 @@
             4px 4px 5px 0px rgba(0,0,0,.3);
     transition: all 0.3s ease;
 }
-
+.btn-purchase:hover:after {
+    width: 31.5%;
+}
 
 .purchaseBtn-color{
     background-color: #03A100;
