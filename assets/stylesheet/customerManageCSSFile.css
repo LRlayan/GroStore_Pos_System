@@ -4,11 +4,19 @@
     font-family: Raleway;
 }
 
+.tableTitleParent{
+    z-index: -1;
+    position: relative;
+    left: 1020px;
+    top: 320px;
+    width: fit-content;
+}
+
 .tableTitle{
     position: absolute;
     left: 0rem;
     top: 0px;
-    /*width: 400px;*/
+    width:200px;
 }
 
 .newButton{

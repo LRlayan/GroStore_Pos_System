@@ -19,12 +19,14 @@ a:link{
 #profileDropdown{
     width: 75px;
     position: relative;
-    left: -50px;
+    left: -20px;
 }
 
 #dropdownList{
     width: 250px;
     height: 400px;
+    position: absolute;
+    left: 9rem;
 }
 
 #dropdownImage{
@@ -65,19 +67,6 @@ a:link{
 /*    position: relative;*/
 /*    left: 100px;*/
 /*    top: 0px;*/
-/*}*/
-
-/*.profile{*/
-/*    width: 78px;*/
-/*    height: 75px;*/
-
-/*    border-radius: 100%;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-
-/*    position: relative;*/
-/*    top: 0px;*/
-/*    left: 165px;*/
 /*}*/
 
 /*----------------------------------------------------------------------------------------------------------*/
