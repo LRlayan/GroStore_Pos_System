@@ -4,6 +4,13 @@
     font-family: Raleway;
 }
 
+.tableTitle{
+    position: absolute;
+    left: 0rem;
+    top: 0px;
+    /*width: 400px;*/
+}
+
 .newButton{
     margin-right: 15px;
     width: 110px;
@@ -49,14 +56,14 @@
 
 /*customer table*/
 
-.viewCustomerTitle{
-    position: relative;
-    top: 151px;
-    left: 66rem;
+/*.viewCustomerTitle{*/
+/*    position: relative;*/
+/*    top: 151px;*/
+/*    left: 66rem;*/
 
-    width: fit-content;
-    font: 20px Raleway;
-}
+/*    width: fit-content;*/
+/*    font: 20px Raleway;*/
+/*}*/
 
 .customerTable{
     position: relative;

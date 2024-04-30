@@ -15,10 +15,18 @@
 
 .storeTable{
     position: relative;
-    top: 161px;
+    top: 190px;
 
     margin: auto;
     width: 82vw;
+}
+
+.tableStoreTitle{
+    font-family: Raleway;
+    position: absolute;
+    left: 4rem;
+    top: -135px;
+    width: 200px;
 }
 
 .tableTitleSubDiv{
@@ -28,3 +36,4 @@
 .tableTitleParentDiv{
     width: 1300px;
 }
+
