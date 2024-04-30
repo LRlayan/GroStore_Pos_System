@@ -12,7 +12,29 @@
     <link rel="stylesheet" href="assets/stylesheet/placeOrderCSSFile.css">
 
     <style>
+
+        @media all and (max-width: 320px) {}
+
+        @media all and (min-width: 321px) and (max-width: 375px){}
+
+        @media all and (min-width: 376px) and (max-width: 425px){}
+
+        @media all and (min-width: 426px) and (max-width: 768px){
+            .tableTitleParent{
+                position: relative;
+                left: 300px;
+                top: 100px;
+            }
+        }
+
         @media all and (min-width: 769px) and (max-width: 1024px){
+
+            .tableTitle{
+                width: 200px;
+            }
+
+
+
             #DashGroStore{
                 font-size: 30px;
             }
@@ -68,9 +90,10 @@
             }
 
             .headerPosition{
-                position: relative;
-                left: 2px;
-                top: 15.5px;
+                /*position: relative;*/
+                /*left: -10px;*/
+                /*top: 15.5px;*/
+                width: 600px;
             }
 
             .profile{
@@ -83,7 +106,7 @@
 
                 position: relative;
                 top: -15px;
-                left: 158px;
+                left: 50px;
             }
 
 
@@ -288,7 +311,10 @@
             }
 
             #d1{
-                position: absolute;
+                z-index: -1;
+                position: relative;
+                left: 700px;
+                top: 280px;
                 width: fit-content;
             }
 
@@ -341,9 +367,37 @@
             .textAlignCenter{
                 text-align: center;
             }
+
+            /* Top and Bottom borders come in */
+            div.topBotomBordersIn span:before, div.topBotomBordersIn span:after
+            {
+                position: absolute;
+                left: 227px;
+                width: 20%;
+                height: 2px;
+                background: #590067;
+                content: "";
+                opacity: 0;
+                transition: all 0.3s;
+            }
+
+
+
+            div.topBotomBordersIn span:before
+            {
+                top: 0px;
+                transform: translateY(0px);
+            }
+
+            div.topBotomBordersIn span:after
+            {
+                left: 227px;
+                bottom: 0px;
+                transform: translateY(10px);
+            }
         }
 
-        @media all and (min-width: 1367px) and (max-width: 1440px) {
+        @media all and (max-width: 1440px) {
 
 
             #DashGroStore{
@@ -727,7 +781,7 @@
             </div>
         </div>
 
-        <div class="relativePosition crudButton">
+        <div class="row relativePosition crudButton">
             <div class="absolutePosition">
                 <button class="noBorder btn newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>
                 <button class="noBorder btn updateButton btn-all btn-update-customer updateBtn-color" data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>
@@ -736,13 +790,13 @@
         </div>
 
         <div class="row">
-            <div id="d1" class="row margin col-sm-4 col-xs">
-                <h4 class="viewCustomerTitle">View Customers</h4>
+            <div id="d1" class="tableTitleParent margin">
+                <h4 class="tableTitle">View Customers</h4>
             </div>
         </div>
 
         <div class="tableDiv customerTable">
-            <table class="table">
+            <table class="table table-responsive">
                 <thead>
                 <tr>
                     <th class="OrderTableHead " scope="col">Order Id</th>
