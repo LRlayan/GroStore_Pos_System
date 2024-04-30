@@ -79,7 +79,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 263px;
+    right: 315px;
     bottom: 0;
     background-color:#ED6400;
     box-shadow:
@@ -91,7 +91,7 @@
 }
 
 .btn-cancel:hover:after {
-    width: 31.5%;
+    width: 22.6%;
 }
 
 
@@ -103,7 +103,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 82px;
+    right: 134px;
     bottom: 0;
     background-color:#03A100;
     box-shadow:
@@ -130,7 +130,7 @@
     transition: all 0.3s ease;
 }
 .btn-purchase:hover:after {
-    width: 31.5%;
+    width: 22.6%;
 }
 
 .purchaseBtn-color{
