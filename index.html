@@ -421,6 +421,139 @@
                 top: 0px;
                 left: 320px;
             }
+
+            #billBtn{
+                position: relative;
+                top: 16.7rem;
+                padding-left: 12rem;
+            }
+
+            /*customer manage update*/
+            .btn-update-customer span:before,
+            .btn-update-customer span:after {
+                /*top-left border color*/
+                position: absolute;
+                content: "";
+                left: 0;
+                top:0;
+                background-color: #fcba03;
+                box-shadow:
+                        -7px -7px 20px 0px rgba(255,255,255,.9),
+                        -4px -4px 5px 0px rgba(255,255,255,.9),
+                        7px 7px 20px 0px rgba(0,0,0,.2),
+                        4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.3s ease;
+            }
+
+            .btn-update-customer:before,
+            .btn-update-customer:after {
+
+                /*right-bottom border color*/
+                position: absolute;
+                content: "";
+                right: 348px;
+                bottom: 0;
+                background-color:#fcba03;
+                box-shadow:
+                        -7px -7px 20px 0px rgba(255,255,255,.9),
+                        -4px -4px 5px 0px rgba(255,255,255,.9),
+                        7px 7px 20px 0px rgba(0,0,0,.2),
+                        4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.3s ease;
+            }
+
+            .btn-update-customer:hover:after {
+                width: 18.3%;
+            }
+
+            .updateBtn-color{
+                background-color: #fcba03;
+            }
+
+            /*customer new button*/
+            .btn-new:before,
+            .btn-new:after {
+
+                /*right-bottom border color*/
+                position: absolute;
+                content: "";
+                right: 478px;
+                bottom: 0;
+                background-color:#03A100;
+                box-shadow:
+                        -7px -7px 20px 0px rgba(255,255,255,.9),
+                        -4px -4px 5px 0px rgba(255,255,255,.9),
+                        7px 7px 20px 0px rgba(0,0,0,.2),
+                        4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.3s ease;
+            }
+
+            .btn-new span:before,
+            .btn-new span:after {
+                /*top-left border color*/
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                background-color: #03A100;
+                box-shadow:
+                        -7px -7px 20px 0px rgba(255,255,255,.9),
+                        -4px -4px 5px 0px rgba(255,255,255,.9),
+                        7px 7px 20px 0px rgba(0,0,0,.2),
+                        4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.3s ease;
+            }
+
+            .newBtn-color{
+                background-color: #03A100;
+            }
+
+            .btn-new:hover:after {
+                width: 18.3%;
+            }
+
+            /*customer remove*/
+            /*remove button*/
+            .btn-remove-customer span:before,
+            .btn-remove-customer span:after {
+                /*top-left border color*/
+                position: absolute;
+                content: "";
+                left: 0;
+                top:0;
+                background-color: #e82902;
+                box-shadow:
+                        -7px -7px 20px 0px rgba(255,255,255,.9),
+                        -4px -4px 5px 0px rgba(255,255,255,.9),
+                        7px 7px 20px 0px rgba(0,0,0,.2),
+                        4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.3s ease;
+            }
+
+            .btn-remove-customer:before,
+            .btn-remove-customer:after {
+
+                /*right-bottom border color*/
+                position: absolute;
+                content: "";
+                right: 220px;
+                bottom: 0;
+                background-color:#e82902;
+                box-shadow:
+                        -7px -7px 20px 0px rgba(255,255,255,.9),
+                        -4px -4px 5px 0px rgba(255,255,255,.9),
+                        7px 7px 20px 0px rgba(0,0,0,.2),
+                        4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.3s ease;
+            }
+
+            .btn-remove-customer:hover:after {
+                width: 18.3%;
+            }
+
+            .removeBtn-color{
+                background-color: #e82902;
+            }
         }
 
         @media all and (min-width: 1367px) and (max-width: 1440px) {
@@ -1041,9 +1174,9 @@
 
     <div class="relativePosition crudButton">
         <div class="absolutePosition">
-            <button class="noBorder newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>
-            <button class="noBorder updateButton btn-all btn-update-customer updateBtn-color " data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>
-            <button class="noBorder removeButton btn-all btn-remove btn-remove-customer removeBtn-color" data-bs-toggle="modal" data-bs-target="#removeModal" type="button"><span>Remove</span></button>
+            <button class="noBorder buttons btn-all btn-new-store newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>
+            <button class="noBorder buttons btn-all btn-update-store updateBtn-color " data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>
+            <button class="noBorder buttons btn-all btn-remove btn-remove-store removeBtn-color" data-bs-toggle="modal" data-bs-target="#removeModal" type="button"><span>Remove</span></button>
         </div>
     </div>
 

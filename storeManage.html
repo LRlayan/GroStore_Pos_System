@@ -4,728 +4,728 @@
     <meta charset="UTF-8">
     <title>ManageStore</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/stylesheet/storeManageCSSFile.css">
-    <link rel="stylesheet" href="assets/stylesheet/customerManageCSSFile.css">
+<!--    <link rel="stylesheet" href="assets/stylesheet/storeManageCSSFile.css">-->
+<!--    <link rel="stylesheet" href="assets/stylesheet/customerManageCSSFile.css">-->
     <link rel="stylesheet" href="assets/stylesheet/dashboardCSSFile.css">
-    <link rel="stylesheet" href="assets/stylesheet/buttonAnmation.css">
+<!--    <link rel="stylesheet" href="assets/stylesheet/buttonAnmation.css">-->
 
     <style>
 
-        /* Styles for Mobile Small (up to 320px) */
-        @media all and (max-width: 320px) {
-            #GroStore{
-                font-size: 24px;
-                -webkit-text-fill-color: purple;
-                font-weight: bold;
-            }
-
-            #profileDropdown{
-                width: 75px;
-                position: relative;
-                left: 120px;
-            }
-
-            #dropdownList{
-                width: 250px;
-                height: 400px;
-                position: absolute;
-                left: -190px;
-            }
-
-            #dropdownImage{
-
-                width: 170px;
-                height: 150px;
-
-                border-radius: 100%;
-                position: relative;
-                left: 39px;
-            }
-
-            .textAlignCenter{
-                text-align: center;
-            }
-
-            .profileDetail{
-                -webkit-text-fill-color: gray;
-                position: relative;
-                left: 60px;
-                width: fit-content;
-            }
-
-            .signup{
-                -webkit-text-fill-color: #0066FF;
-                margin-top: 20px;
-            }
-
-            .logout{
-                text-align: center;
-                -webkit-text-fill-color: #590067;
-                font-weight: bold;
-
-                margin-bottom: 20px;
-            }
-
-            .headerPosition{
-                position: relative;
-                left: 150px;
-                top: 15px;
-                width: fit-content;
-            }
-
-            .profile{
-                width: 78px;
-                height: 75px;
-
-                border-radius: 100%;
-                margin: 0;
-                padding: 0;
-
-                position: relative;
-                top: -15px;
-                left: -8px;
-            }
-
-            /*  -------------------------------------------------------------------------------------------------  */
-            .viewStoreTableTitle{
-                position: relative;
-                top: 152px;
-                left: 760px;
-
-                width: fit-content;
-            }
-
-            .storeTable{
-                position: relative;
-                top: 161px;
-
-                margin: auto;
-                width: 82vw;
-            }
-
-            .tableTitleSubDiv{
-                width: 250px;
-            }
-
-            .tableTitleParentDiv{
-                width: 500px;
-            }
-        }
-
-         /*Styles for Tablet (426px to 768px) */
-        @media all and (min-width: 300px) and (max-width: 768px) {
-            #GroStore{
-                font-size: 24px;
-                -webkit-text-fill-color: purple;
-                font-weight: bold;
-            }
-
-            #profileDropdown{
-                width: 75px;
-                position: relative;
-                left: 120px;
-            }
-
-            #dropdownList{
-                width: 250px;
-                height: 400px;
-                position: absolute;
-                left: -190px;
-            }
-
-            #dropdownImage{
-
-                width: 170px;
-                height: 150px;
-
-                border-radius: 100%;
-                position: relative;
-                left: 39px;
-            }
-
-            .textAlignCenter{
-                text-align: center;
-            }
-
-            .profileDetail{
-                -webkit-text-fill-color: gray;
-                position: relative;
-                left: 60px;
-                width: fit-content;
-            }
-
-            .signup{
-                -webkit-text-fill-color: #0066FF;
-                margin-top: 20px;
-            }
-
-            .logout{
-                text-align: center;
-                -webkit-text-fill-color: #590067;
-                font-weight: bold;
-
-                margin-bottom: 20px;
-            }
-
-            .headerPosition{
-                position: relative;
-                left: 150px;
-                top: 15px;
-                width: fit-content;
-            }
-
-            .profile{
-                width: 78px;
-                height: 75px;
-
-                border-radius: 100%;
-                margin: 0;
-                padding: 0;
-
-                position: relative;
-                top: -15px;
-                left: -8px;
-            }
-
-            /*  -------------------------------------------------------------------------------------------------  */
-            .viewStoreTableTitle{
-                position: relative;
-                top: 152px;
-                left: 760px;
-
-                width: fit-content;
-            }
-
-            .storeTable{
-                position: relative;
-                top: 161px;
-
-                margin: auto;
-                width: 82vw;
-            }
-
-            .tableTitleSubDiv{
-                width: 250px;
-            }
-
-            .tableTitleParentDiv{
-                width: 500px;
-            }
-        }
-
-        /* Styles for Laptop (769px to 1024px) */
-        @media all and (min-width: 769px) and (max-width: 1024px) {
-            #GroStore{
-                font-size: 24px;
-                -webkit-text-fill-color: purple;
-                font-weight: bold;
-            }
-
-            #profileDropdown{
-                width: 75px;
-                position: relative;
-                left: -168px;
-            }
-
-            #dropdownList{
-                width: 250px;
-                height: 400px;
-            }
-
-            #dropdownImage{
-
-                width: 170px;
-                height: 150px;
-
-                border-radius: 100%;
-                position: relative;
-                left: 39px;
-            }
-
-            .textAlignCenter{
-                text-align: center;
-            }
-
-            .profileDetail{
-                -webkit-text-fill-color: gray;
-                position: relative;
-                left: 40px;
-                width: fit-content;
-            }
-
-            .signup{
-                -webkit-text-fill-color: #0066FF;
-                margin-top: 20px;
-            }
-
-            .logout{
-                text-align: center;
-                -webkit-text-fill-color: #590067;
-                font-weight: bold;
-
-                margin-bottom: 20px;
-            }
-
-            .headerPosition{
-                position: relative;
-                left: 2px;
-                top: 15.5px;
-            }
-
-            .profile{
-                width: 78px;
-                height: 75px;
-
-                border-radius: 100%;
-                margin: 0;
-                padding: 0;
-
-                position: relative;
-                top: -15px;
-                left: 158px;
-            }
-
-            /*  -------------------------------------------------------------------------------------------------  */
-            .viewStoreTableTitle{
-                position: relative;
-                top: 152px;
-                left: 49.8rem;
-
-                width: fit-content;
-                font: 24px Raleway;
-            }
-
-            .storeTable{
-                position: relative;
-                top: 161px;
-
-                margin: auto;
-                width: 82vw;
-                font: 15px Raleway;
-            }
-
-            .tableTitleSubDiv{
-                width: 250px;
-            }
-
-            .tableTitleParentDiv{
-                width: 1000px;
-            }
-
-            /* Top and Bottom borders come in */
-            div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
-            {
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background: #590067;
-                content: "";
-                opacity: 0;
-                transition: all 0.3s;
-            }
-
-            div.topBotomBordersIn a:before
-            {
-                top: 0px;
-                transform: translateY(-10px);
-            }
-
-            div.topBotomBordersIn a:after
-            {
-                bottom: 20px;
-                transform: translateY(10px);
-            }
-
-            div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after
-            {
-                opacity: 1;
-                transform: translateY(0px);
-            }
-        }
-
-        /* Styles for Laptop Large (1367px to 1440px) */
-        @media all and (min-width: 1367px) and (max-width: 1440px) {
-            #DashGroStore{
-                font-size: 30px;
-            }
-
-            #DashGroStore{
-                -webkit-text-fill-color: #590067;
-                font-weight: bold;
-            }
-
-            #profileDropdown{
-                width: 75px;
-                position: relative;
-                left: -10px;
-            }
-
-            #dropdownList{
-                width: 250px;
-                height: 400px;
-            }
-
-            #dropdownImage{
-
-                width: 170px;
-                height: 150px;
-
-                border-radius: 100%;
-                position: relative;
-                left: 39px;
-            }
-
-            .textAlignCenter{
-                text-align: center;
-            }
-
-            .profileDetail{
-                -webkit-text-fill-color: gray;
-                position: relative;
-                left: 40px;
-                width: fit-content;
-            }
-
-            .signup{
-                -webkit-text-fill-color: #0066FF;
-                margin-top: 20px;
-            }
-
-            .logout{
-                text-align: center;
-                -webkit-text-fill-color: #590067;
-                font-weight: bold;
-
-                margin-bottom: 20px;
-            }
-
-            .headerPosition{
-                position: relative;
-                left: 152px;
-                top: 0px;
-            }
-
-            .profile{
-                width: 78px;
-                height: 75px;
-
-                border-radius: 100%;
-                margin: 0;
-                padding: 0;
-
-                position: relative;
-                top: 0px;
-                left: 220px;
-            }
-
-            /*  -------------------------------------------------------------------------------------------------  */
-            .viewStoreTableTitle{
-                position: relative;
-                top: 152px;
-                left: 73.5rem;
-
-                width: fit-content;
-                font: 24px Raleway;
-            }
-
-            .storeTable{
-                position: relative;
-                top: 161px;
-
-                margin: auto;
-                width: 82vw;
-                font: 15px Raleway;
-            }
-
-            .tableTitleSubDiv{
-                width: 250px;
-            }
-
-            .tableTitleParentDiv{
-                width: 1300px;
-            }
-
-            /* Top and Bottom borders come in */
-            div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
-            {
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background: #590067;
-                content: "";
-                opacity: 0;
-                transition: all 0.3s;
-            }
-
-            div.topBotomBordersIn a:before
-            {
-                top: 0px;
-                transform: translateY(-10px);
-            }
-
-            div.topBotomBordersIn a:after
-            {
-                bottom: 20px;
-                transform: translateY(10px);
-            }
-
-            div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after
-            {
-                opacity: 1;
-                transform: translateY(0px);
-            }
-        }
+        /*!* Styles for Mobile Small (up to 320px) *!*/
+        /*@media all and (max-width: 320px) {*/
+        /*    #GroStore{*/
+        /*        font-size: 24px;*/
+        /*        -webkit-text-fill-color: purple;*/
+        /*        font-weight: bold;*/
+        /*    }*/
+
+        /*    #profileDropdown{*/
+        /*        width: 75px;*/
+        /*        position: relative;*/
+        /*        left: 120px;*/
+        /*    }*/
+
+        /*    #dropdownList{*/
+        /*        width: 250px;*/
+        /*        height: 400px;*/
+        /*        position: absolute;*/
+        /*        left: -190px;*/
+        /*    }*/
+
+        /*    #dropdownImage{*/
+
+        /*        width: 170px;*/
+        /*        height: 150px;*/
+
+        /*        border-radius: 100%;*/
+        /*        position: relative;*/
+        /*        left: 39px;*/
+        /*    }*/
+
+        /*    .textAlignCenter{*/
+        /*        text-align: center;*/
+        /*    }*/
+
+        /*    .profileDetail{*/
+        /*        -webkit-text-fill-color: gray;*/
+        /*        position: relative;*/
+        /*        left: 60px;*/
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .signup{*/
+        /*        -webkit-text-fill-color: #0066FF;*/
+        /*        margin-top: 20px;*/
+        /*    }*/
+
+        /*    .logout{*/
+        /*        text-align: center;*/
+        /*        -webkit-text-fill-color: #590067;*/
+        /*        font-weight: bold;*/
+
+        /*        margin-bottom: 20px;*/
+        /*    }*/
+
+        /*    .headerPosition{*/
+        /*        position: relative;*/
+        /*        left: 150px;*/
+        /*        top: 15px;*/
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .profile{*/
+        /*        width: 78px;*/
+        /*        height: 75px;*/
+
+        /*        border-radius: 100%;*/
+        /*        margin: 0;*/
+        /*        padding: 0;*/
+
+        /*        position: relative;*/
+        /*        top: -15px;*/
+        /*        left: -8px;*/
+        /*    }*/
+
+        /*    !*  -------------------------------------------------------------------------------------------------  *!*/
+        /*    .viewStoreTableTitle{*/
+        /*        position: relative;*/
+        /*        top: 152px;*/
+        /*        left: 760px;*/
+
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .storeTable{*/
+        /*        position: relative;*/
+        /*        top: 161px;*/
+
+        /*        margin: auto;*/
+        /*        width: 82vw;*/
+        /*    }*/
+
+        /*    .tableTitleSubDiv{*/
+        /*        width: 250px;*/
+        /*    }*/
+
+        /*    .tableTitleParentDiv{*/
+        /*        width: 500px;*/
+        /*    }*/
+        /*}*/
+
+        /* !*Styles for Tablet (426px to 768px) *!*/
+        /*@media all and (min-width: 300px) and (max-width: 768px) {*/
+        /*    #GroStore{*/
+        /*        font-size: 24px;*/
+        /*        -webkit-text-fill-color: purple;*/
+        /*        font-weight: bold;*/
+        /*    }*/
+
+        /*    #profileDropdown{*/
+        /*        width: 75px;*/
+        /*        position: relative;*/
+        /*        left: 120px;*/
+        /*    }*/
+
+        /*    #dropdownList{*/
+        /*        width: 250px;*/
+        /*        height: 400px;*/
+        /*        position: absolute;*/
+        /*        left: -190px;*/
+        /*    }*/
+
+        /*    #dropdownImage{*/
+
+        /*        width: 170px;*/
+        /*        height: 150px;*/
+
+        /*        border-radius: 100%;*/
+        /*        position: relative;*/
+        /*        left: 39px;*/
+        /*    }*/
+
+        /*    .textAlignCenter{*/
+        /*        text-align: center;*/
+        /*    }*/
+
+        /*    .profileDetail{*/
+        /*        -webkit-text-fill-color: gray;*/
+        /*        position: relative;*/
+        /*        left: 60px;*/
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .signup{*/
+        /*        -webkit-text-fill-color: #0066FF;*/
+        /*        margin-top: 20px;*/
+        /*    }*/
+
+        /*    .logout{*/
+        /*        text-align: center;*/
+        /*        -webkit-text-fill-color: #590067;*/
+        /*        font-weight: bold;*/
+
+        /*        margin-bottom: 20px;*/
+        /*    }*/
+
+        /*    .headerPosition{*/
+        /*        position: relative;*/
+        /*        left: 150px;*/
+        /*        top: 15px;*/
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .profile{*/
+        /*        width: 78px;*/
+        /*        height: 75px;*/
+
+        /*        border-radius: 100%;*/
+        /*        margin: 0;*/
+        /*        padding: 0;*/
+
+        /*        position: relative;*/
+        /*        top: -15px;*/
+        /*        left: -8px;*/
+        /*    }*/
+
+        /*    !*  -------------------------------------------------------------------------------------------------  *!*/
+        /*    .viewStoreTableTitle{*/
+        /*        position: relative;*/
+        /*        top: 152px;*/
+        /*        left: 760px;*/
+
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .storeTable{*/
+        /*        position: relative;*/
+        /*        top: 161px;*/
+
+        /*        margin: auto;*/
+        /*        width: 82vw;*/
+        /*    }*/
+
+        /*    .tableTitleSubDiv{*/
+        /*        width: 250px;*/
+        /*    }*/
+
+        /*    .tableTitleParentDiv{*/
+        /*        width: 500px;*/
+        /*    }*/
+        /*}*/
+
+        /*!* Styles for Laptop (769px to 1024px) *!*/
+        /*@media all and (min-width: 769px) and (max-width: 1024px) {*/
+        /*    #GroStore{*/
+        /*        font-size: 24px;*/
+        /*        -webkit-text-fill-color: purple;*/
+        /*        font-weight: bold;*/
+        /*    }*/
+
+        /*    #profileDropdown{*/
+        /*        width: 75px;*/
+        /*        position: relative;*/
+        /*        left: -168px;*/
+        /*    }*/
+
+        /*    #dropdownList{*/
+        /*        width: 250px;*/
+        /*        height: 400px;*/
+        /*    }*/
+
+        /*    #dropdownImage{*/
+
+        /*        width: 170px;*/
+        /*        height: 150px;*/
+
+        /*        border-radius: 100%;*/
+        /*        position: relative;*/
+        /*        left: 39px;*/
+        /*    }*/
+
+        /*    .textAlignCenter{*/
+        /*        text-align: center;*/
+        /*    }*/
+
+        /*    .profileDetail{*/
+        /*        -webkit-text-fill-color: gray;*/
+        /*        position: relative;*/
+        /*        left: 40px;*/
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .signup{*/
+        /*        -webkit-text-fill-color: #0066FF;*/
+        /*        margin-top: 20px;*/
+        /*    }*/
+
+        /*    .logout{*/
+        /*        text-align: center;*/
+        /*        -webkit-text-fill-color: #590067;*/
+        /*        font-weight: bold;*/
+
+        /*        margin-bottom: 20px;*/
+        /*    }*/
+
+        /*    .headerPosition{*/
+        /*        position: relative;*/
+        /*        left: 2px;*/
+        /*        top: 15.5px;*/
+        /*    }*/
+
+        /*    .profile{*/
+        /*        width: 78px;*/
+        /*        height: 75px;*/
+
+        /*        border-radius: 100%;*/
+        /*        margin: 0;*/
+        /*        padding: 0;*/
+
+        /*        position: relative;*/
+        /*        top: -15px;*/
+        /*        left: 158px;*/
+        /*    }*/
+
+        /*    !*  -------------------------------------------------------------------------------------------------  *!*/
+        /*    .viewStoreTableTitle{*/
+        /*        position: relative;*/
+        /*        top: 152px;*/
+        /*        left: 49.8rem;*/
+
+        /*        width: fit-content;*/
+        /*        font: 24px Raleway;*/
+        /*    }*/
+
+        /*    .storeTable{*/
+        /*        position: relative;*/
+        /*        top: 161px;*/
+
+        /*        margin: auto;*/
+        /*        width: 82vw;*/
+        /*        font: 15px Raleway;*/
+        /*    }*/
+
+        /*    .tableTitleSubDiv{*/
+        /*        width: 250px;*/
+        /*    }*/
+
+        /*    .tableTitleParentDiv{*/
+        /*        width: 1000px;*/
+        /*    }*/
+
+        /*    !* Top and Bottom borders come in *!*/
+        /*    div.topBotomBordersIn a:before, div.topBotomBordersIn a:after*/
+        /*    {*/
+        /*        position: absolute;*/
+        /*        left: 0;*/
+        /*        width: 100%;*/
+        /*        height: 2px;*/
+        /*        background: #590067;*/
+        /*        content: "";*/
+        /*        opacity: 0;*/
+        /*        transition: all 0.3s;*/
+        /*    }*/
+
+        /*    div.topBotomBordersIn a:before*/
+        /*    {*/
+        /*        top: 0px;*/
+        /*        transform: translateY(-10px);*/
+        /*    }*/
+
+        /*    div.topBotomBordersIn a:after*/
+        /*    {*/
+        /*        bottom: 20px;*/
+        /*        transform: translateY(10px);*/
+        /*    }*/
+
+        /*    div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after*/
+        /*    {*/
+        /*        opacity: 1;*/
+        /*        transform: translateY(0px);*/
+        /*    }*/
+        /*}*/
+
+        /*!* Styles for Laptop Large (1367px to 1440px) *!*/
+        /*@media all and (min-width: 1367px) and (max-width: 1440px) {*/
+        /*    #DashGroStore{*/
+        /*        font-size: 30px;*/
+        /*    }*/
+
+        /*    #DashGroStore{*/
+        /*        -webkit-text-fill-color: #590067;*/
+        /*        font-weight: bold;*/
+        /*    }*/
+
+        /*    #profileDropdown{*/
+        /*        width: 75px;*/
+        /*        position: relative;*/
+        /*        left: -10px;*/
+        /*    }*/
+
+        /*    #dropdownList{*/
+        /*        width: 250px;*/
+        /*        height: 400px;*/
+        /*    }*/
+
+        /*    #dropdownImage{*/
+
+        /*        width: 170px;*/
+        /*        height: 150px;*/
+
+        /*        border-radius: 100%;*/
+        /*        position: relative;*/
+        /*        left: 39px;*/
+        /*    }*/
+
+        /*    .textAlignCenter{*/
+        /*        text-align: center;*/
+        /*    }*/
+
+        /*    .profileDetail{*/
+        /*        -webkit-text-fill-color: gray;*/
+        /*        position: relative;*/
+        /*        left: 40px;*/
+        /*        width: fit-content;*/
+        /*    }*/
+
+        /*    .signup{*/
+        /*        -webkit-text-fill-color: #0066FF;*/
+        /*        margin-top: 20px;*/
+        /*    }*/
+
+        /*    .logout{*/
+        /*        text-align: center;*/
+        /*        -webkit-text-fill-color: #590067;*/
+        /*        font-weight: bold;*/
+
+        /*        margin-bottom: 20px;*/
+        /*    }*/
+
+        /*    .headerPosition{*/
+        /*        position: relative;*/
+        /*        left: 152px;*/
+        /*        top: 0px;*/
+        /*    }*/
+
+        /*    .profile{*/
+        /*        width: 78px;*/
+        /*        height: 75px;*/
+
+        /*        border-radius: 100%;*/
+        /*        margin: 0;*/
+        /*        padding: 0;*/
+
+        /*        position: relative;*/
+        /*        top: 0px;*/
+        /*        left: 220px;*/
+        /*    }*/
+
+        /*    !*  -------------------------------------------------------------------------------------------------  *!*/
+        /*    .viewStoreTableTitle{*/
+        /*        position: relative;*/
+        /*        top: 152px;*/
+        /*        left: 73.5rem;*/
+
+        /*        width: fit-content;*/
+        /*        font: 24px Raleway;*/
+        /*    }*/
+
+        /*    .storeTable{*/
+        /*        position: relative;*/
+        /*        top: 161px;*/
+
+        /*        margin: auto;*/
+        /*        width: 82vw;*/
+        /*        font: 15px Raleway;*/
+        /*    }*/
+
+        /*    .tableTitleSubDiv{*/
+        /*        width: 250px;*/
+        /*    }*/
+
+        /*    .tableTitleParentDiv{*/
+        /*        width: 1300px;*/
+        /*    }*/
+
+        /*    !* Top and Bottom borders come in *!*/
+        /*    div.topBotomBordersIn a:before, div.topBotomBordersIn a:after*/
+        /*    {*/
+        /*        position: absolute;*/
+        /*        left: 0;*/
+        /*        width: 100%;*/
+        /*        height: 2px;*/
+        /*        background: #590067;*/
+        /*        content: "";*/
+        /*        opacity: 0;*/
+        /*        transition: all 0.3s;*/
+        /*    }*/
+
+        /*    div.topBotomBordersIn a:before*/
+        /*    {*/
+        /*        top: 0px;*/
+        /*        transform: translateY(-10px);*/
+        /*    }*/
+
+        /*    div.topBotomBordersIn a:after*/
+        /*    {*/
+        /*        bottom: 20px;*/
+        /*        transform: translateY(10px);*/
+        /*    }*/
+
+        /*    div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after*/
+        /*    {*/
+        /*        opacity: 1;*/
+        /*        transform: translateY(0px);*/
+        /*    }*/
+        /*}*/
     </style>
 </head>
 <body>
-<section>
-    <header id="header">
-        <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a id="DashGroStore" class="navbar-brand" href="#">GroStore</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+<!--<section>-->
+<!--    <header id="header">-->
+<!--        <nav class="navbar shadow p-3 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">-->
+<!--            <nav class="navbar navbar-expand-lg">-->
+<!--                <div class="container-fluid">-->
+<!--                    <a id="DashGroStore" class="navbar-brand" href="#">GroStore</a>-->
+<!--                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                        <span class="navbar-toggler-icon"></span>-->
+<!--                    </button>-->
 
-                    <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">
-                        <div class="navbar-nav position container topBotomBordersIn">
-                            <a class="nav-link active" aria-current="page" href="index.html">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <a class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <a class="nav-link active" href="storeManage.html">Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <a class="nav-link active" href="placeOrderManage.html">Place Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                            <a class="nav-link active" href="index.html">About us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<!--                    <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">-->
+<!--                        <div class="navbar-nav position container topBotomBordersIn">-->
+<!--                            <a class="nav-link active" aria-current="page" href="index.html">Dashboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>-->
+<!--                            <a class="nav-link active" href="customerManage.html">Customer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>-->
+<!--                            <a class="nav-link active" href="storeManage.html">Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>-->
+<!--                            <a class="nav-link active" href="placeOrderManage.html">Place Order &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>-->
+<!--                            <a class="nav-link active" href="index.html">About us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>-->
 
-                        </div>
-                        <div id="profileDropdown" class="dropdown">
-                            <img class="profile btn-secondary dropdown-toggle" data-bs-toggle="dropdown" src="assets/image/profile.jpg" alt="profile" title="profile">
+<!--                        </div>-->
+<!--                        <div id="profileDropdown" class="dropdown">-->
+<!--                            <img class="profile btn-secondary dropdown-toggle" data-bs-toggle="dropdown" src="assets/image/profile.jpg" alt="profile" title="profile">-->
 
-                            <ul id="dropdownList" class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <li><img id="dropdownImage" src="assets/image/profile.jpg" class="dropdown-item"></li>
-                                <li id="" class="textAlignCenter"><a class="dropdown-item logout" href="loginPage.html">Logout</a></li>
-                                <li><a class="dropdown-item profileDetail">Ramesh Layan</a></li>
-                                <li><a class="dropdown-item profileDetail">Beruwala</a></li>
-                                <li><a class="dropdown-item profileDetail">075 798 0223</a></li>
-                                <li class="textAlignCenter"><a class="dropdown-item signup" href="signupPage.html">Sign Up</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </nav>
-    </header>
-</section>
+<!--                            <ul id="dropdownList" class="dropdown-menu" aria-labelledby="dropdownMenuButton2">-->
+<!--                                <li><img id="dropdownImage" src="assets/image/profile.jpg" class="dropdown-item"></li>-->
+<!--                                <li id="" class="textAlignCenter"><a class="dropdown-item logout" href="loginPage.html">Logout</a></li>-->
+<!--                                <li><a class="dropdown-item profileDetail">Ramesh Layan</a></li>-->
+<!--                                <li><a class="dropdown-item profileDetail">Beruwala</a></li>-->
+<!--                                <li><a class="dropdown-item profileDetail">075 798 0223</a></li>-->
+<!--                                <li class="textAlignCenter"><a class="dropdown-item signup" href="signupPage.html">Sign Up</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </nav>-->
+<!--        </nav>-->
+<!--    </header>-->
+<!--</section>-->
 
-<section>
-    <div class="container-fluid searchBarParent">
-        <div id="searchBar" class="input-group mb-3">
-            <input id="searchInputField" type="text" class="form-control" placeholder="Search Item" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
-        </div>
-    </div>
+<!--<section>-->
+<!--    <div class="container-fluid searchBarParent">-->
+<!--        <div class="input-group mb-3 searchBar">-->
+<!--            <input type="text" class="form-control searchInputField" placeholder="Search Item" aria-label="Recipient's username" aria-describedby="button-addon2">-->
+<!--            <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <div id="crudButton" class="relativePosition">
-        <div class="absolutePosition">
-            <button class="noBorder newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>
-            <button class="noBorder updateButton btn-all btn-update-customer updateBtn-color " data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>
-            <button class="noBorder removeButton btn-all btn-remove btn-remove-customer removeBtn-color" data-bs-toggle="modal" data-bs-target="#removeModal" type="button"><span>Remove</span></button>
-        </div>
-    </div>
+<!--    <div class="relativePosition crudButton">-->
+<!--        <div class="absolutePosition">-->
+<!--            <button class="noBorder newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>-->
+<!--            <button class="noBorder updateButton btn-all btn-update-customer updateBtn-color " data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>-->
+<!--            <button class="noBorder removeButton btn-all btn-remove btn-remove-customer removeBtn-color" data-bs-toggle="modal" data-bs-target="#removeModal" type="button"><span>Remove</span></button>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <div class="row tableTitleParentDiv">
-        <div class="row margin col-sm-4 col-xs tableTitleSubDiv">
-            <h4 class="viewStoreTableTitle">View Items</h4>
-        </div>
-    </div>
+<!--    <div class="row tableTitleParentDiv">-->
+<!--        <div class="row margin col-sm-4 col-xs tableTitleSubDiv">-->
+<!--            <h4 class="viewStoreTableTitle">View Items</h4>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <div class="tableDiv storeTable">
-        <table class="table">
-            <thead>
-            <tr>
-                <th class="OrderTableHead " scope="col">Item Id</th>
-                <th class="OrderTableHead" scope="col">Item Name</th>
-                <th class="OrderTableHead" scope="col">QTY On Hand</th>
-                <th class="OrderTableHead" scope="col">Unit Price</th>
-            </tr>
-            </thead>
-            <tbody id="orderTable">
-            <tr>
-                <th class="orderTableBody" scope="row">1</th>
-                <td class="orderTableBody">Mark</td>
-                <td class="orderTableBody">Otto</td>
-                <td class="orderTableBody">@mdo</td>
-            </tr>
+<!--    <div class="tableDiv storeTable">-->
+<!--        <table class="table">-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th class="OrderTableHead " scope="col">Item Id</th>-->
+<!--                <th class="OrderTableHead" scope="col">Item Name</th>-->
+<!--                <th class="OrderTableHead" scope="col">QTY On Hand</th>-->
+<!--                <th class="OrderTableHead" scope="col">Unit Price</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody id="orderTable">-->
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">1</th>-->
+<!--                <td class="orderTableBody">Mark</td>-->
+<!--                <td class="orderTableBody">Otto</td>-->
+<!--                <td class="orderTableBody">@mdo</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">2</th>
-                <td class="orderTableBody">Jacob</td>
-                <td class="orderTableBody">Thornton</td>
-                <td class="orderTableBody">@fat</td>
-            </tr>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">2</th>-->
+<!--                <td class="orderTableBody">Jacob</td>-->
+<!--                <td class="orderTableBody">Thornton</td>-->
+<!--                <td class="orderTableBody">@fat</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">3</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">3</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">4</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">4</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">4</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr><tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">4</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr><tr>-->
+<!--                <th class="orderTableBody" scope="row">4</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr>-->
 
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<!--            <tr>-->
+<!--                <th class="orderTableBody" scope="row">4</th>-->
+<!--                <td class="orderTableBody" colspan="2">Larry the Bird</td>-->
+<!--                <td class="orderTableBody">@twitter</td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
 
-    <!--  new Modal  -->
-    <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!--    code here  -->
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="-inputItemCode" class="form-label">Item Code :</label>
-                            <select id="-inputItemCode" class="form-select">
-                                <option selected>I001</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="_inputItemName" class="form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id="_inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
-                        </div>
-                    </div>
+<!--    &lt;!&ndash;  new Modal  &ndash;&gt;-->
+<!--    <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--        <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    &lt;!&ndash;    code here  &ndash;&gt;-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for="-inputItemCode" class="form-label">Item Code :</label>-->
+<!--                            <select id="-inputItemCode" class="form-select">-->
+<!--                                <option selected>I001</option>-->
+<!--                                <option>...</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for="_inputItemName" class="form-label inputFieldMargin">Item Name :</label>-->
+<!--                            <input type="text" id="_inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for=" inputCity" class="form-label ">QTY On Hand :</label>
-                            <input type="text" id=" inputCity" class="form-control" placeholder="select city" aria-label="City">
-                        </div>
-                        <div class="col-12 margin-bottom">
-                            <label for=" inputTelephone" class="form-label inputFieldMargin">Unit Price :</label>
-                            <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary saveChanges">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--                    <div class="row">-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for=" inputCity" class="form-label ">QTY On Hand :</label>-->
+<!--                            <input type="text" id=" inputCity" class="form-control" placeholder="select city" aria-label="City">-->
+<!--                        </div>-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for=" inputTelephone" class="form-label inputFieldMargin">Unit Price :</label>-->
+<!--                            <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>-->
+<!--                    <button type="button" class="btn btn-primary saveChanges">Save changes</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <!--  update Modal  -->
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id=" exampleModalLabel">Update Item</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!--    code here  -->
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for=" -inputItemCode" class="form-label">Item Code :</label>
-                            <select id=" -inputItemCode" class="form-select">
-                                <option selected>I001</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div class="col-12 margin-bottom">
-                            <label for=" _inputItemName" class="form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id=" _inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
-                        </div>
-                    </div>
+<!--    &lt;!&ndash;  update Modal  &ndash;&gt;-->
+<!--    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--        <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h1 class="modal-title fs-5" id=" exampleModalLabel">Update Item</h1>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    &lt;!&ndash;    code here  &ndash;&gt;-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for=" -inputItemCode" class="form-label">Item Code :</label>-->
+<!--                            <select id=" -inputItemCode" class="form-select">-->
+<!--                                <option selected>I001</option>-->
+<!--                                <option>...</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for=" _inputItemName" class="form-label inputFieldMargin">Item Name :</label>-->
+<!--                            <input type="text" id=" _inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="inputCity" class="form-label ">QTY On Hand :</label>
-                            <input type="text" id="inputCity" class="form-control" placeholder="select city" aria-label="City">
-                        </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="inputTelephone" class="form-label inputFieldMargin">Unit Price :</label>
-                            <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary saveChanges">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--                    <div class="row">-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for="inputCity" class="form-label ">QTY On Hand :</label>-->
+<!--                            <input type="text" id="inputCity" class="form-control" placeholder="select city" aria-label="City">-->
+<!--                        </div>-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for="inputTelephone" class="form-label inputFieldMargin">Unit Price :</label>-->
+<!--                            <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>-->
+<!--                    <button type="button" class="btn btn-primary saveChanges">Save changes</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <!--  remove Modal  -->
-    <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="-exampleModalLabel">Remove Item</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!--    code here  -->
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="_inputItemCode" class="form-label">Item Code :</label>
-                            <select id="_inputItemCode" class="form-select">
-                                <option selected>I001</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="-inputItemName" class="form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id="-inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary  saveChanges">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--    &lt;!&ndash;  remove Modal  &ndash;&gt;-->
+<!--    <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--        <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h1 class="modal-title fs-5" id="-exampleModalLabel">Remove Item</h1>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    &lt;!&ndash;    code here  &ndash;&gt;-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for="_inputItemCode" class="form-label">Item Code :</label>-->
+<!--                            <select id="_inputItemCode" class="form-select">-->
+<!--                                <option selected>I001</option>-->
+<!--                                <option>...</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 margin-bottom">-->
+<!--                            <label for="-inputItemName" class="form-label inputFieldMargin">Item Name :</label>-->
+<!--                            <input type="text" id="-inputItemName" class="form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>-->
+<!--                    <button type="button" class="btn btn-primary  saveChanges">Save changes</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

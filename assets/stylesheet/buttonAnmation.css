@@ -289,7 +289,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 128px;
+    right: 348px;
     bottom: 0;
     background-color:#fcba03;
     box-shadow:
@@ -301,7 +301,11 @@
 }
 
 .btn-update-customer:hover:after {
-    width: 30%;
+    width: 18.3%;
+}
+
+.btn-Store:hover:after {
+    width: 25.3%;
 }
 
 .updateBtn-color{
@@ -315,7 +319,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: 258px;
+    right: 478px;
     bottom: 0;
     background-color:#03A100;
     box-shadow:
@@ -347,7 +351,7 @@
 }
 
 .btn-new:hover:after {
-    width: 30%;
+    /*width: 18.3%;*/
 }
 
 /*customer remove*/
@@ -374,7 +378,7 @@
     /*right-bottom border color*/
     position: absolute;
     content: "";
-    right: -1px;
+    right: 220px;
     bottom: 0;
     background-color:#e82902;
     box-shadow:
@@ -386,7 +390,7 @@
 }
 
 .btn-remove-customer:hover:after {
-    width: 30%;
+    width: 18.3%;
 }
 
 .removeBtn-color{
@@ -394,3 +398,124 @@
 }
 
 
+/*store crud button*/
+.btn-update-store span:before,
+.btn-update-store span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top:0;
+    background-color: #fcba03;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-update-store:before,
+.btn-update-store:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: 145px;
+    bottom: 0;
+    background-color:#fcba03;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-update-store:hover:after {
+    width: 28.3%;
+}
+
+/*remove button*/
+.btn-remove-store span:before,
+.btn-remove-store span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top:0;
+    background-color: #e82902;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-remove-store:before,
+.btn-remove-store:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: 15px;
+    bottom: 0;
+    background-color:#e82902;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-remove-store:hover:after {
+    width: 28%;
+}
+
+.removeBtn-color{
+    background-color: #e82902;
+}
+
+/*new button*/
+.btn-new-store:before,
+.btn-new-store:after {
+
+    /*right-bottom border color*/
+    position: absolute;
+    content: "";
+    right: 272px;
+    bottom: 0;
+    background-color:#03A100;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.btn-new-store span:before,
+.btn-new-store span:after {
+    /*top-left border color*/
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background-color: #03A100;
+    box-shadow:
+            -7px -7px 20px 0px rgba(255,255,255,.9),
+            -4px -4px 5px 0px rgba(255,255,255,.9),
+            7px 7px 20px 0px rgba(0,0,0,.2),
+            4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+
+.newBtn-color{
+    background-color: #03A100;
+}
+
+.btn-new-store:hover:after {
+    width: 28.6%;
+}
