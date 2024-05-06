@@ -10,6 +10,7 @@ $('#submitStore').on('click' , ()=>{
     let storeDetail = new Store(itemCode,itemName,QTYOnHand,unitPrice)
     store.push(storeDetail)
     loadTable()
+    clearForm()
 })
 
 function loadTable(){
@@ -24,3 +25,11 @@ function loadTable(){
         $('#storeTable').append(record)
     })
 }
+
+function clearForm(){
+    $('#itemCode').val("")
+    $('#itemName').val("")
+    $('#inputQTY').val("")
+    $('#unitPrice').val("")
+}
+
