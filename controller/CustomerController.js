@@ -30,7 +30,7 @@ $('#submitC').on('click' , ()=>{
         $('#inputCustomerId').val(idC);
         $('#inputCustomerName').val(nameC);
     })
-    // clearNewForm()
+     clearForm()
 })
 
 function loadTable(){
@@ -60,7 +60,7 @@ $('#updateC').on('click' , ()=>{
     cus.tel = cTel
 
     loadTable()
-    // clearUpdateForm()
+    clearForm()
 })
 
 $('#deleteC').on('click',()=>{
@@ -68,3 +68,18 @@ $('#deleteC').on('click',()=>{
     loadTable()
     // clearRemoveForm()
 })
+
+function clearForm(){
+    $('#-inputCustomerId').val("")
+    $('#_inputCustomerName').val("")
+    $('#inputCityC').val("")
+    $('#inputTelephoneC').val("")
+
+    $('#inputCustomerIdU').val("")
+    $('#inputCustomerNameU').val("")
+    $('#inputCityU').val("")
+    $('#inputTelephoneU').val("")
+
+    $('#inputCustomerId').val("")
+    $('#inputCustomerName').val("")
+}
