@@ -1,5 +1,5 @@
 import Store from "../model/Store.js";
-import {store} from "../db/DB.js"
+import {customer, store} from "../db/DB.js"
 
 let clickTableRow = 0;
 
@@ -24,7 +24,7 @@ $('#submitStore').on('click' , ()=>{
 
         $('#itemCodeS').val(code);
         $('#itemNameS').val(name);
-        $('#inputCity').val(qty);
+        $('#qty').val(qty);
         $('#priceS').val(price);
 
         $('#itemCodeR').val(code);
@@ -46,10 +46,32 @@ function loadTable(){
     })
 }
 
+$('#updateS').on('click' , ()=>{
+    let itemCode = $('#itemCodeS').val();
+    let itemName = $('#itemNameS').val();
+    let QTYOnHand = $('#qty').val();
+    let unitPrice = $('#priceS').val();
+
+    let items = store[clickTableRow]
+
+    items.itemCode = itemCode
+    items.itemName = itemName
+    items.QTYOnHand = QTYOnHand
+    items.unitPrice = unitPrice
+
+    loadTable()
+    clearForm()
+})
+
 function clearForm(){
     $('#itemCode').val("")
     $('#itemName').val("")
     $('#inputQTY').val("")
     $('#unitPrice').val("")
+
+    $('#itemCodeS').val("")
+    $('#itemNameS').val("")
+    $('#qty').val("")
+    $('#priceS').val("")
 }
 
