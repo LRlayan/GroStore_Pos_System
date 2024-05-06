@@ -66,7 +66,7 @@ $('#updateC').on('click' , ()=>{
 $('#deleteC').on('click',()=>{
     customer.splice(clickTableRow , 1)
     loadTable()
-    // clearRemoveForm()
+     clearForm()
 })
 
 function clearForm(){
