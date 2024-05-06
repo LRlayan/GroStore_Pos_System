@@ -1,6 +1,8 @@
 import Store from "../model/Store.js";
 import {store} from "../db/DB.js"
 
+let clickTableRow = 0;
+
 $('#submitStore').on('click' , ()=>{
     let itemCode = $('#itemCode').val();
     let itemName = $('#itemName').val();
@@ -10,6 +12,24 @@ $('#submitStore').on('click' , ()=>{
     let storeDetail = new Store(itemCode,itemName,QTYOnHand,unitPrice)
     store.push(storeDetail)
     loadTable()
+
+    $('#storeTable').on('click', 'tr', function () {
+
+        let code = $(this).find(".s-code").text()
+        let name = $(this).find(".s-name").text()
+        let qty = $(this).find(".s-qty").text()
+        let price = $(this).find(".s-price").text()
+
+        clickTableRow = $(this).index()
+
+        $('#itemCodeS').val(code);
+        $('#itemNameS').val(name);
+        $('#inputCity').val(qty);
+        $('#priceS').val(price);
+
+        $('#itemCodeR').val(code);
+        $('#itemNameR').val(name);
+    })
     clearForm()
 })
 
