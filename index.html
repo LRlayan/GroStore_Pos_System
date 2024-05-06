@@ -965,87 +965,15 @@
         <div class="tableDiv customerTable">
             <table class="table table-responsive">
                 <thead>
-                <tr>
-                    <th class="OrderTableHead " scope="col">Order Id</th>
-                    <th class="OrderTableHead" scope="col">Customer</th>
-                    <th class="OrderTableHead" scope="col">Item</th>
-                    <th class="OrderTableHead" scope="col">Quantity</th>
-                    <th class="OrderTableHead" scope="col">Discount</th>
-                    <th class="OrderTableHead" scope="col">Price</th>
-                </tr>
+                    <tr>
+                        <th class="OrderTableHead " scope="col">Customer Id</th>
+                        <th class="OrderTableHead" scope="col">Customer Name</th>
+                        <th class="OrderTableHead" scope="col">City</th>
+                        <th class="OrderTableHead" scope="col">Telephone</th>
+                    </tr>
                 </thead>
                 <tbody id="customerTable">
-                <tr>
-                    <th class="orderTableBody" scope="row">1</th>
-                    <td class="orderTableBody">Mark</td>
-                    <td class="orderTableBody">Otto</td>
-                    <td class="orderTableBody">@mdo</td>
-                    <td class="orderTableBody">@mdo</td>
-                    <td class="orderTableBody">@mdo</td>
-                </tr>
 
-                <tr>
-                    <th class="orderTableBody" scope="row">2</th>
-                    <td class="orderTableBody">Jacob</td>
-                    <td class="orderTableBody">Thornton</td>
-                    <td class="orderTableBody">@fat</td>
-                    <td class="orderTableBody">@fat</td>
-                    <td class="orderTableBody">@fat</td>
-                </tr>
-
-                <tr>
-                    <th class="orderTableBody" scope="row">3</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr>
-
-                <tr>
-                    <th class="orderTableBody" scope="row">4</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr>
-
-                <tr>
-                    <th class="orderTableBody" scope="row">4</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr>
-
-                <tr>
-                    <th class="orderTableBody" scope="row">4</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr>
-
-                <tr>
-                    <th class="orderTableBody" scope="row">4</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr><tr>
-                    <th class="orderTableBody" scope="row">4</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr>
-
-                <tr>
-                    <th class="orderTableBody" scope="row">4</th>
-                    <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                    <td class="orderTableBody">@twitter</td>
-                </tr>
                 </tbody>
             </table>
         </div>
@@ -1073,18 +1001,18 @@
 
                         <div class="row">
                             <div class="col-12 margin-bottom">
-                                <label for=" inputCity" class="margin-left-0 form-label ">City :</label>
-                                <input type="text" id=" inputCity " class="margin-left-0 form-control" placeholder="select city" aria-label="City">
+                                <label for="inputCityC" class="margin-left-0 form-label ">City :</label>
+                                <input type="text" id="inputCityC" class="margin-left-0 form-control" placeholder="select city" aria-label="City">
                             </div>
                             <div class="col-12 margin-bottom">
-                                <label for=" inputTelephone" class="margin-left-0 form-label inputFieldMargin">Telephone :</label>
-                                <input type="text" id=" inputTelephone " class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                                <label for="inputTelephoneC" class="margin-left-0 form-label inputFieldMargin">Telephone :</label>
+                                <input type="text" id="inputTelephoneC" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                        <button id="submitC" type="button" class="btn btn-primary saveChanges">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -1832,6 +1760,7 @@
     </div>
 </footer>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script type="module" src="controller/CustomerController.js"></script>
 <script>
 
     $('#customer-sec').css({display:'none'})
