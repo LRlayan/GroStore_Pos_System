@@ -26,7 +26,11 @@ $('#submitC').on('click' , ()=>{
         $('#inputCustomerNameU').val(nameC);
         $('#inputCityU').val(cityC);
         $('#inputTelephoneU').val(telC);
+
+        $('#inputCustomerId').val(idC);
+        $('#inputCustomerName').val(nameC);
     })
+    // clearNewForm()
 })
 
 function loadTable(){
@@ -50,11 +54,17 @@ $('#updateC').on('click' , ()=>{
     let cTel = $('#inputTelephoneU').val()
 
     let cus = customer[clickTableRow]
-    console.log("cus" + cus)
     cus.id = cId
     cus.name = cName
     cus.city = cCity
     cus.tel = cTel
 
     loadTable()
+    // clearUpdateForm()
+})
+
+$('#deleteC').on('click',()=>{
+    customer.splice(clickTableRow , 1)
+    loadTable()
+    // clearRemoveForm()
 })
