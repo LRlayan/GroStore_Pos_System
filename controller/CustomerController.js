@@ -43,7 +43,18 @@ function loadTable(){
     })
 }
 
-function table() {
+$('#updateC').on('click' , ()=>{
+    let cId = $('#inputCustomerIdU').val()
+    let cName = $('#inputCustomerNameU').val()
+    let cCity = $('#inputCityU').val()
+    let cTel = $('#inputTelephoneU').val()
 
+    let cus = customer[clickTableRow]
+    console.log("cus" + cus)
+    cus.id = cId
+    cus.name = cName
+    cus.city = cCity
+    cus.tel = cTel
 
-}
+    loadTable()
+})
