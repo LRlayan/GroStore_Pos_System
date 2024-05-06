@@ -1,5 +1,5 @@
 import Store from "../model/Store.js";
-import {customer, store} from "../db/DB.js"
+import {store} from "../db/DB.js"
 
 let clickTableRow = 0;
 
