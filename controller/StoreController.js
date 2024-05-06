@@ -63,6 +63,12 @@ $('#updateS').on('click' , ()=>{
     clearForm()
 })
 
+$('#deleteS').on('click',()=>{
+    store.splice(clickTableRow , 1)
+    loadTable()
+    clearForm()
+})
+
 function clearForm(){
     $('#itemCode').val("")
     $('#itemName').val("")
@@ -73,5 +79,8 @@ function clearForm(){
     $('#itemNameS').val("")
     $('#qty').val("")
     $('#priceS').val("")
+
+    $('#itemCodeR').val("")
+    $('#itemNameR').val("")
 }
 
