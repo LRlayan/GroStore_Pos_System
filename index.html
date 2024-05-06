@@ -13,15 +13,6 @@
 
     <style>
 
-        @media all and (max-width: 320px) {}
-
-        @media all and (min-width: 321px) and (max-width: 375px){}
-
-        @media all and (min-width: 376px) and (max-width: 425px){}
-
-        @media all and (min-width: 426px) and (max-width: 768px) {
-        }
-
         @media all and (min-width: 769px) and (max-width: 1024px){
 
             .tableTitle{
@@ -956,8 +947,8 @@
 
         <div class="row relativePosition crudButton">
             <div class="absolutePosition">
-                <button class="noBorder buttons btn newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModal" type="button"><span>New</span></button>
-                <button class="noBorder buttons btn updateButton btn-all btn-update-customer updateBtn-color" data-bs-toggle="modal" data-bs-target="#updateModal" type="button"><span>Update</span></button>
+                <button class="noBorder buttons btn newButton btn-all btn-new newBtn-color" data-bs-toggle="modal" data-bs-target="#newModalCus" type="button"><span>New</span></button>
+                <button class="noBorder buttons btn updateButton btn-all btn-update-customer updateBtn-color" data-bs-toggle="modal" data-bs-target="#updateModalCus" type="button"><span>Update</span></button>
                 <button class="noBorder buttons btn removeButton btn-all btn-remove btn-remove-customer removeBtn-color" data-bs-toggle="modal" data-bs-target="#removeModal" type="button"><span>Remove</span></button>
             </div>
         </div>
@@ -1057,7 +1048,7 @@
         </div>
 
         <!--new modal-->
-        <div class="modal fade" id=" newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1100,7 +1091,7 @@
         </div>
 
         <!--update modal-->
-        <div class="modal fade" id=" updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="updateModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
