@@ -1121,62 +1121,8 @@
                 <th class="OrderTableHead" scope="col">Unit Price</th>
             </tr>
             </thead>
-            <tbody id="orderTable">
-            <tr>
-                <th class="orderTableBody" scope="row">1</th>
-                <td class="orderTableBody">Mark</td>
-                <td class="orderTableBody">Otto</td>
-                <td class="orderTableBody">@mdo</td>
-            </tr>
+            <tbody id="storeTable">
 
-            <tr>
-                <th class="orderTableBody" scope="row">2</th>
-                <td class="orderTableBody">Jacob</td>
-                <td class="orderTableBody">Thornton</td>
-                <td class="orderTableBody">@fat</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">3</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
             </tbody>
         </table>
     </div>
@@ -1187,35 +1133,34 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!--    code here  -->
                     <div class="row">
                         <div class="col-12 margin-bottom">
-                            <label for="-inputItemCode" class="margin-left-0 form-label">Item Code :</label>
-                            <input type="text" id="-inputItemCode" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            <label for="itemCode" class="margin-left-0 form-label">Item Code :</label>
+                            <input type="text" id="itemCode" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
                         </div>
                         <div class="col-12 margin-bottom">
-                            <label for="_inputItemName" class="margin-left-0 form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id="_inputItemName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            <label for="itemName" class="margin-left-0 form-label inputFieldMargin">Item Name :</label>
+                            <input type="text" id="itemName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-12 margin-bottom">
-                            <label for=" inputCity" class="margin-left-0 form-label ">QTY On Hand :</label>
-                            <input type="text" id=" inputCity" class="margin-left-0 form-control" placeholder="select city" aria-label="City">
+                            <label for="inputQTY" class="margin-left-0 form-label ">QTY On Hand :</label>
+                            <input type="text" id="inputQTY" class="margin-left-0 form-control" placeholder="select city" aria-label="City">
                         </div>
                         <div class="col-12 margin-bottom">
-                            <label for=" inputTelephone" class="margin-left-0 form-label inputFieldMargin">Unit Price :</label>
-                            <input type="text" id=" inputTelephone" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            <label for="unitPrice" class="margin-left-0 form-label inputFieldMargin">Unit Price :</label>
+                            <input type="text" id="unitPrice" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                    <button id="submitStore" type="button" class="btn btn-primary saveChanges">Save changes</button>
                 </div>
             </div>
         </div>
@@ -1248,8 +1193,8 @@
                             <input type="text" id="inputCity" class="margin-left-0 form-control" placeholder="select city" aria-label="City">
                         </div>
                         <div class="col-12 margin-bottom">
-                            <label for="inputTelephone" class="margin-left-0 form-label inputFieldMargin">Unit Price :</label>
-                            <input type="text" id="-inputTelephone" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            <label for="priceU" class="margin-left-0 form-label inputFieldMargin">Unit Price :</label>
+                            <input type="text" id="priceU" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                         </div>
                     </div>
                 </div>
@@ -1320,7 +1265,7 @@
                     <input type="text" id=" -inputCity" class="form-control" placeholder="select city" aria-label="City">
                 </div>
                 <div class="col-7 margin-bottom">
-                    <label for="inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                    <label for="inputTel" class="form-label inputFieldMargin">Telephone :</label>
                     <input type="text" id="inputTel" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                 </div>
             </div>
@@ -1485,7 +1430,7 @@
                 <th class="OrderTableHead" scope="col">Price</th>
             </tr>
             </thead>
-            <tbody id="storeTable">
+            <tbody id="orderDetailTable"><!--storeTable -->
             <tr>
                 <th class="orderTableBody" scope="row">1</th>
                 <td class="orderTableBody">Mark</td>
@@ -1603,8 +1548,8 @@
                                     <input type="text" id="inputCityStore" class="form-control" placeholder="select city" aria-label="City">
                                 </div>
                                 <div class="col-7 margin-bottom">
-                                    <label for="inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
-                                    <input type="text" id="inputTelephone " class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                                    <label for=" inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                                    <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                                 </div>
                             </div>
 
@@ -1691,7 +1636,7 @@
 
                             <div class="row">
                                 <div class="col-12 margin-bottom">
-                                    <label for=" inputCustomerName" class="form-label ">Customer Name :</label>
+                                    <label for=" inputCustomerName " class="form-label ">Customer Name :</label>
                                     <input type="text" id=" inputCustomerName " class="form-control " placeholder="customer name" aria-label="Customer Name">
                                 </div>
                             </div>
@@ -1761,6 +1706,7 @@
 </footer>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/StoreController.js"></script>
 <script>
 
     $('#customer-sec').css({display:'none'})
