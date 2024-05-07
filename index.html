@@ -1261,8 +1261,8 @@
 
             <div class="row">
                 <div class="col-5 margin-bottom">
-                    <label for="inputCity" class="form-label ">City :</label>
-                    <input type="text" id=" -inputCity" class="form-control" placeholder="select city" aria-label="City">
+                    <label for="inputCityP" class="form-label ">City :</label>
+                    <input type="text" id="inputCityP" class="form-control" placeholder="select city" aria-label="City">
                 </div>
                 <div class="col-7 margin-bottom">
                     <label for="inputTel" class="form-label inputFieldMargin">Telephone :</label>
@@ -1277,10 +1277,9 @@
 
             <div class="row">
                 <div class="col-5 margin-bottom">
-                    <label for="inputItemCode" class="form-label">Item Code</label>
-                    <select id="inputItemCode " class="form-select">
-                        <option selected>I001</option>
-                        <option>...</option>
+                    <label for="selectItemCode" class="form-label">Item Code</label>
+                    <select id="selectItemCode" class="form-select">
+
                     </select>
                 </div>
                 <div class="col-7 margin-bottom">
@@ -1305,7 +1304,7 @@
                 <input type="text" class="form-control" id="inputPrice " placeholder="price">
             </div>
             <div class="col-12">
-                <button id="addToCartBtn" type="submit" class="btn btn-primary btnSize addToCartBtn-color btn-addToCart btn-all"><span> Add To Cart </span></button>
+                <button id="addToCartBtn" type="button" class="btn btn-primary btnSize addToCartBtn-color btn-addToCart btn-all"><span> Add To Cart </span></button>
             </div>
             <div id="line2"></div>
 
@@ -1707,6 +1706,7 @@
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/StoreController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
 <script>
 
     $('#customer-sec').css({display:'none'})
@@ -1744,6 +1744,7 @@
         $('#dash-sec').css({display:'none'})
         $('#footer').css({display:'none'})
     })
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
