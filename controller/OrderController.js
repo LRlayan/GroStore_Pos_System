@@ -59,7 +59,12 @@ $('#orderQTYP').change(function (){
 
         $('#subTotal').text(subTotal);
 
+        var dis = 0;
+
         if (subTotal >= 5000){
-            $('#discount').text(subTotal*discount/100);
+            dis = subTotal*discount/100;
+            $('#discount').text(dis);
         }
+
+        $('#balance').text(subTotal-dis);
     });
