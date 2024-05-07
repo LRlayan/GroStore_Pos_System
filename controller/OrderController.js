@@ -43,14 +43,14 @@ $('#orderQTYP').change(function (){
 
     $('#addToCartBtn').click(function() {
 
-        var input1 = $('#itemNameP').val()
-        var input2 = $('#inputPriceP').val()
+        var inputName = $('#itemNameP').val()
+        var inputPrice = $('#inputPriceP').val()
 
         // Create a new paragraph element with item details
-        var newItemParagraph = $('<p>').text(input1);
-        var two = $('<p>').text(input2).css({textAlign:"right"});
+        var newItemParagraph = $('<p>').text(inputName);
+        var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right"});
 
         // Append the new paragraph to the cart container
         $('#itemNameLabel').append(newItemParagraph);
-        $('#itemPriceListMainDiv').append(two);
+        $('#itemPriceListMainDiv').append(newItemPrice);
     });
