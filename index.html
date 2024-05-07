@@ -1244,13 +1244,13 @@
     <div class="col-6 placeOrderForm">
         <form class="row g-3 ">
             <div class="col-12 margin-bottom">
-                <label for="inputOrderId" class="form-label">Order Id :</label>
-                <input type="text" class="form-control" id="inputOrderId-" placeholder="O001">
+                <label for="orderId" class="form-label">Order Id :</label>
+                <input type="text" class="form-control" id="orderId" placeholder="O001">
             </div>
 
             <div class="row">
                 <div class="col-5 margin-bottom">
-                    <label for="inputCustomerId" class="form-label">Customer Id :</label>
+                    <label for="selectCustomerId" class="form-label">Customer Id :</label>
                     <select id="selectCustomerId" class="form-select">
 
                     </select>
@@ -1340,8 +1340,8 @@
                 </div>
 
                 <div id="billBtn" class="col-12">
-                    <button id="cancelBtn" type="submit" class="btn btn-primary btnSize custom-btn cancelBtn-color btn-cancel btn-all"><span> Cancel </span></button>
-                    <button id="purchaseBtn" type="submit" class="btn btn-primary inputFieldMargin btnSize purchaseBtn-color btn-purchase btn-all"><span> Purchase </span></button>
+                    <button id="cancelBtn" type="button" class="btn btn-primary btnSize custom-btn cancelBtn-color btn-cancel btn-all"><span> Cancel </span></button>
+                    <button id="purchaseBtn" type="button" class="btn btn-primary inputFieldMargin btnSize purchaseBtn-color btn-purchase btn-all"><span> Purchase </span></button>
                 </div>
             </div>
         </form>
@@ -1395,84 +1395,17 @@
             <tr>
                 <th class="OrderTableHead " scope="col">Order Id</th>
                 <th class="OrderTableHead" scope="col">Customer</th>
-                <th class="OrderTableHead" scope="col">Item</th>
+                <th class="OrderTableHead" scope="col">City</th>
+                <th class="OrderTableHead" scope="col">Tel</th>
+                <th class="OrderTableHead" scope="col">Item Code</th>
+                <th class="OrderTableHead" scope="col">Item Name</th>
                 <th class="OrderTableHead" scope="col">Quantity</th>
                 <th class="OrderTableHead" scope="col">Discount</th>
                 <th class="OrderTableHead" scope="col">Price</th>
             </tr>
             </thead>
             <tbody id="orderDetailTable"><!--storeTable -->
-            <tr>
-                <th class="orderTableBody" scope="row">1</th>
-                <td class="orderTableBody">Mark</td>
-                <td class="orderTableBody">Otto</td>
-                <td class="orderTableBody">@mdo</td>
-                <td class="orderTableBody">@mdo</td>
-                <td class="orderTableBody">@mdo</td>
-            </tr>
 
-            <tr>
-                <th class="orderTableBody" scope="row">2</th>
-                <td class="orderTableBody">Jacob</td>
-                <td class="orderTableBody">Thornton</td>
-                <td class="orderTableBody">@fat</td>
-                <td class="orderTableBody">@fat</td>
-                <td class="orderTableBody">@fat</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">3</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr><tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
-
-            <tr>
-                <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" colspan="2">Larry the Bird</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-                <td class="orderTableBody">@twitter</td>
-            </tr>
             </tbody>
         </table>
     </div>
@@ -1679,45 +1612,7 @@
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/StoreController.js"></script>
 <script type="module" src="controller/OrderController.js"></script>
-<script>
-
-    $('#customer-sec').css({display:'none'})
-
-    $('#dashboard-tab').on('click' , () =>{
-        $('#dash-sec').css({display:'block'})
-        $('#footer').css({display: 'block'})
-        $('#customer-sec').css({display:'none'})
-        $('#store-sec').css({display:'none'})
-        $('#placeOrder-sec').css({display:'none'})
-    })
-
-    $('#customer-tab').on('click' , () =>{
-        $('#customer-sec').css({display:'block'})
-        $('#placeOrder-sec').css({display:'none'})
-        $('#dash-sec').css({display:'none'})
-        $('#footer').css({display: 'none'})
-        $('#store-sec').css({display:'none'})
-    })
-
-    $('#store-sec').css({display:'none'})
-    $('#store-tab').on('click' , () => {
-        $('#store-sec').css({display:'block'})
-        $('#placeOrder-sec').css({display:'none'})
-        $('#customer-sec').css({display:'none'})
-        $('#dash-sec').css({display:'none'})
-        $('#footer').css({display:'none'})
-    })
-
-    $('#placeOrder-sec').css({display:'none'})
-    $('#placeOrder-tab').on('click' , () => {
-        $('#placeOrder-sec').css({display:'block'})
-        $('#store-sec').css({display:'none'})
-        $('#customer-sec').css({display:'none'})
-        $('#dash-sec').css({display:'none'})
-        $('#footer').css({display:'none'})
-    })
-
-</script>
+<script type="module" src="controller/indexController.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
