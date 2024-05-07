@@ -3,6 +3,7 @@ import {orders,store,customer} from "../db/DB.js"
 
 let unitPrice = 0;
 var subTotal = 0;
+var discount = 5;
 
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
@@ -10,9 +11,9 @@ var subTotal = 0;
 
         customer.map(function (cus){
             if (selectedValue === cus.id){
-                $('#cusName').val(cus.name)
-                $('#cusCity').val(cus.city)
-                $('#cusTel').val(cus.tel)
+                $('#cusName').val(cus.name);
+                $('#cusCity').val(cus.city);
+                $('#cusTel').val(cus.tel);
             }
         })
     });
@@ -23,9 +24,9 @@ $('#selectItemCode').change(function() {
 
     store.map(function (store){
         if (selectedValue === store.itemCode){
-            $('#itemNameP').val(store.itemName)
-            $('#qtyOnHandP').val(store.QTYOnHand)
-            $('#inputPriceP').val(store.unitPrice)
+            $('#itemNameP').val(store.itemName);
+            $('#qtyOnHandP').val(store.QTYOnHand);
+            $('#inputPriceP').val(store.unitPrice);
 
             unitPrice = store.unitPrice;
         }
@@ -36,14 +37,14 @@ $('#orderQTYP').change(function (){
     let selectedValue = $(this).val();
 
     let total = (selectedValue*unitPrice);
-    $('#inputPriceP').val(total)
+    $('#inputPriceP').val(total);
 })
 
     $('#addToCartBtn').click(function() {
 
-        var inputName = $('#itemNameP').val()
-        var inputPrice = $('#inputPriceP').val()
-        var qty = $('#orderQTYP').val()
+        var inputName = $('#itemNameP').val();
+        var inputPrice = $('#inputPriceP').val();
+        var qty = $('#orderQTYP').val();
 
         // Create a new paragraph element with item details
         var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty);
@@ -56,5 +57,9 @@ $('#orderQTYP').change(function (){
         var value = parseFloat(newItemPrice.text());
         subTotal += value;
 
-        $('#subTotal').text(subTotal)
+        $('#subTotal').text(subTotal);
+
+        if (subTotal >= 5000){
+            $('#discount').text(subTotal*discount/100);
+        }
     });
