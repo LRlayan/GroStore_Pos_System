@@ -13,6 +13,8 @@ $('#submitStore').on('click' , ()=>{
     store.push(storeDetail)
     loadTable()
 
+    $('#selectItemCode').append($('<option>').text(itemCode)); // place order item code comboBox set item code
+
     $('#storeTable').on('click', 'tr', function () {
 
         let code = $(this).find(".s-code").text()
@@ -83,4 +85,3 @@ function clearForm(){
     $('#itemCodeR').val("")
     $('#itemNameR').val("")
 }
-
