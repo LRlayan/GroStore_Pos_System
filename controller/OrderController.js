@@ -45,12 +45,15 @@ $('#orderQTYP').change(function (){
 
         var inputName = $('#itemNameP').val()
         var inputPrice = $('#inputPriceP').val()
+        var qty = $('#orderQTYP').val()
 
         // Create a new paragraph element with item details
-        var newItemParagraph = $('<p>').text(inputName);
+        var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty);
         var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right"});
 
         // Append the new paragraph to the cart container
         $('#itemNameLabel').append(newItemParagraph);
         $('#itemPriceListMainDiv').append(newItemPrice);
+
+
     });
