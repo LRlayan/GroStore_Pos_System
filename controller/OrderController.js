@@ -86,6 +86,10 @@ $('#purchaseBtn').on('click',()=>{
      clear()
 })
 
+$('#cancelBtn').on('click',()=>{
+    cancel()
+})
+
 function loadTable() {
     $('#orderDetailTable').empty()
     orders.map(function (orderDetails){
@@ -117,6 +121,11 @@ function clear(){
     $('#qtyOnHandP').val('');
     $('#subTotal').text('0.00');
 
+    $('#itemNameLabel').empty();
+    $('#itemPriceListMainDiv').empty();
+}
+
+function cancel(){
     $('#itemNameLabel').empty();
     $('#itemPriceListMainDiv').empty();
 }
