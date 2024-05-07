@@ -2,6 +2,7 @@ import Order from "../model/Order.js";
 import {orders,store,customer} from "../db/DB.js"
 
 let unitPrice = 0;
+var subTotal = 0;
 
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
@@ -33,11 +34,8 @@ $('#selectItemCode').change(function() {
 
 $('#orderQTYP').change(function (){
     let selectedValue = $(this).val();
-    console.log(selectedValue)
-    console.log(unitPrice)
 
     let total = (selectedValue*unitPrice);
-   console.log(total)
     $('#inputPriceP').val(total)
 })
 
@@ -55,5 +53,8 @@ $('#orderQTYP').change(function (){
         $('#itemNameLabel').append(newItemParagraph);
         $('#itemPriceListMainDiv').append(newItemPrice);
 
+        var value = parseFloat(newItemPrice.text());
+        subTotal += value;
 
+        $('#subTotal').text(subTotal)
     });
