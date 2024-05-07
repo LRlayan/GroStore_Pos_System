@@ -68,12 +68,12 @@
 /*Billing Section*/
 
 .itemsDetails{
-    /*width: 612px;*/
+    height: 340px;
     margin: 40px;
 
     position: relative;
     top: 7rem;
-    z-index: -1;
+    z-index: 1;
 }
 
 .itemsDetails{
