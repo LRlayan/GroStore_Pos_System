@@ -13,6 +13,8 @@ $('#submitC').on('click' , ()=>{
     customer.push(customerDetail)
     loadTable()
 
+    $('#selectCustomerId').append($('<option>').text(cId)); // place order item code comboBox set item code
+
     $('#customerTable').on('click', 'tr', function () {
 
         let idC = $(this).find(".c-id").text()
