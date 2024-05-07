@@ -1,18 +1,14 @@
 export default class Order{
-    constructor(orderId,cusId,cusName,city,tel,itemCode,itemName,QTYOnHand,orderQTY,price,subTotal,discount,balance) {
+    constructor(orderId,cusName,city,tel,itemCode,itemName,orderQTY,discount,price) {
         this._orderId = orderId;
-        this._cusId = cusId;
         this._cusName = cusName;
         this._city = city;
         this._tel = tel;
         this._itemCode = itemCode;
         this._itemName = itemName;
-        this._QTYOnHand = QTYOnHand;
         this._orderQTY = orderQTY;
-        this._price = price;
-        this._subTotal = subTotal;
         this._discount = discount;
-        this._balance = balance;
+        this._price = price;
     }
 
     get orderId(){
@@ -20,13 +16,6 @@ export default class Order{
     }
     set orderId(value){
         return this._orderId = value;
-    }
-    get cusId(){
-        return this._cusId;
-    }
-
-    set cusId(value){
-        this._cusId = value;
     }
 
     get cusName(){
@@ -93,19 +82,11 @@ export default class Order{
         return this._price = value;
     }
 
-    get subTotal(){
-        return this._subTotal;
+    get discount(){
+        return this._discount;
     }
 
-    set subTotal(value){
-        this._subTotal = value
-    }
-
-    get balance(){
-        return this._balance;
-    }
-
-    set balance(value){
-        this._balance = value
+    set discount(value){
+        this._discount = value;
     }
 }
