@@ -67,4 +67,40 @@ $('#orderQTYP').change(function (){
         }
 
         $('#balance').text(subTotal-dis);
+
+        let orderId = $('#orderId').val();
+        let cusName = $('#cusName').val();
+        let cusCity = $('#cusCity').val();
+        let cusTel = $('#cusTel').val();
+
+        let code = $('#selectItemCode').val();
+        let itemName = $('#itemNameP').val();
+        let orderQty = $('#orderQTYP').val();
+        let totalPrice = $('#balance').text();
+        let discounts = $('#discount').text();
+
+        let orderDetail = new Order(orderId,cusName,cusCity,cusTel,code,itemName,orderQty,discounts,totalPrice);
+        orders.push(orderDetail);
     });
+
+$('#purchaseBtn').on('click',()=>{
+     loadTable()
+})
+
+function loadTable() {
+    $('#orderDetailTable').empty()
+    orders.map(function (orderDetails){
+        let record = `<tr>
+                <th class="orderTableBody" scope="row">${orderDetails.orderId}</th>
+                <td class="orderTableBody">${orderDetails.cusName}</td>
+                <td class="orderTableBody">${orderDetails.cusCity}</td>
+                <td class="orderTableBody">${orderDetails.cusTel}</td>
+                <td class="orderTableBody">${orderDetails.itemCode}</td>  
+                <td class="orderTableBody">${orderDetails.itemName}</td>  
+                <td class="orderTableBody">${orderDetails.orderQTY}</td>  
+                <td class="orderTableBody">${orderDetails.discount}</td>
+                <td class="orderTableBody">${orderDetails.price}</td>  
+                             </tr>`
+        $('#orderDetailTable').append(record)
+    })
+}
