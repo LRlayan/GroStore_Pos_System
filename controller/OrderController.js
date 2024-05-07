@@ -74,17 +74,16 @@ $('#orderQTYP').change(function (){
         let cusTel = $('#cusTel').val();
 
         let code = $('#selectItemCode').val();
-        let itemName = $('#itemNameP').val();
-        let orderQty = $('#orderQTYP').val();
         let totalPrice = $('#balance').text();
         let discounts = $('#discount').text();
 
-        let orderDetail = new Order(orderId,cusName,cusCity,cusTel,code,itemName,orderQty,discounts,totalPrice);
+        let orderDetail = new Order(orderId,cusName,cusCity,cusTel,code,inputName,qty,discounts,totalPrice);
         orders.push(orderDetail);
     });
 
 $('#purchaseBtn').on('click',()=>{
      loadTable()
+     clear()
 })
 
 function loadTable() {
@@ -103,4 +102,21 @@ function loadTable() {
                              </tr>`
         $('#orderDetailTable').append(record)
     })
+}
+
+function clear(){
+    $('#orderId').val('');
+    $('#cusName').val('');
+    $('#cusCity').val('');
+    $('#cusTel').val('');
+    $('#balance').text('0.00');
+    $('#discount').text('0.00');
+    $('#itemNameP').val('');
+    $('#inputPriceP').val('');
+    $('#orderQTYP').val('');
+    $('#qtyOnHandP').val('');
+    $('#subTotal').text('0.00');
+
+    $('#itemNameLabel').empty();
+    $('#itemPriceListMainDiv').empty();
 }
