@@ -1404,7 +1404,7 @@
                 <th class="OrderTableHead" scope="col">Price</th>
             </tr>
             </thead>
-            <tbody id="orderDetailTable"><!--storeTable -->
+            <tbody id="viewOrderDetailTable"><!--storeTable -->
 
             </tbody>
         </table>
@@ -1429,31 +1429,28 @@
                         <form class="row g-3 ">
                             <div class="col-12 margin-bottom">
                                 <label for="inputOrderId" class="form-label">Order Id :</label>
-                                <select id="inputOrderId" class="form-select">
-                                    <option selected>O001</option>
-                                    <option>...</option>
-                                </select>
+                                <input type="text" id="inputOrderId" class="form-control inputFieldMargin" placeholder="order Id" aria-label="order Id">
+                                <!--                                <select id="inputOrderId" class="form-select">-->
+<!--                                    <option selected>O001</option>-->
+<!--                                    <option>...</option>-->
+<!--                                </select>-->
                             </div>
 
                             <div class="row">
-                                <div class="col-5 margin-bottom">
-                                    <label for="inputCustomerId" class="form-label">Customer Id :</label>
-                                    <input type="text" id="inputCustomerId " class="form-control" placeholder="customer id" aria-label="Customer city">
-                                </div>
-                                <div class="col-7 margin-bottom">
-                                    <label for="inputCustomerName" class="form-label inputFieldMargin">Customer Name :</label>
-                                    <input type="text" id="inputCustomerName " class="form-control inputFieldMargin" placeholder="customer name" aria-label="Customer Name">
+                                <div class="col-12 margin-bottom">
+                                    <label for="customerNameU" class="form-label inputFieldMargin">Customer Name :</label>
+                                    <input type="text" id="customerNameU" class="form-control inputFieldMargin" placeholder="customer name" aria-label="Customer Name">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-5 margin-bottom">
-                                    <label for="inputCity" class="form-label ">City :</label>
+                                    <label for="inputCityStore" class="form-label ">City :</label>
                                     <input type="text" id="inputCityStore" class="form-control" placeholder="select city" aria-label="City">
                                 </div>
                                 <div class="col-7 margin-bottom">
-                                    <label for=" inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
-                                    <input type="text" id=" inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                                    <label for="inputTelephone" class="form-label inputFieldMargin">Telephone :</label>
+                                    <input type="text" id="inputTelephone" class="form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
                                 </div>
                             </div>
 
@@ -1465,10 +1462,11 @@
                             <div class="row">
                                 <div class="col-5 margin-bottom">
                                     <label for="inputItemCode" class="form-label">Item Code</label>
-                                    <select id="inputItemCode" class="form-select">
-                                        <option selected>I001</option>
-                                        <option>...</option>
-                                    </select>
+                                    <input type="text" id="inputItemCode" class="form-control inputFieldMargin" placeholder="item code" aria-label="item Code">
+                                    <!--                                    <select id="inputItemCode" class="form-select">-->
+<!--                                        <option selected>I001</option>-->
+<!--                                        <option>...</option>-->
+<!--                                    </select>-->
                                 </div>
                                 <div class="col-7 margin-bottom">
                                     <label for="inputItemName" class="form-label inputFieldMargin">Item Name :</label>
@@ -1477,14 +1475,15 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-5 margin-bottom">
-                                    <label for="qtyOnHand" class="form-label">QTY On Hand :</label>
-                                    <input type="text" id="qtyOnHand" class="form-control" placeholder="QTY On Hand" aria-label="QTY On Hand">
-                                </div>
-                                <div class="col-7 margin-bottom">
+                                <div class="col-12 margin-bottom">
                                     <label for="orderQTY" class="form-label inputFieldMargin">Order QTY :</label>
                                     <input type="text" id="orderQTY" class="form-control inputFieldMargin" placeholder="order qty" aria-label="orderQTY">
                                 </div>
+                            </div>
+
+                            <div class="col-md-12 marginZero">
+                                <label for="inputDiscount" class="form-label">Discount</label>
+                                <input type="text" class="form-control" id="inputDiscount" placeholder="discount">
                             </div>
 
                             <div class="col-md-12 marginZero">
@@ -1492,20 +1491,20 @@
                                 <input type="text" class="form-control" id="inputPrice" placeholder="price">
                             </div>
 
-                            <div class="subTotal col-4">
-                                <h6 class="">Sub Total</h6>
-                                <h5 class="">0.00</h5>
-                            </div>
+<!--                            <div class="subTotal col-4">-->
+<!--                                <h6 class="">Sub Total</h6>-->
+<!--                                <h5 class="">0.00</h5>-->
+<!--                            </div>-->
 
-                            <div class="discount col-4">
-                                <h6 class="textAlignCenter">Discount</h6>
-                                <h5 class="textAlignCenter">0.00</h5>
-                            </div>
+<!--                            <div class="discount col-4">-->
+<!--                                <h6 class="textAlignCenter">Discount</h6>-->
+<!--                                <h5 class="textAlignCenter">0.00</h5>-->
+<!--                            </div>-->
 
-                            <div class="balance col-4">
-                                <h6 class="textAlignRight">Balance</h6>
-                                <h5 class="textAlignRight">0.00</h5>
-                            </div>
+<!--                            <div class="balance col-4">-->
+<!--                                <h6 class="textAlignRight">Balance</h6>-->
+<!--                                <h5 class="textAlignRight">0.00</h5>-->
+<!--                            </div>-->
                         </form>
                     </div>
                     <div class="modal-footer">
