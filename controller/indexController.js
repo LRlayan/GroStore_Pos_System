@@ -1,4 +1,7 @@
+import {orders,store} from "../db/DB.js"
+
 let clickOrderTableRow = null
+let unitPrice = 0;
 
 $('#customer-sec').css({display:'none'})
 
@@ -60,3 +63,16 @@ $('#viewOrderDetailTable').on('click', 'tr', function () {
     $('#inputDiscount').val(dis)
     $('#inputPrice').val(price)
 });
+
+$('#orderQTY').change(function (){
+    let selectedValue = $(this).val();
+
+    orders.map(function (order){
+        store.map(function (stores){
+            if (stores.itemCode === order.itemCode){
+                let total = (selectedValue*stores.unitPrice);
+                $('#inputPrice').val(total);
+            }
+        })
+    })
+})
