@@ -82,3 +82,32 @@ $('#orderQTY').change(function (){
         $('#inputDiscount').val('0.00');
     }
 })
+
+$('#updateOrderDetail').on('click' , ()=>{
+    let orderId = $('#inputOrderId').val()
+    let cusName = $('#customerNameU').val()
+    let cusCity = $('#inputCityStore').val()
+    let cusTel = $('#inputTelephone').val()
+    let code = $('#inputItemCode').val()
+    let iName = $('#inputItemName').val()
+    let qty = $('#orderQTY').val()
+    let dis = $('#inputDiscount').val()
+    let price = $('#inputPrice').val()
+
+    let orderDetail = orders[clickOrderTableRow]
+    orderDetail.orderId = orderId;
+    orderDetail.cusName = cusName;
+    orderDetail.cusCity = cusCity;
+    orderDetail.cusTel = cusTel;
+    orderDetail.itemCode = code;
+    orderDetail.itemName = iName;
+    orderDetail.orderQTY = qty;
+    orderDetail.discount = dis;
+    orderDetail.unitPrice = price;
+
+    clearForm()
+})
+
+function clearForm(){
+
+}
