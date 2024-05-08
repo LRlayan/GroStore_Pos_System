@@ -18,27 +18,27 @@ var discount = 5;
         })
     });
 
-$('#selectItemCode').change(function() {
-    // Get the selected value using val()
-    var selectedValue = $(this).val();
+    $('#selectItemCode').change(function() {
+        // Get the selected value using val()
+        var selectedValue = $(this).val();
 
-    store.map(function (store){
-        if (selectedValue === store.itemCode){
-            $('#itemNameP').val(store.itemName);
-            $('#qtyOnHandP').val(store.QTYOnHand);
-            $('#inputPriceP').val(store.unitPrice);
+        store.map(function (store){
+            if (selectedValue === store.itemCode){
+                $('#itemNameP').val(store.itemName);
+                $('#qtyOnHandP').val(store.QTYOnHand);
+                $('#inputPriceP').val(store.unitPrice);
 
-            unitPrice = store.unitPrice;
-        }
+                unitPrice = store.unitPrice;
+            }
+        })
+    });
+
+    $('#orderQTYP').change(function (){
+        let selectedValue = $(this).val();
+
+        let total = (selectedValue*unitPrice);
+        $('#inputPriceP').val(total);
     })
-});
-
-$('#orderQTYP').change(function (){
-    let selectedValue = $(this).val();
-
-    let total = (selectedValue*unitPrice);
-    $('#inputPriceP').val(total);
-})
 
     $('#addToCartBtn').click(function() {
 
@@ -81,51 +81,51 @@ $('#orderQTYP').change(function (){
         orders.push(orderDetail);
     });
 
-$('#purchaseBtn').on('click',()=>{
-     loadTable()
-     clear()
-})
-
-$('#cancelBtn').on('click',()=>{
-    cancel()
-})
-
-function loadTable() {
-    $('#orderDetailTable').empty()
-    orders.map(function (orderDetails){
-        let record = `<tr>
-                <th class="orderTableBody" scope="row">${orderDetails.orderId}</th>
-                <td class="orderTableBody">${orderDetails.cusName}</td>
-                <td class="orderTableBody">${orderDetails.cusCity}</td>
-                <td class="orderTableBody">${orderDetails.cusTel}</td>
-                <td class="orderTableBody">${orderDetails.itemCode}</td>  
-                <td class="orderTableBody">${orderDetails.itemName}</td>  
-                <td class="orderTableBody">${orderDetails.orderQTY}</td>  
-                <td class="orderTableBody">${orderDetails.discount}</td>
-                <td class="orderTableBody">${orderDetails.price}</td>  
-                             </tr>`
-        $('#orderDetailTable').append(record)
+    $('#purchaseBtn').on('click',()=>{
+         loadTable()
+         clear()
     })
-}
 
-function clear(){
-    $('#orderId').val('');
-    $('#cusName').val('');
-    $('#cusCity').val('');
-    $('#cusTel').val('');
-    $('#balance').text('0.00');
-    $('#discount').text('0.00');
-    $('#itemNameP').val('');
-    $('#inputPriceP').val('');
-    $('#orderQTYP').val('');
-    $('#qtyOnHandP').val('');
-    $('#subTotal').text('0.00');
+    $('#cancelBtn').on('click',()=>{
+        cancel()
+    })
 
-    $('#itemNameLabel').empty();
-    $('#itemPriceListMainDiv').empty();
-}
+    function loadTable() {
+        $('#viewOrderDetailTable').empty()
+        orders.map(function (orderDetails){
+            let record = `<tr>
+                    <th class="o-orderId orderTableBody" scope="row">${orderDetails.orderId}</th>
+                    <td class="o-cusName orderTableBody">${orderDetails.cusName}</td>
+                    <td class="o-city orderTableBody">${orderDetails.cusCity}</td>
+                    <td class="o-tel orderTableBody">${orderDetails.cusTel}</td>
+                    <td class="o-code orderTableBody">${orderDetails.itemCode}</td>  
+                    <td class="o-iName orderTableBody">${orderDetails.itemName}</td>  
+                    <td class="o-qty orderTableBody">${orderDetails.orderQTY}</td>  
+                    <td class="o-dis orderTableBody">${orderDetails.discount}</td>
+                    <td class="o-price orderTableBody">${orderDetails.price}</td>  
+                                 </tr>`
+            $('#viewOrderDetailTable').append(record)
+        })
+    }
 
-function cancel(){
-    $('#itemNameLabel').empty();
-    $('#itemPriceListMainDiv').empty();
-}
+    function clear(){
+        $('#orderId').val('');
+        $('#cusName').val('');
+        $('#cusCity').val('');
+        $('#cusTel').val('');
+        $('#balance').text('0.00');
+        $('#discount').text('0.00');
+        $('#itemNameP').val('');
+        $('#inputPriceP').val('');
+        $('#orderQTYP').val('');
+        $('#qtyOnHandP').val('');
+        $('#subTotal').text('0.00');
+
+        $('#itemNameLabel').empty();
+        $('#itemPriceListMainDiv').empty();
+    }
+
+    function cancel(){
+        $('#itemNameLabel').empty();
+        $('#itemPriceListMainDiv').empty();
+    }
