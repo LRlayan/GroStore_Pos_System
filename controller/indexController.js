@@ -62,6 +62,11 @@ $('#viewOrderDetailTable').on('click', 'tr', function () {
     $('#orderQTY').val(qty)
     $('#inputDiscount').val(dis)
     $('#inputPrice').val(price)
+
+    $('#orderIdR').val(orderId)
+    $('#customerName').val(cusName)
+    $('#itemNameRe').val(iName)
+    $('#inputPriceR').val(price)
 });
 
 $('#orderQTY').change(function (){
@@ -108,6 +113,12 @@ $('#updateOrderDetail').on('click' , ()=>{
     clearForm()
 })
 
+$('#removeOrder').on('click',()=>{
+    orders.splice(clickOrderTableRow , 1)
+    loadTable()
+    clearForm()
+})
+
 function loadTable() {
     $('#viewOrderDetailTable').empty()
     orders.map(function (orderDetails){
@@ -136,4 +147,9 @@ function clearForm(){
     $('#orderQTY').val('')
     $('#inputDiscount').val('')
     $('#inputPrice').val('')
+
+    $('#orderIdR').val('')
+    $('#customerName').val('')
+    $('#itemNameRe').val('')
+    $('#inputPriceR').val('')
 }
