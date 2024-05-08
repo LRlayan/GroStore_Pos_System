@@ -104,10 +104,36 @@ $('#updateOrderDetail').on('click' , ()=>{
     orderDetail.orderQTY = qty;
     orderDetail.discount = dis;
     orderDetail.unitPrice = price;
-
+    loadTable()
     clearForm()
 })
 
-function clearForm(){
+function loadTable() {
+    $('#viewOrderDetailTable').empty()
+    orders.map(function (orderDetails){
+        let record = `<tr>
+                    <th class="o-orderId orderTableBody" scope="row">${orderDetails.orderId}</th>
+                    <td class="o-cusName orderTableBody">${orderDetails.cusName}</td>
+                    <td class="o-city orderTableBody">${orderDetails.cusCity}</td>
+                    <td class="o-tel orderTableBody">${orderDetails.cusTel}</td>
+                    <td class="o-code orderTableBody">${orderDetails.itemCode}</td>  
+                    <td class="o-iName orderTableBody">${orderDetails.itemName}</td>  
+                    <td class="o-qty orderTableBody">${orderDetails.orderQTY}</td>  
+                    <td class="o-dis orderTableBody">${orderDetails.discount}</td>
+                    <td class="o-price orderTableBody">${orderDetails.price}</td>  
+                                 </tr>`
+        $('#viewOrderDetailTable').append(record)
+    })
+}
 
+function clearForm(){
+    $('#inputOrderId').val('')
+    $('#customerNameU').val('')
+    $('#inputCityStore').val('')
+    $('#inputTelephone').val('')
+    $('#inputItemCode').val('')
+    $('#inputItemName').val('')
+    $('#orderQTY').val('')
+    $('#inputDiscount').val('')
+    $('#inputPrice').val('')
 }
