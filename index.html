@@ -1430,10 +1430,6 @@
                             <div class="col-12 margin-bottom">
                                 <label for="inputOrderId" class="form-label">Order Id :</label>
                                 <input type="text" id="inputOrderId" class="form-control inputFieldMargin" placeholder="order Id" aria-label="order Id">
-                                <!--                                <select id="inputOrderId" class="form-select">-->
-<!--                                    <option selected>O001</option>-->
-<!--                                    <option>...</option>-->
-<!--                                </select>-->
                             </div>
 
                             <div class="row">
@@ -1463,10 +1459,6 @@
                                 <div class="col-5 margin-bottom">
                                     <label for="inputItemCode" class="form-label">Item Code</label>
                                     <input type="text" id="inputItemCode" class="form-control inputFieldMargin" placeholder="item code" aria-label="item Code">
-                                    <!--                                    <select id="inputItemCode" class="form-select">-->
-<!--                                        <option selected>I001</option>-->
-<!--                                        <option>...</option>-->
-<!--                                    </select>-->
                                 </div>
                                 <div class="col-7 margin-bottom">
                                     <label for="inputItemName" class="form-label inputFieldMargin">Item Name :</label>
@@ -1515,36 +1507,38 @@
 
                         <form class="row g-3 ">
                             <div class="col-12 margin-bottom">
-                                <label for=" inputOrderId" class="form-label">Order Id :</label>
-                                <select id=" inputOrderId" class="form-select">
-                                    <option selected>I001</option>
-                                    <option>...</option>
-                                </select>
+                                <label for="orderIdR" class="form-label">Order Id :</label>
+                                <input type="text" id="orderIdR" class="form-control " placeholder="order Id" aria-label="order id">
+
+                                <!--                                <select id=" inputOrderId" class="form-select">-->
+<!--                                    <option selected>I001</option>-->
+<!--                                    <option>...</option>-->
+<!--                                </select>-->
                             </div>
 
                             <div class="row">
                                 <div class="col-12 margin-bottom">
-                                    <label for=" inputCustomerName " class="form-label ">Customer Name :</label>
-                                    <input type="text" id=" inputCustomerName " class="form-control " placeholder="customer name" aria-label="Customer Name">
+                                    <label for="customerName" class="form-label ">Customer Name :</label>
+                                    <input type="text" id="customerName" class="form-control " placeholder="customer name" aria-label="Customer Name">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-12 margin-bottom">
-                                    <label for=" inputItemName" class="form-label ">Item Name :</label>
-                                    <input type="text" id=" inputItemName" class="form-control " placeholder="item name" aria-label="item name">
+                                    <label for="itemNameRe" class="form-label ">Item Name :</label>
+                                    <input type="text" id="itemNameRe" class="form-control " placeholder="item name" aria-label="item name">
                                 </div>
                             </div>
 
                             <div class="col-md-12 marginZero">
-                                <label for=" inputPrice" class="form-label">Price</label>
-                                <input type="text" class="form-control" id=" inputPrice" placeholder="price">
+                                <label for="inputPriceR" class="form-label">Price</label>
+                                <input type="text" class="form-control" id="inputPriceR" placeholder="price">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary saveChanges">Save changes</button>
+                        <button id="removeOrder" type="button" class="btn btn-primary saveChanges">Save changes</button>
                     </div>
                 </div>
             </div>
