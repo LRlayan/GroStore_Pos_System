@@ -1,7 +1,7 @@
 import {orders,store} from "../db/DB.js"
 
 let clickOrderTableRow = null
-let unitPrice = 0;
+var discount = 5;
 
 $('#customer-sec').css({display:'none'})
 
@@ -66,13 +66,19 @@ $('#viewOrderDetailTable').on('click', 'tr', function () {
 
 $('#orderQTY').change(function (){
     let selectedValue = $(this).val();
-
+    let total = 0;
     orders.map(function (order){
         store.map(function (stores){
             if (stores.itemCode === order.itemCode){
-                let total = (selectedValue*stores.unitPrice);
+                total = (selectedValue*stores.unitPrice);
                 $('#inputPrice').val(total);
             }
         })
     })
+
+    if (total >= 5000){
+        $('#inputDiscount').val(total*discount/100);
+    }else {
+        $('#inputDiscount').val('0.00');
+    }
 })
