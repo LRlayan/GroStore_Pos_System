@@ -137,6 +137,15 @@ function loadTable() {
     })
 }
 
+$(document).ready(function(){
+    $("#dashStore").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#viewOrderDetailTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
 function clearForm(){
     $('#inputOrderId').val('')
     $('#customerNameU').val('')

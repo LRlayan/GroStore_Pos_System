@@ -71,6 +71,15 @@ $('#deleteS').on('click',()=>{
     clearForm()
 })
 
+$(document).ready(function(){
+    $("#storeSearch").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#storeTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
 function clearForm(){
     $('#itemCode').val("")
     $('#itemName').val("")

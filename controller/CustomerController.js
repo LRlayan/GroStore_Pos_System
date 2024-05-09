@@ -71,6 +71,15 @@ $('#deleteC').on('click',()=>{
      clearForm()
 })
 
+$(document).ready(function(){
+    $("#inputSearch").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#customerTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
 function clearForm(){
     $('#-inputCustomerId').val("")
     $('#_inputCustomerName').val("")
@@ -85,3 +94,5 @@ function clearForm(){
     $('#inputCustomerId').val("")
     $('#inputCustomerName').val("")
 }
+
+
