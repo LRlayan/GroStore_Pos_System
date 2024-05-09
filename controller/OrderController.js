@@ -9,6 +9,28 @@ var generateOrderId = 1;
 
     $('#orderId').val('O0' + generateOrderId)
 
+$('#addToCartBtn').prop('disabled' , true);
+$('#purchaseBtn').prop('disabled', true);
+$('#cancelBtn').prop('disabled', true);
+$('#orderQTYP').change(function() {
+        let orderId = $('#orderId').val()
+        let cusId = $('#selectCustomerId').val()
+        let cusName = $('#cusName').val()
+        let cusCity = $('#cusCity').val()
+        let cusTel = $('#cusTel').val()
+        let code = $('#selectItemCode').val()
+        let iName = $('#itemNameP').val()
+        let qtyOnHand = $('#qtyOnHandP').val()
+        let qty = $('#orderQTYP').val()
+        let price = $('#inputPriceP').val()
+
+        if (cusId !== '' && cusName !== '' && cusCity !== '' && cusTel !== '' && code !== '' && iName !== '' && qtyOnHand !== '' && qty !== '' && price !== '') {
+            $('#addToCartBtn').prop('disabled', false);
+        }else {
+            $('#addToCartBtn').prop('disabled', true);
+        }
+})
+
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
         var selectedValue = $(this).val();
@@ -72,6 +94,11 @@ var generateOrderId = 1;
 
         $('#balance').text(subTotal-dis);
 
+        if (newItemParagraph !== '' && newItemPrice !== ''){
+            $('#purchaseBtn').prop('disabled', false);
+            $('#cancelBtn').prop('disabled', false);
+        }
+
         let orderId = $('#orderId').val();
         let cusName = $('#cusName').val();
         let cusCity = $('#cusCity').val();
@@ -90,10 +117,15 @@ var generateOrderId = 1;
         $('#orderId').val('O0' + generateOrderId)
          loadTable()
          clear()
+        $('#purchaseBtn').prop('disabled', true);
+        $('#cancelBtn').prop('disabled', true);
+        $('#addToCartBtn').prop('disabled', true);
     })
 
     $('#cancelBtn').on('click',()=>{
         cancel()
+        $('#purchaseBtn').prop('disabled', true);
+        $('#cancelBtn').prop('disabled', true);
     })
 
     function loadTable() {
