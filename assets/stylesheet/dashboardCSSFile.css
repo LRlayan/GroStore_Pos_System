@@ -107,6 +107,7 @@ a:link{
 }
 
 .searchInputField{
+    z-index: 1;
     border-radius: 200px 0 0 200px;
 }
 
