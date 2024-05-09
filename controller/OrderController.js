@@ -5,6 +5,10 @@ let unitPrice = 0;
 var subTotal = 0;
 var discount = 5;
 
+var generateOrderId = 1;
+
+    $('#orderId').val('O0' + generateOrderId)
+
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
         var selectedValue = $(this).val();
@@ -82,6 +86,8 @@ var discount = 5;
     });
 
     $('#purchaseBtn').on('click',()=>{
+        generateOrderId++;
+        $('#orderId').val('O0' + generateOrderId)
          loadTable()
          clear()
     })
@@ -109,7 +115,7 @@ var discount = 5;
     }
 
     function clear(){
-        $('#orderId').val('');
+        // $('#orderId').val('');
         $('#cusName').val('');
         $('#cusCity').val('');
         $('#cusTel').val('');
