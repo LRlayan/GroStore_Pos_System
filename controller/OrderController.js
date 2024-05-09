@@ -9,10 +9,11 @@ var generateOrderId = 1;
 
     $('#orderId').val('O0' + generateOrderId)
 
-$('#addToCartBtn').prop('disabled' , true);
-$('#purchaseBtn').prop('disabled', true);
-$('#cancelBtn').prop('disabled', true);
-$('#orderQTYP').change(function() {
+    $('#addToCartBtn').prop('disabled' , true);
+    $('#purchaseBtn').prop('disabled', true);
+    $('#cancelBtn').prop('disabled', true);
+
+    $('#orderQTYP').change(function() {
         let orderId = $('#orderId').val()
         let cusId = $('#selectCustomerId').val()
         let cusName = $('#cusName').val()
@@ -29,7 +30,7 @@ $('#orderQTYP').change(function() {
         }else {
             $('#addToCartBtn').prop('disabled', true);
         }
-})
+    })
 
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
@@ -117,6 +118,7 @@ $('#orderQTYP').change(function() {
         $('#orderId').val('O0' + generateOrderId)
          loadTable()
          clear()
+
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
         $('#addToCartBtn').prop('disabled', true);
@@ -124,6 +126,7 @@ $('#orderQTYP').change(function() {
 
     $('#cancelBtn').on('click',()=>{
         cancel()
+
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
     })
