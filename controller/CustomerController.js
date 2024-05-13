@@ -2,7 +2,9 @@ import Customer from "../model/Customer.js";
 import {customer} from "../db/DB.js"
 
 let clickTableRow = 0;
-
+$('#submitC').prop('disabled' , true);
+emptyInputFields()
+validation()
 $('#submitC').on('click' , ()=>{
     let cId = $('#-inputCustomerId').val();
     let cName = $('#_inputCustomerName').val();
@@ -95,4 +97,45 @@ function clearForm(){
     $('#inputCustomerName').val("")
 }
 
+function validation(){
+    (() => {
+         'use strict'
+        var increase = 0;
 
+         // Fetch all the forms we want to apply custom Bootstrap validation styles to
+         const forms = document.querySelectorAll('.needs-validation')
+
+         // Loop over them and prevent submission
+         Array.from(forms).forEach(form => {
+            form.addEventListener('change', event => {
+               if (!form.checkValidity()) {
+                   // event.preventDefault()
+                   // event.stopPropagation()
+                   increase++
+                   console.log(increase)
+               }
+
+                form.classList.add('was-validated')
+                emptyInputFields()
+            }, false)
+         })
+    })()
+}
+
+function emptyInputFields(){
+
+    var id = $('#-inputCustomerId').val()
+    var name = $('#_inputCustomerName').val()
+    var city = $('#inputCityC').val()
+    var tel = $('#inputTelephoneC').val()
+
+   if (id !== '' && name !== '' && city !== '' && tel !== ''){
+       $('#submitC').prop('disabled' , false);
+   }else {
+       $('#submitC').prop('disabled' , true);
+   }
+
+
+
+
+}
