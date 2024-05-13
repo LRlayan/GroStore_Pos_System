@@ -942,7 +942,7 @@
 <!--Customer-->
 <section id="customer-sec" class="fonts">
         <div class="container-fluid searchBarParent">
-            <div class="input-group mb-3 searchBar"><!-- -->
+            <div class="input-group mb-3 searchBar">
                 <input id="inputSearch" type="text" class="searchInputField form-control" placeholder="Search Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addonC">Search</button><!-- -->
             </div>
@@ -979,44 +979,103 @@
         </div>
 
         <!--new modal-->
-        <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalCusLabel">Add New Customer</h1><!-- -->
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!--    code here  -->
-                        <div class="row">
-                            <div class="col-12 margin-bottom">
-                                <label for="-inputCustomerId" class="margin-left-0 form-label">Customer Id :</label>
-                                <input type="text" id="-inputCustomerId" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+<!--        <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--            <div class="modal-dialog">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h1 class="modal-title fs-5" id="exampleModalCusLabel">Add New Customer</h1>&lt;!&ndash; &ndash;&gt;-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        &lt;!&ndash;    code here  &ndash;&gt;-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-12 margin-bottom">-->
+<!--                                <label for="-inputCustomerId" class="margin-left-0 form-label">Customer Id :</label>-->
+<!--                                <input type="text" id="-inputCustomerId" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
+<!--                                <div class="invalid-feedback">-->
+<!--                                    Please choose a username.-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="invalid-feedback">-->
+<!--                                Please choose a username.-->
+<!--                            </div>-->
+<!--                            <div class="col-12 margin-bottom">-->
+<!--                                <label for="_inputCustomerName" class="margin-left-0 form-label inputFieldMargin">Customer Name :</label>-->
+<!--                                <input type="text" id="_inputCustomerName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row">-->
+<!--                            <div class="col-12 margin-bottom">-->
+<!--                                <label for="inputCityC" class="margin-left-0 form-label ">City :</label>-->
+<!--                                <input type="text" id="inputCityC" class="margin-left-0 form-control" placeholder="select city" aria-label="City">-->
+<!--                            </div>-->
+<!--                            <div class="col-12 margin-bottom">-->
+<!--                                <label for="inputTelephoneC" class="margin-left-0 form-label inputFieldMargin">Telephone :</label>-->
+<!--                                <input type="text" id="inputTelephoneC" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>-->
+<!--                        <button id="submitC" type="button" class="btn btn-primary saveChanges">Save changes</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalCusLabel">Add New Customer</h1><!-- -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--    code here  -->
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-12">
+                            <label for="-inputCustomerId" class="form-label">Customer ID</label>
+                            <input type="text" class="form-control" id="-inputCustomerId" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid name.
                             </div>
-                            <div class="col-12 margin-bottom">
-                                <label for="_inputCustomerName" class="margin-left-0 form-label inputFieldMargin">Customer Name :</label>
-                                <input type="text" id="_inputCustomerName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="_inputCustomerName" class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" id="_inputCustomerName" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid address.
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-12 margin-bottom">
-                                <label for="inputCityC" class="margin-left-0 form-label ">City :</label>
-                                <input type="text" id="inputCityC" class="margin-left-0 form-control" placeholder="select city" aria-label="City">
-                            </div>
-                            <div class="col-12 margin-bottom">
-                                <label for="inputTelephoneC" class="margin-left-0 form-label inputFieldMargin">Telephone :</label>
-                                <input type="text" id="inputTelephoneC" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                        <div class="col-md-12">
+                            <label for="inputCityC" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCityC" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                        <button id="submitC" type="button" class="btn btn-primary saveChanges">Save changes</button>
-                    </div>
+
+                        <div class="col-md-12">
+                            <label for="inputTelephoneC" class="form-label">Telephone</label>
+                            <input type="text" class="form-control" id="inputTelephoneC" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid number.
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                            <!--                <button id="submitC" type="button" class="btn btn-primary saveChanges">Save changes</button>-->
+                            <button id="submitC" class="btn btn-primary saveChanges" type="button">Submit form</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
         <!--update modal-->
         <div class="modal fade" id="updateModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
