@@ -110,26 +110,26 @@ function validation(){
             form.addEventListener('click', event => {
 
                 $('#-inputCustomerId').on('input' , ()=>{
-                var id = $('#-inputCustomerId').val();
+                    var id = $('#-inputCustomerId').val();
 
-                if (id.startsWith('C00-')) {
-                    const numericPart = id.substring(6);
+                    if (id.startsWith('C00-')) {
+                        const numericPart = id.substring(6);
 
-                    if (!(/^\d+$/.test(numericPart))) {
-                        $('#c-id').text('Customer ID must be minimum 3 digit value followed by C00- format.');
+                        if (!(/^\d+$/.test(numericPart))) {
+                            $('#c-id').text('Customer ID must be minimum 3 digit value followed by C00- format.');
+                            $('#c-id').css({ display: 'block' });
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            $('#c-id').css({ display: 'none' });
+                            $('#-inputCustomerId').css({border:'1px solid green'});
+                        }
+                    } else {
                         $('#c-id').css({ display: 'block' });
+                        $('#-inputCustomerId').css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
-                    } else {
-                        $('#c-id').css({ display: 'none' });
-                        $('#-inputCustomerId').css({border:'1px solid green'});
                     }
-                } else {
-                    $('#c-id').css({ display: 'block' });
-                    $('#-inputCustomerId').css({border:'1px solid red'});
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
                 });
                 emptyInputFields();
 
@@ -142,7 +142,7 @@ function validation(){
                         $('#c-name').css({ display: 'block' });
                         $('#_inputCustomerName').css({ border: '1px solid red' });
                     }
-                })
+                });
 
                 $('#inputCityC').on('input' ,()=> {
                     var city = $('#inputCityC').val();
@@ -154,7 +154,19 @@ function validation(){
                         $('#c-city').css({ display: 'block' });
                         $('#inputCityC').css({ border: '1px solid red' });
                     }
-                })
+                });
+
+                $('#inputTelephoneC').on('input' ,()=> {
+                    var tel = $('#inputTelephoneC').val();
+
+                    if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
+                        $('#c-tel').css({ display: 'none' });
+                        $('#inputTelephoneC').css({ border: '1px solid green' });
+                    } else {
+                        $('#c-tel').css({ display: 'block' });
+                        $('#inputTelephoneC').css({ border: '1px solid red' });
+                    }
+                });
             }, false)
          })
     })()
