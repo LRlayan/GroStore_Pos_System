@@ -978,7 +978,8 @@
             </table>
         </div>
 
-    <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!--new modal-->
+        <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1092,20 +1093,26 @@
                     </div>
                     <div class="modal-body">
                         <!--   code here   -->
-                        <div class="row">
-                            <div class="col-12 margin-bottom">
-                                <label for="inputCustomerId" class="margin-left-0 form-label">Customer Id</label>
-                                <input type="text" id="inputCustomerId" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-12">
+                                <label for="-inputCustomerId" class="form-label">Customer ID</label>
+                                <input type="text" class="inputCustomerId form-control" id="inputCustomerId" required>
+                                <div class="c-id invalid-feedback">
+                                    customer ID is a required field : Pattern C00-001.
+                                </div>
                             </div>
-                            <div class="col-12 margin-bottom">
-                                <label for="inputCustomerName" class="margin-left-0 form-label inputFieldMargin">Customer Name :</label>
-                                <input type="text" id="inputCustomerName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                            <div class="col-md-12">
+                                <label for="_inputCustomerName" class="form-label">Customer Name</label>
+                                <input type="text" class="inputCustomerName form-control" id="inputCustomerName" required>
+                                <div class="c-name invalid-feedback">
+                                    Minimum 5, Max 20,Space Allowed and input only English letters.
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                        <button id="deleteC" type="button" class="btn btn-primary saveChanges">Save changes</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                                <button id="deleteC" class="btn btn-primary saveChanges" type="button">Submit form</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
