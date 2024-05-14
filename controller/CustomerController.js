@@ -107,12 +107,12 @@ function validation(){
 
          // Loop over them and prevent submission
          Array.from(forms).forEach(form => {
-            form.addEventListener('change', event => {
+            form.addEventListener('click', event => {
 
-                var id = $('#-inputCustomerId').val()
+                $('#-inputCustomerId').on('input' , ()=>{
+                var id = $('#-inputCustomerId').val().trim();
 
                 if (id.startsWith('C00-')) {
-
                     const numericPart = id.substring(6);
 
                     if (!(/^\d+$/.test(numericPart))) {
@@ -122,15 +122,27 @@ function validation(){
                         event.stopPropagation();
                     } else {
                         $('#c-id').css({ display: 'none' });
-                        $('#-inputCustomerId').css({border:'1px solid green'})
+                        $('#-inputCustomerId').css({border:'1px solid green'});
                     }
                 } else {
                     $('#c-id').css({ display: 'block' });
-                    $('#-inputCustomerId').css({border:'1px solid red'})
+                    $('#-inputCustomerId').css({border:'1px solid red'});
                     event.preventDefault();
                     event.stopPropagation();
                 }
-                emptyInputFields()
+                });
+                emptyInputFields();
+
+                $('#_inputCustomerName').on('input' ,()=>{
+                    var name = $('#_inputCustomerName').val().trim();
+                    if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
+                        $('#c-name').css({ display: 'none' });
+                        $('#_inputCustomerName').css({ border: '1px solid green' });
+                    } else {
+                        $('#c-name').css({ display: 'block' });
+                        $('#_inputCustomerName').css({ border: '1px solid red' });
+                    }
+                })
             }, false)
          })
     })()
@@ -138,10 +150,10 @@ function validation(){
 
 function emptyInputFields(){
 
-    var id = $('#-inputCustomerId').val()
-    var name = $('#_inputCustomerName').val()
-    var city = $('#inputCityC').val()
-    var tel = $('#inputTelephoneC').val()
+    var id = $('#-inputCustomerId').val();
+    var name = $('#_inputCustomerName').val();
+    var city = $('#inputCityC').val();
+    var tel = $('#inputTelephoneC').val();
 
    if (id !== '' && name !== '' && city !== '' && tel !== ''){
        $('#submitC').prop('disabled' , false);
