@@ -3,7 +3,6 @@ import {customer} from "../db/DB.js"
 
 let clickTableRow = 0;
 $('#submitC').prop('disabled' , true);
-emptyInputFields()
 validation()
 $('#submitC').on('click' , ()=>{
     let cId = $('#-inputCustomerId').val();
@@ -101,17 +100,36 @@ function validation(){
     (() => {
          'use strict'
 
+        $('#c-id').css({display: 'none'});
+
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
 
          // Loop over them and prevent submission
          Array.from(forms).forEach(form => {
             form.addEventListener('change', event => {
-               if (!form.checkValidity()) {
-                   event.preventDefault()
-                   event.stopPropagation()
-               }
-                form.classList.add('was-validated')
+
+                var id = $('#-inputCustomerId').val()
+
+                if (id.startsWith('C00-')) {
+
+                    const numericPart = id.substring(6);
+
+                    if (!(/^\d+$/.test(numericPart))) {
+                        $('#c-id').text('Customer ID must be minimum 3 digit value followed by C00- format.');
+                        $('#c-id').css({ display: 'block' });
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        $('#c-id').css({ display: 'none' });
+                        $('#-inputCustomerId').css({border:'1px solid green'})
+                    }
+                } else {
+                    $('#c-id').css({ display: 'block' });
+                    $('#-inputCustomerId').css({border:'1px solid red'})
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
                 emptyInputFields()
             }, false)
          })
@@ -130,8 +148,4 @@ function emptyInputFields(){
    }else {
        $('#submitC').prop('disabled' , true);
    }
-
-
-
-
 }
