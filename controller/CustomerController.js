@@ -110,7 +110,7 @@ function validation(){
             form.addEventListener('click', event => {
 
                 $('#-inputCustomerId').on('input' , ()=>{
-                var id = $('#-inputCustomerId').val().trim();
+                var id = $('#-inputCustomerId').val();
 
                 if (id.startsWith('C00-')) {
                     const numericPart = id.substring(6);
@@ -141,6 +141,18 @@ function validation(){
                     } else {
                         $('#c-name').css({ display: 'block' });
                         $('#_inputCustomerName').css({ border: '1px solid red' });
+                    }
+                })
+
+                $('#inputCityC').on('input' ,()=> {
+                    var city = $('#inputCityC').val();
+
+                    if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
+                        $('#c-city').css({ display: 'none' });
+                        $('#inputCityC').css({ border: '1px solid green' });
+                    } else {
+                        $('#c-city').css({ display: 'block' });
+                        $('#inputCityC').css({ border: '1px solid red' });
                     }
                 })
             }, false)
