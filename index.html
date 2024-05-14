@@ -990,31 +990,31 @@
                     <form class="row g-3 needs-validation" novalidate>
                         <div class="col-md-12">
                             <label for="-inputCustomerId" class="form-label">Customer ID</label>
-                            <input type="text" class="form-control" id="-inputCustomerId" required>
-                            <div id="c-id" class="invalid-feedback">
+                            <input type="text" class="inputCustomerId form-control" id="-inputCustomerId" required>
+                            <div class="c-id invalid-feedback">
                                 customer ID is a required field : Pattern C00-001.
                             </div>
                         </div>
                         <div class="col-md-12">
                             <label for="_inputCustomerName" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="_inputCustomerName" required>
-                            <div id="c-name" class="invalid-feedback">
+                            <input type="text" class="inputCustomerName form-control" id="_inputCustomerName" required>
+                            <div class="c-name invalid-feedback">
                                 Minimum 5, Max 20,Space Allowed and input only English letters.
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <label for="inputCityC" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCityC" required>
-                            <div id="c-city" class="invalid-feedback">
+                            <input type="text" class="inputCity form-control" id="inputCityC" required>
+                            <div class="c-city invalid-feedback">
                                 Max 25 letters and input only English letters.
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <label for="inputTelephoneC" class="form-label">Telephone</label>
-                            <input type="text" class="form-control" id="inputTelephoneC" required>
-                            <div id="c-tel" class="invalid-feedback">
+                            <input type="text" class="inputTelephone form-control" id="inputTelephoneC" required>
+                            <div class="c-tel invalid-feedback">
                                 Please enter valid mobile number.Space Not Allowed,Max 10.
                             </div>
                         </div>
@@ -1039,31 +1039,44 @@
                     </div>
                     <div class="modal-body">
                         <!--    code here  -->
-                        <div class="row">
-                            <div class="col-12 margin-bottom">
-                                <label for="inputCustomerIdU" class="margin-left-0 form-label">Customer Id</label>
-                                <input type="text" id="inputCustomerIdU" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
-                            </div>
-                            <div class="col-12 margin-bottom">
-                                <label for="inputCustomerNameU" class="margin-left-0 form-label inputFieldMargin">Customer Name :</label>
-                                <input type="text" id="inputCustomerNameU" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-12 margin-bottom">
-                                <label for="inputCityU" class="margin-left-0 form-label ">City :</label>
-                                <input type="text" id="inputCityU" class="margin-left-0 form-control" placeholder="select city" aria-label="City">
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-12">
+                                <label for="inputCustomerIdU" class="form-label">Customer ID</label>
+                                <input type="text" class="form-control" id="inputCustomerIdU" required>
+                                <div class="c-id invalid-feedback">
+                                    customer ID is a required field : Pattern C00-001.
+                                </div>
                             </div>
-                            <div class="col-12 margin-bottom">
-                                <label for="inputTelephoneU" class="margin-left-0 form-label inputFieldMargin">Telephone :</label>
-                                <input type="text" id="inputTelephoneU" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">
+                            <div class="col-md-12">
+                                <label for="inputCustomerNameU" class="form-label">Customer Name</label>
+                                <input type="text" class="form-control" id="inputCustomerNameU" required>
+                                <div class="c-name invalid-feedback">
+                                    Minimum 5, Max 20,Space Allowed and input only English letters.
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                        <button id="updateC" type="button" class="btn btn-primary saveChanges">Save changes</button>
+
+                            <div class="col-md-12">
+                                <label for="inputCityU" class="form-label">City</label>
+                                <input type="text" class="form-control" id="inputCityU" required>
+                                <div class="c-city invalid-feedback">
+                                    Max 25 letters and input only English letters.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="inputTelephoneU" class="form-label">Telephone</label>
+                                <input type="text" class="form-control" id="inputTelephoneU" required>
+                                <div class="c-tel invalid-feedback">
+                                    Please enter valid mobile number.Space Not Allowed,Max 10.
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                                <button id="updateC" class="btn btn-primary saveChanges" type="button">Submit form</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
