@@ -100,7 +100,6 @@ function clearForm(){
 function validation(){
     (() => {
          'use strict'
-        var increase = 0;
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
@@ -109,12 +108,9 @@ function validation(){
          Array.from(forms).forEach(form => {
             form.addEventListener('change', event => {
                if (!form.checkValidity()) {
-                   // event.preventDefault()
-                   // event.stopPropagation()
-                   increase++
-                   console.log(increase)
+                   event.preventDefault()
+                   event.stopPropagation()
                }
-
                 form.classList.add('was-validated')
                 emptyInputFields()
             }, false)
