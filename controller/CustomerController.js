@@ -3,7 +3,7 @@ import {customer} from "../db/DB.js"
 
 let clickTableRow = 0;
 $('#submitC').prop('disabled' , true);
-validation()
+
 $('#submitC').on('click' , ()=>{
     let cId = $('#-inputCustomerId').val();
     let cName = $('#_inputCustomerName').val();
@@ -96,11 +96,19 @@ function clearForm(){
     $('#inputCustomerName').val("")
 }
 
-function validation(){
+$('#newModalCus').on('shown.bs.modal', function() {
+    validation('#-inputCustomerId','#_inputCustomerName','#inputCityC','#inputTelephoneC')
+});
+
+$('#updateModalCus').on('shown.bs.modal', function() {
+    validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU')
+});
+
+function validation(cId,cName,cCity,cTel){
     (() => {
          'use strict'
 
-        $('#c-id').css({display: 'none'});
+        $('.c-id').css({display: 'none'});
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
@@ -109,62 +117,62 @@ function validation(){
          Array.from(forms).forEach(form => {
             form.addEventListener('click', event => {
 
-                $('#-inputCustomerId').on('input' , ()=>{
-                    var id = $('#-inputCustomerId').val();
+                $(cId).on('input' , ()=>{
+                    var id = $(cId).val();
 
                     if (id.startsWith('C00-')) {
                         const numericPart = id.substring(6);
 
                         if (!(/^\d+$/.test(numericPart))) {
-                            $('#c-id').text('Customer ID must be minimum 3 digit value followed by C00- format.');
-                            $('#c-id').css({ display: 'block' });
+                            $('.c-id').text('Customer ID must be minimum 3 digit value followed by C00- format.');
+                            $('.c-id').css({ display: 'block' });
                             event.preventDefault();
                             event.stopPropagation();
                         } else {
-                            $('#c-id').css({ display: 'none' });
-                            $('#-inputCustomerId').css({border:'1px solid green'});
+                            $('.c-id').css({ display: 'none' });
+                            $(cId).css({border:'1px solid green'});
                         }
                     } else {
-                        $('#c-id').css({ display: 'block' });
-                        $('#-inputCustomerId').css({border:'1px solid red'});
+                        $('.c-id').css({ display: 'block' });
+                        $(cId).css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
                     }
                 });
                 emptyInputFields();
 
-                $('#_inputCustomerName').on('input' ,()=>{
-                    var name = $('#_inputCustomerName').val().trim();
+                $(cName).on('input' ,()=>{
+                    var name = $(cName).val().trim();
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
-                        $('#c-name').css({ display: 'none' });
-                        $('#_inputCustomerName').css({ border: '1px solid green' });
+                        $('.c-name').css({ display: 'none' });
+                        $(cName).css({ border: '1px solid green' });
                     } else {
-                        $('#c-name').css({ display: 'block' });
-                        $('#_inputCustomerName').css({ border: '1px solid red' });
+                        $('.c-name').css({ display: 'block' });
+                        $(cName).css({ border: '1px solid red' });
                     }
                 });
 
-                $('#inputCityC').on('input' ,()=> {
-                    var city = $('#inputCityC').val();
+                $(cCity).on('input' ,()=> {
+                    var city = $(cCity).val();
 
                     if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
-                        $('#c-city').css({ display: 'none' });
-                        $('#inputCityC').css({ border: '1px solid green' });
+                        $('.c-city').css({ display: 'none' });
+                        $(cCity).css({ border: '1px solid green' });
                     } else {
-                        $('#c-city').css({ display: 'block' });
-                        $('#inputCityC').css({ border: '1px solid red' });
+                        $('.c-city').css({ display: 'block' });
+                        $(cCity).css({ border: '1px solid red' });
                     }
                 });
 
-                $('#inputTelephoneC').on('input' ,()=> {
-                    var tel = $('#inputTelephoneC').val();
+                $(cTel).on('input' ,()=> {
+                    var tel = $(cTel).val();
 
                     if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
-                        $('#c-tel').css({ display: 'none' });
-                        $('#inputTelephoneC').css({ border: '1px solid green' });
+                        $('.c-tel').css({ display: 'none' });
+                        $(cTel).css({ border: '1px solid green' });
                     } else {
-                        $('#c-tel').css({ display: 'block' });
-                        $('#inputTelephoneC').css({ border: '1px solid red' });
+                        $('.c-tel').css({ display: 'block' });
+                        $(cTel).css({ border: '1px solid red' });
                     }
                 });
             }, false)
