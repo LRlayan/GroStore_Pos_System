@@ -978,53 +978,6 @@
             </table>
         </div>
 
-        <!--new modal-->
-<!--        <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--            <div class="modal-dialog">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h1 class="modal-title fs-5" id="exampleModalCusLabel">Add New Customer</h1>&lt;!&ndash; &ndash;&gt;-->
-<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        &lt;!&ndash;    code here  &ndash;&gt;-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-12 margin-bottom">-->
-<!--                                <label for="-inputCustomerId" class="margin-left-0 form-label">Customer Id :</label>-->
-<!--                                <input type="text" id="-inputCustomerId" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
-<!--                                <div class="invalid-feedback">-->
-<!--                                    Please choose a username.-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="invalid-feedback">-->
-<!--                                Please choose a username.-->
-<!--                            </div>-->
-<!--                            <div class="col-12 margin-bottom">-->
-<!--                                <label for="_inputCustomerName" class="margin-left-0 form-label inputFieldMargin">Customer Name :</label>-->
-<!--                                <input type="text" id="_inputCustomerName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="row">-->
-<!--                            <div class="col-12 margin-bottom">-->
-<!--                                <label for="inputCityC" class="margin-left-0 form-label ">City :</label>-->
-<!--                                <input type="text" id="inputCityC" class="margin-left-0 form-control" placeholder="select city" aria-label="City">-->
-<!--                            </div>-->
-<!--                            <div class="col-12 margin-bottom">-->
-<!--                                <label for="inputTelephoneC" class="margin-left-0 form-label inputFieldMargin">Telephone :</label>-->
-<!--                                <input type="text" id="inputTelephoneC" class="margin-left-0 form-control inputFieldMargin" placeholder="telephone" aria-label="telephone">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="modal-footer">-->
-<!--                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>-->
-<!--                        <button id="submitC" type="button" class="btn btn-primary saveChanges">Save changes</button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-
     <div class="modal fade" id="newModalCus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1038,8 +991,8 @@
                         <div class="col-md-12">
                             <label for="-inputCustomerId" class="form-label">Customer ID</label>
                             <input type="text" class="form-control" id="-inputCustomerId" required>
-                            <div class="invalid-feedback">
-                                customer ID is a required field : Pattern C001.
+                            <div id="c-id" class="invalid-feedback">
+                                customer ID is a required field : Pattern C00-001.
                             </div>
                         </div>
                         <div class="col-md-12">
