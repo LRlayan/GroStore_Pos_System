@@ -104,6 +104,10 @@ $('#updateModalCus').on('shown.bs.modal', function() {
     validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU')
 });
 
+$('#removeModal').on('shown.bs.modal', function() {
+    validation('#inputCustomerId','#inputCustomerName')
+});
+
 function validation(cId,cName,cCity,cTel){
     (() => {
          'use strict'
