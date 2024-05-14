@@ -1167,31 +1167,43 @@
                 </div>
                 <div class="modal-body">
                     <!--    code here  -->
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="itemCode" class="margin-left-0 form-label">Item Code :</label>
-                            <input type="text" id="itemCode" class="margin-left-0 form-control inputFieldMargin" placeholder="item code" aria-label="item name">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-12">
+                            <label for="itemCode" class="form-label">Item Code</label>
+                            <input type="text" class="inputCustomerId form-control" id="itemCode" required>
+                            <div class="s-code invalid-feedback">
+                                Item Code is a required field : Pattern I00-001.
+                            </div>
                         </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="itemName" class="margin-left-0 form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id="itemName" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        <div class="col-md-12">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="itemName" required>
+                            <div class="s-name invalid-feedback">
+                                Minimum 5, Max 20,Space Allowed and input only English letters.
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="inputQTY" class="margin-left-0 form-label ">QTY On Hand :</label>
-                            <input type="text" id="inputQTY" class="margin-left-0 form-control" placeholder="qty on hand" aria-label="City">
+                        <div class="col-md-12">
+                            <label for="inputQTY" class="form-label">QTY On Hand</label>
+                            <input type="text" class="form-control" id="inputQTY" required>
+                            <div class="s-qty invalid-feedback">
+                                Max 15 letters and only numbers.
+                            </div>
                         </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="unitPrice" class="margin-left-0 form-label inputFieldMargin">Unit Price :</label>
-                            <input type="text" id="unitPrice" class="margin-left-0 form-control inputFieldMargin" placeholder="unit price" aria-label="telephone">
+
+                        <div class="col-md-12">
+                            <label for="unitPrice" class="form-label">Unit Price</label>
+                            <input type="text" class="form-control" id="unitPrice" required>
+                            <div class="s-price invalid-feedback">
+                                Please Input Price and only numbers.
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button id="submitStore" type="button" class="btn btn-primary saveChanges">Save changes</button>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                            <button id="submitStore" class="btn btn-primary saveChanges" type="button">Save Chnages</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1206,32 +1218,43 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!--    code here  -->
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="itemCodeS" class="margin-left-0 form-label">Item Code :</label>
-                            <input type="text" id="itemCodeS" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-12">
+                            <label for="itemCode" class="form-label">Item Code</label>
+                            <input type="text" class="inputCustomerId form-control" id="itemCodeS" required>
+                            <div class="s-code invalid-feedback">
+                                Item Code is a required field : Pattern I00-001.
+                            </div>
                         </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="itemNames" class="margin-left-0 form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id="itemNameS" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        <div class="col-md-12">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="itemNameS" required>
+                            <div class="s-name invalid-feedback">
+                                Minimum 5, Max 20,Space Allowed and input only English letters.
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="qty" class="margin-left-0 form-label ">QTY On Hand :</label>
-                            <input type="text" id="qty" class="margin-left-0 form-control" placeholder="qty on hand" aria-label="City">
+                        <div class="col-md-12">
+                            <label for="inputQTY" class="form-label">QTY On Hand</label>
+                            <input type="text" class="form-control" id="qty" required>
+                            <div class="s-qty invalid-feedback">
+                                Max 15 letters and only numbers.
+                            </div>
                         </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="priceS" class="margin-left-0 form-label inputFieldMargin">Unit Price :</label>
-                            <input type="text" id="priceS" class="margin-left-0 form-control inputFieldMargin" placeholder="unit price" aria-label="telephone">
+
+                        <div class="col-md-12">
+                            <label for="unitPrice" class="form-label">Unit Price</label>
+                            <input type="text" class="form-control" id="priceS" required>
+                            <div class="s-price invalid-feedback">
+                                Please Input Price and only numbers.
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button  id="updateS" type="button" class="btn btn-primary saveChanges">Save changes</button>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                            <button id="updateS" class="btn btn-primary saveChanges" type="button">Update Changes</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
