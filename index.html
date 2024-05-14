@@ -1218,6 +1218,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- code-here -->
                     <form class="row g-3 needs-validation" novalidate>
                         <div class="col-md-12">
                             <label for="itemCode" class="form-label">Item Code</label>
@@ -1270,20 +1271,27 @@
                 </div>
                 <div class="modal-body">
                     <!--    code here  -->
-                    <div class="row">
-                        <div class="col-12 margin-bottom">
-                            <label for="itemCodeR" class="margin-left-0 form-label">Item Code :</label>
-                            <input type="text" id="itemCodeR" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-12">
+                            <label for="itemCode" class="form-label">Item Code</label>
+                            <input type="text" class="inputCustomerId form-control" id="itemCodeR" required>
+                            <div class="s-code invalid-feedback">
+                                Item Code is a required field : Pattern I00-001.
+                            </div>
                         </div>
-                        <div class="col-12 margin-bottom">
-                            <label for="itemNameR" class="margin-left-0 form-label inputFieldMargin">Item Name :</label>
-                            <input type="text" id="itemNameR" class="margin-left-0 form-control inputFieldMargin" placeholder="item name" aria-label="item name">
+                        <div class="col-md-12">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="itemNameR" required>
+                            <div class="s-name invalid-feedback">
+                                Minimum 5, Max 20,Space Allowed and input only English letters.
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                    <button id="deleteS" type="button" class="btn btn-primary  saveChanges">Save changes</button>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                            <button id="deleteS" class="btn btn-primary saveChanges" type="button">Remove Changes</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
