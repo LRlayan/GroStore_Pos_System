@@ -96,22 +96,23 @@ function clearForm(){
 }
 
 $('#newModal').on('shown.bs.modal', function() {
-    validation('#itemCode','#itemName','#inputQTY','#unitPrice');
+    validation('#itemCode','#itemName','#inputQTY','#unitPrice','#submitStore');
 });
 
 $('#updateModal').on('shown.bs.modal', function() {
-    validation('#itemCodeS','#itemNameS','#qty','#priceS');
+    validation('#itemCodeS','#itemNameS','#qty','#priceS','#updateS');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
-    validation('#itemCodeR','#itemNameR');
+    validation('#itemCodeR','#itemNameR','','','#deleteS');
 });
 
-function validation(sCode,sName,sQty,sPrice){
+function validation(sCode,sName,sQty,sPrice,btnId){
     (() => {
         'use strict'
 
-        $('.c-id').css({display: 'none'});
+        $('.s-code').css({display: 'none'});
+        checkEmptyInputFields(sCode,sName,sQty,sPrice,btnId);
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
@@ -142,7 +143,6 @@ function validation(sCode,sName,sQty,sPrice){
                         event.stopPropagation();
                     }
                 });
-                // emptyInputFields();
 
                 $(sName).on('input' ,()=>{
                     var name = $(sName).val().trim();
@@ -178,7 +178,34 @@ function validation(sCode,sName,sQty,sPrice){
                         $(sPrice).css({ border: '1px solid red' });
                     }
                 });
+
+                checkEmptyInputFields(sCode,sName,sQty,sPrice,btnId);
+
+                $(btnId).on('click',()=>{
+                    clearBorderColor(sCode,sName,sQty,sPrice);
+                })
             }, false)
         })
     })()
+}
+
+function checkEmptyInputFields(sCode,sName,sQTY,sPrice,btnId){
+
+    var code = $(sCode).val();
+    var name = $(sName).val();
+    var qty = $(sQTY).val();
+    var price = $(sPrice).val();
+
+    if (code !== '' && name !== '' && qty !== '' && price !== ''){
+        $(btnId).prop('disabled' , false);
+    }else {
+        $(btnId).prop('disabled' , true);
+    }
+}
+
+function clearBorderColor(code,name,qty,price){
+    $(code).css({ border: '1px solid #cfcfcf'});
+    $(name).css({ border: '1px solid #cfcfcf'});
+    $(qty).css({ border: '1px solid #cfcfcf'});
+    $(price).css({ border: '1px solid #cfcfcf'});
 }
