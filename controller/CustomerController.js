@@ -97,22 +97,23 @@ function clearForm(){
 }
 
 $('#newModalCus').on('shown.bs.modal', function() {
-    validation('#-inputCustomerId','#_inputCustomerName','#inputCityC','#inputTelephoneC')
+    validation('#-inputCustomerId','#_inputCustomerName','#inputCityC','#inputTelephoneC','#submitC')
 });
 
 $('#updateModalCus').on('shown.bs.modal', function() {
-    validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU')
+    validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU','#updateC')
 });
 
 $('#removeModal').on('shown.bs.modal', function() {
-    validation('#inputCustomerId','#inputCustomerName')
+    validation('#inputCustomerId','#inputCustomerName','','','#deleteC')
 });
 
-function validation(cId,cName,cCity,cTel){
+function validation(cId,cName,cCity,cTel,btnId){
     (() => {
          'use strict'
 
         $('.c-id').css({display: 'none'});
+        checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
@@ -143,7 +144,6 @@ function validation(cId,cName,cCity,cTel){
                         event.stopPropagation();
                     }
                 });
-                emptyInputFields();
 
                 $(cName).on('input' ,()=>{
                     var name = $(cName).val().trim();
@@ -184,16 +184,16 @@ function validation(cId,cName,cCity,cTel){
     })()
 }
 
-function emptyInputFields(){
+function checkEmptyInputFields(cId,cName,cCity,cTel,btnId){
 
-    var id = $('#-inputCustomerId').val();
-    var name = $('#_inputCustomerName').val();
-    var city = $('#inputCityC').val();
-    var tel = $('#inputTelephoneC').val();
+    var id = $(cId).val();
+    var name = $(cName).val();
+    var city = $(cCity).val();
+    var tel = $(cTel).val();
 
    if (id !== '' && name !== '' && city !== '' && tel !== ''){
-       $('#submitC').prop('disabled' , false);
+       $(btnId).prop('disabled' , false);
    }else {
-       $('#submitC').prop('disabled' , true);
+       $(btnId).prop('disabled' , true);
    }
 }
