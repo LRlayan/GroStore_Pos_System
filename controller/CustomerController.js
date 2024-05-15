@@ -179,6 +179,8 @@ function validation(cId,cName,cCity,cTel,btnId){
                         $(cTel).css({ border: '1px solid red' });
                     }
                 });
+
+                checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
             }, false)
          })
     })()
