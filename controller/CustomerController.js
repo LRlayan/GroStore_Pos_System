@@ -181,6 +181,9 @@ function validation(cId,cName,cCity,cTel,btnId){
                 });
 
                 checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+                $(btnId).on('click',()=>{
+                    clearBorderColor(cId,cName,cCity,cTel);
+                })
             }, false)
          })
     })()
@@ -198,4 +201,11 @@ function checkEmptyInputFields(cId,cName,cCity,cTel,btnId){
    }else {
        $(btnId).prop('disabled' , true);
    }
+}
+
+function clearBorderColor(id,name,city,tel){
+    $(id).css({ border: '1px solid #cfcfcf'});
+    $(name).css({ border: '1px solid #cfcfcf'});
+    $(city).css({ border: '1px solid #cfcfcf'});
+    $(tel).css({ border: '1px solid #cfcfcf'});
 }
