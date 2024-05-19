@@ -4,7 +4,7 @@ let clickOrderTableRow = null
 var discount = 5;
 
 $('#updateOrderModal').on('shown.bs.modal', function() {
-    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode');
+    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
@@ -188,7 +188,7 @@ $(document).on('keydown', function(event) {
     }
 });
 
-function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode){
+function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty){
     (() => {
         'use strict'
 
@@ -298,6 +298,19 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     } else {
                         $('.s-qtyD').css({ display: 'block' });
                         $(sQTY).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(orderQty).on('input' ,()=> {
+                    var qty = $(orderQty).val();
+                    var qtyOnHand = $(sQTY).val();
+
+                    if (qty.length <= 15 && /^[0-9]+$/.test(qty) && qtyOnHand >= qty) {
+                        $('.s-qtyOrderD').css({ display: 'none' });
+                        $(orderQty).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-qtyOrderD').css({ display: 'block' });
+                        $(orderQty).css({ border: '1px solid red' });
                     }
                 });
 

@@ -8,7 +8,7 @@ let discount = 0;
 var generateOrderId = 1;
 
     $('#placeOrder-tab').on('click',()=>{
-        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder')
+        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP')
     })
 
     $('#orderId').val('O0-' + generateOrderId)
@@ -178,7 +178,7 @@ var generateOrderId = 1;
         $('#itemPriceListMainDiv').empty();
     }
 
-function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount){
+function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,orderQty){
     (() => {
         'use strict'
 
@@ -288,6 +288,19 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount){
                     } else {
                         $('.s-qty').css({ display: 'block' });
                         $(sQTY).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(orderQty).on('input' ,()=> {
+                    var qty = $(orderQty).val();
+                    var qtyOnHand = $(sQTY).val();
+
+                    if (qty.length <= 15 && /^[0-9]+$/.test(qty) && qtyOnHand >= qty) {
+                        $('.s-qtyOrder').css({ display: 'none' });
+                        $(orderQty).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-qtyOrder').css({ display: 'block' });
+                        $(orderQty).css({ border: '1px solid red' });
                     }
                 });
 
