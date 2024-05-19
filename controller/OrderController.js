@@ -292,16 +292,20 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                 });
 
                 $(orderQty).on('input' ,()=> {
-                    var qty = $(orderQty).val();
-                    var qtyOnHand = $(sQTY).val();
+                        let qty = $(orderQty).val();
+                        let qtyOnHand = $(sQTY).val();
 
-                    if (qty.length <= 15 && /^[0-9]+$/.test(qty) && qtyOnHand >= qty) {
-                        $('.s-qtyOrder').css({ display: 'none' });
-                        $(orderQty).css({ border: '1px solid green' });
-                    } else {
-                        $('.s-qtyOrder').css({ display: 'block' });
-                        $(orderQty).css({ border: '1px solid red' });
-                    }
+                        if (qty.length <= 15 && /^[0-9]+$/.test(qty) && parseInt(qtyOnHand) >= parseInt(qty)) {
+                            console.log('green'+qty)
+                            console.log('green'+qtyOnHand)
+                            $('.s-qtyOrder').css({ display: 'none' });
+                            $(orderQty).css({ border: '1px solid green' });
+                        } else {
+                            console.log('red'+qty)
+                            console.log('red'+qtyOnHand)
+                            $('.s-qtyOrder').css({ display: 'block' });
+                            $(orderQty).css({ border: '1px solid red' });
+                        }
                 });
 
                 $(sPrice).on('input' ,()=> {

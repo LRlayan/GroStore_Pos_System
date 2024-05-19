@@ -4,7 +4,7 @@ let clickOrderTableRow = null
 var discount = 5;
 
 $('#updateOrderModal').on('shown.bs.modal', function() {
-    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','');
+    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
@@ -305,7 +305,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     var qty = $(orderQty).val();
                     var qtyOnHand = $(sQTY).val();
 
-                    if (qty.length <= 15 && /^[0-9]+$/.test(qty) && qtyOnHand >= qty) {
+                    if (qty.length <= 15 && /^[0-9]+$/.test(qty) && parseInt(qtyOnHand) >= parseInt(qty)) {
                         $('.s-qtyOrderD').css({ display: 'none' });
                         $(orderQty).css({ border: '1px solid green' });
                     } else {
