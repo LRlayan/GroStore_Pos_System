@@ -170,3 +170,9 @@ function clearForm(){
     $('#itemNameRe').val('')
     $('#inputPriceR').val('')
 }
+
+$(document).on('keydown', function(event) {
+    if (event.key === "Tab" || event.keyCode === 9) {
+        event.preventDefault();
+    }
+});
