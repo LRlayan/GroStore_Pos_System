@@ -105,6 +105,7 @@ var generateOrderId = 1;
         }
 
         let orderId = $('#orderId').val();
+        let date = $('#date').val();
         let cusName = $('#cusName').val();
         let cusCity = $('#cusCity').val();
         let cusTel = $('#cusTel').val();
@@ -113,7 +114,7 @@ var generateOrderId = 1;
         let totalPrice = $('#balance').text();
         let discounts = $('#discount').text();
 
-        let orderDetail = new Order(orderId,cusName,cusCity,cusTel,code,inputName,qty,discounts,totalPrice);
+        let orderDetail = new Order(orderId,date,cusName,cusCity,cusTel,code,inputName,qty,discounts,totalPrice);
         orders.push(orderDetail);
     });
 
@@ -140,6 +141,7 @@ var generateOrderId = 1;
         orders.map(function (orderDetails){
             let record = `<tr>
                     <th class="o-orderId orderTableBody" scope="row">${orderDetails.orderId}</th>
+                    <th class="o-orderId orderTableBody">${orderDetails.date}</th>
                     <td class="o-cusName orderTableBody">${orderDetails.cusName}</td>
                     <td class="o-city orderTableBody">${orderDetails.cusCity}</td>
                     <td class="o-tel orderTableBody">${orderDetails.cusTel}</td>

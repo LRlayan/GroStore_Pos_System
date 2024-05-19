@@ -1,6 +1,7 @@
 export default class Order{
-    constructor(orderId,cusName,city,tel,itemCode,itemName,orderQTY,discount,price) {
+    constructor(orderId,date,cusName,city,tel,itemCode,itemName,orderQTY,discount,price) {
         this._orderId = orderId;
+        this._date = date;
         this._cusName = cusName;
         this._city = city;
         this._tel = tel;
@@ -16,6 +17,14 @@ export default class Order{
     }
     set orderId(value){
         return this._orderId = value;
+    }
+
+    get date(){
+        return this._date;
+    }
+
+    set date(value){
+        return this._date = value;
     }
 
     get cusName(){
