@@ -1,4 +1,4 @@
-import {orders,store} from "../db/DB.js"
+import {orders,store,customer} from "../db/DB.js"
 
 let clickOrderTableRow = null
 var discount = 5;
@@ -37,6 +37,14 @@ $('#placeOrder-tab').on('click' , () => {
     $('#customer-sec').css({display:'none'})
     $('#dash-sec').css({display:'none'})
     $('#footer').css({display:'none'})
+
+    // var selectedValue = $(this).val();
+
+    customer.map(function (cus){
+            $('#cusName').val(cus.name);
+            $('#cusCity').val(cus.city);
+            $('#cusTel').val(cus.tel);
+    })
 })
 
 $('#viewOrderDetailTable').on('click', 'tr', function () {

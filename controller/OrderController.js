@@ -3,11 +3,13 @@ import {orders,store,customer} from "../db/DB.js"
 
 let unitPrice = 0;
 var subTotal = 0;
-var discount = 5;
+let discount = 0;
 
 var generateOrderId = 1;
 
-    $('#orderId').val('O0' + generateOrderId)
+    validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder')
+
+    $('#orderId').val('O0-' + generateOrderId)
 
     $('#addToCartBtn').prop('disabled' , true);
     $('#purchaseBtn').prop('disabled', true);
@@ -67,11 +69,13 @@ var generateOrderId = 1;
         $('#inputPriceP').val(total);
     })
 
+
     $('#addToCartBtn').click(function() {
 
         var inputName = $('#itemNameP').val();
         var inputPrice = $('#inputPriceP').val();
         var qty = $('#orderQTYP').val();
+        discount = $('#discountOrder').val();
 
         // Create a new paragraph element with item details
         var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty);
@@ -115,7 +119,7 @@ var generateOrderId = 1;
 
     $('#purchaseBtn').on('click',()=>{
         generateOrderId++;
-        $('#orderId').val('O0' + generateOrderId)
+        $('#orderId').val('O0-' + generateOrderId)
          loadTable()
          clear()
 
@@ -150,7 +154,6 @@ var generateOrderId = 1;
     }
 
     function clear(){
-        // $('#orderId').val('');
         $('#cusName').val('');
         $('#cusCity').val('');
         $('#cusTel').val('');
@@ -170,3 +173,149 @@ var generateOrderId = 1;
         $('#itemNameLabel').empty();
         $('#itemPriceListMainDiv').empty();
     }
+
+function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount){
+    (() => {
+        'use strict'
+
+        $('.c-id').css({display: 'none'});
+        // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('click', event => {
+
+                $(orderId).on('input' , ()=>{
+                    var id = $(orderId).val();
+
+                    if (id.startsWith('O0-')) {
+                        const numericPart = id.substring(3);
+
+                        if (!(/^\d+$/.test(numericPart))) {
+                            $('.o-id').text('Order ID must be minimum 1 digit value followed by O0- format.');
+                            $('.o-id').css({ display: 'block' });
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            $('.o-id').css({ display: 'none' });
+                            $(orderId).css({border:'1px solid green'});
+                        }
+                    } else {
+                        $('.o-id').css({ display: 'block' });
+                        $(orderId).css({border:'1px solid red'});
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                });
+
+                $('#date').change(function (){
+                    var date = $('#date').val()
+                    var currentDate = new Date();
+
+                    var year = currentDate.getFullYear();
+                    var month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+                    var day = ("0" + currentDate.getDate()).slice(-2);
+
+                    if (date === year+"-"+ month + "-" + day){
+                        $('.o-date').css({ display: 'none' });
+                        $(today).css({ border: '1px solid green' });
+                    }else {
+                        $('.o-date').css({ display: 'block' });
+                        $(today).css({ border: '1px solid red' });
+                    }
+                })
+
+                $(cName).on('input' ,()=>{
+                    var name = $(cName).val().trim();
+                    if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
+                        $('.c-name').css({ display: 'none' });
+                        $(cName).css({ border: '1px solid green' });
+                    } else {
+                        $('.c-name').css({ display: 'block' });
+                        $(cName).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(cCity).on('input' ,()=> {
+                    var city = $(cCity).val();
+
+                    if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
+                        $('.c-city').css({ display: 'none' });
+                        $(cCity).css({ border: '1px solid green' });
+                    } else {
+                        $('.c-city').css({ display: 'block' });
+                        $(cCity).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(cTel).on('input' ,()=> {
+                    var tel = $(cTel).val();
+
+                    if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
+                        $('.c-tel').css({ display: 'none' });
+                        $(cTel).css({ border: '1px solid green' });
+                    } else {
+                        $('.c-tel').css({ display: 'block' });
+                        $(cTel).css({ border: '1px solid red' });
+                    }
+                });
+
+
+                $(sName).on('input' ,()=>{
+                    var name = $(sName).val().trim();
+                    if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
+                        $('.s-name').css({ display: 'none' });
+                        $(sName).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-name').css({ display: 'block' });
+                        $(sName).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(sQTY).on('input' ,()=> {
+                    var qty = $(sQTY).val();
+
+                    if (qty.length <= 15 && /^[0-9]+$/.test(qty)) {
+                        $('.s-qty').css({ display: 'none' });
+                        $(sQTY).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-qty').css({ display: 'block' });
+                        $(sQTY).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(sPrice).on('input' ,()=> {
+                    var price = $(sPrice).val();
+
+                    if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
+                        $('.s-price').css({ display: 'none' });
+                        $(sPrice).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-price').css({ display: 'block' });
+                        $(sPrice).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(discount).on('input' ,()=> {
+                    var price = $(discount).val();
+
+                    if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
+                        $('.s-discount').css({ display: 'none' });
+                        $(discount).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-discount').css({ display: 'block' });
+                        $(discount).css({ border: '1px solid red' });
+                    }
+                });
+
+                // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+                // $(btnId).on('click',()=>{
+                //     clearBorderColor(cId,cName,cCity,cTel);
+                // })
+            }, false)
+        })
+    })()
+}
