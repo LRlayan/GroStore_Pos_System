@@ -9,6 +9,14 @@ var generateOrderId = 1;
 
     validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder')
 
+$('#updateOrderModal').on('shown.bs.modal', function() {
+    validation('#inputOrderId','#dateU','#','#','#');
+});
+
+$('#removeModalStore').on('shown.bs.modal', function() {
+    validation('#itemCodeR','#itemNameR','','','#deleteS');
+});
+
     $('#orderId').val('O0-' + generateOrderId)
 
     $('#addToCartBtn').prop('disabled' , true);
@@ -213,8 +221,8 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount){
                     }
                 });
 
-                $('#date').change(function (){
-                    var date = $('#date').val()
+                $(today).change(function (){
+                    var date = $(today).val()
                     var currentDate = new Date();
 
                     var year = currentDate.getFullYear();
