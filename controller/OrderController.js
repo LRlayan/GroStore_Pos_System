@@ -7,15 +7,9 @@ let discount = 0;
 
 var generateOrderId = 1;
 
-    validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder')
-
-$('#updateOrderModal').on('shown.bs.modal', function() {
-    validation('#inputOrderId','#dateU','#','#','#');
-});
-
-$('#removeModalStore').on('shown.bs.modal', function() {
-    validation('#itemCodeR','#itemNameR','','','#deleteS');
-});
+    $('#placeOrder-tab').on('click',()=>{
+        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder')
+    })
 
     $('#orderId').val('O0-' + generateOrderId)
 
