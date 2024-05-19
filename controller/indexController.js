@@ -188,7 +188,7 @@ $(document).on('keydown', function(event) {
     }
 });
 
-function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty){
+function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty,itemCode){
     (() => {
         'use strict'
 
@@ -277,6 +277,28 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     }
                 });
 
+                $(sCode).on('input',()=>{
+                    var code = $(sCode).val();
+
+                    if (code.startsWith('I00-')) {
+                        const numericPart = code.substring(6);
+
+                        if (!(/^\d+$/.test(numericPart))) {
+                            $('.s-codeD').text('Item Code must be minimum 3 digit value followed by I00- format.');
+                            $('.s-codeD').css({ display: 'block' });
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            $('.s-codeD').css({ display: 'none' });
+                            $(sCode).css({border:'1px solid green'});
+                        }
+                    } else {
+                        $('.s-codeD').css({ display: 'block' });
+                        $(sCode).css({border:'1px solid red'});
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                })
 
                 $(sName).on('input' ,()=>{
                     var name = $(sName).val().trim();
