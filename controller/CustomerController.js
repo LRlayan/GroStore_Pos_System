@@ -171,7 +171,7 @@ function validation(cId,cName,cCity,cTel,btnId){
                 $(cTel).on('input' ,()=> {
                     var tel = $(cTel).val();
 
-                    if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
+                    if (tel.length === 10 && /^[0-9]+$/.test(tel)) {
                         $('.c-tel').css({ display: 'none' });
                         $(cTel).css({ border: '1px solid green' });
                     } else {
