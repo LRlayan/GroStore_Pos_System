@@ -98,6 +98,7 @@ $('#orderQTY').change(function (){
 
 $('#updateOrderDetail').on('click' , ()=>{
     let orderId = $('#inputOrderId').val()
+    let date = $('#date').val()
     let cusName = $('#customerNameU').val()
     let cusCity = $('#inputCityStore').val()
     let cusTel = $('#inputTelephone').val()
@@ -109,6 +110,7 @@ $('#updateOrderDetail').on('click' , ()=>{
 
     let orderDetail = orders[clickOrderTableRow]
     orderDetail.orderId = orderId;
+    orderDetail.date = date;
     orderDetail.cusName = cusName;
     orderDetail.cusCity = cusCity;
     orderDetail.cusTel = cusTel;
