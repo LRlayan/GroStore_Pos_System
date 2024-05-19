@@ -3,6 +3,15 @@ import {orders,store,customer} from "../db/DB.js"
 let clickOrderTableRow = null
 var discount = 5;
 
+$('#updateOrderModal').on('shown.bs.modal', function() {
+    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode');
+});
+
+$('#removeModalStore').on('shown.bs.modal', function() {
+    validationModel('#itemCodeR','#itemNameR','','','#deleteS');
+});
+
+
 $('#customer-sec').css({display:'none'})
 
 $('#dashboard-tab').on('click' , () =>{
@@ -98,7 +107,7 @@ $('#orderQTY').change(function (){
 
 $('#updateOrderDetail').on('click' , ()=>{
     let orderId = $('#inputOrderId').val()
-    let date = $('#date').val()
+    let date = $('#dateU').val()
     let cusName = $('#customerNameU').val()
     let cusCity = $('#inputCityStore').val()
     let cusTel = $('#inputTelephone').val()
@@ -178,3 +187,149 @@ $(document).on('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode){
+    (() => {
+        'use strict'
+
+        $('.c-id').css({display: 'none'});
+        // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('click', event => {
+
+                $(orderId).on('input' , ()=>{
+                    var id = $(orderId).val();
+
+                    if (id.startsWith('O0-')) {
+                        const numericPart = id.substring(3);
+
+                        if (!(/^\d+$/.test(numericPart))) {
+                            $('.o-idD').text('Order ID must be minimum 1 digit value followed by O0- format.');
+                            $('.o-idD').css({ display: 'block' });
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            $('.o-idD').css({ display: 'none' });
+                            $(orderId).css({border:'1px solid green'});
+                        }
+                    } else {
+                        $('.o-idD').css({ display: 'block' });
+                        $(orderId).css({border:'1px solid red'});
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                });
+
+                $(today).change(function (){
+                    var date = $(today).val()
+                    var currentDate = new Date();
+
+                    var year = currentDate.getFullYear();
+                    var month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+                    var day = ("0" + currentDate.getDate()).slice(-2);
+
+                    if (date === year+"-"+ month + "-" + day){
+                        $('.o-dateD').css({ display: 'none' });
+                        $(today).css({ border: '1px solid green' });
+                    }else {
+                        $('.o-dateD').css({ display: 'block' });
+                        $(today).css({ border: '1px solid red' });
+                    }
+                })
+
+                $(cName).on('input' ,()=>{
+                    var name = $(cName).val().trim();
+                    if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
+                        $('.c-nameD').css({ display: 'none' });
+                        $(cName).css({ border: '1px solid green' });
+                    } else {
+                        $('.c-nameD').css({ display: 'block' });
+                        $(cName).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(cCity).on('input' ,()=> {
+                    var city = $(cCity).val();
+
+                    if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
+                        $('.c-cityD').css({ display: 'none' });
+                        $(cCity).css({ border: '1px solid green' });
+                    } else {
+                        $('.c-cityD').css({ display: 'block' });
+                        $(cCity).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(cTel).on('input' ,()=> {
+                    var tel = $(cTel).val();
+
+                    if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
+                        $('.c-telD').css({ display: 'none' });
+                        $(cTel).css({ border: '1px solid green' });
+                    } else {
+                        $('.c-telD').css({ display: 'block' });
+                        $(cTel).css({ border: '1px solid red' });
+                    }
+                });
+
+
+                $(sName).on('input' ,()=>{
+                    var name = $(sName).val().trim();
+                    if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
+                        $('.s-nameD').css({ display: 'none' });
+                        $(sName).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-nameD').css({ display: 'block' });
+                        $(sName).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(sQTY).on('input' ,()=> {
+                    var qty = $(sQTY).val();
+
+                    if (qty.length <= 15 && /^[0-9]+$/.test(qty)) {
+                        $('.s-qtyD').css({ display: 'none' });
+                        $(sQTY).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-qtyD').css({ display: 'block' });
+                        $(sQTY).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(sPrice).on('input' ,()=> {
+                    var price = $(sPrice).val();
+
+                    if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
+                        $('.s-priceD').css({ display: 'none' });
+                        $(sPrice).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-priceD').css({ display: 'block' });
+                        $(sPrice).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(discount).on('input' ,()=> {
+                    var price = $(discount).val();
+
+                    if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
+                        $('.s-discountD').css({ display: 'none' });
+                        $(discount).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-discountD').css({ display: 'block' });
+                        $(discount).css({ border: '1px solid red' });
+                    }
+                });
+
+                // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+                // $(btnId).on('click',()=>{
+                //     clearBorderColor(cId,cName,cCity,cTel);
+                // })
+            }, false)
+        })
+    })()
+}
