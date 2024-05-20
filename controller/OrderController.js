@@ -135,8 +135,6 @@ var generateOrderId = 1;
         cancel()
         subTotal = 0;
         discount = 0;
-        console.log(subTotal)
-        console.log(discount)
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
     })
@@ -146,7 +144,7 @@ var generateOrderId = 1;
         orders.map(function (orderDetails){
             let record = `<tr>
                     <th class="o-orderId orderTableBody" scope="row">${orderDetails.orderId}</th>
-                    <th class="o-orderId orderTableBody">${orderDetails.date}</th>
+                    <th class="o-date orderTableBody">${orderDetails.date}</th>
                     <td class="o-cusName orderTableBody">${orderDetails.cusName}</td>
                     <td class="o-city orderTableBody">${orderDetails.cusCity}</td>
                     <td class="o-tel orderTableBody">${orderDetails.cusTel}</td>

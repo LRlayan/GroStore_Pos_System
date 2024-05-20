@@ -59,6 +59,7 @@ $('#placeOrder-tab').on('click' , () => {
 $('#viewOrderDetailTable').on('click', 'tr', function () {
 
     let orderId = $(this).find(".o-orderId").text()
+    let date = $(this).find(".o-date").text()
     let cusName = $(this).find(".o-cusName").text()
     let cusCity = $(this).find(".o-city").text()
     let cusTel = $(this).find(".o-tel").text()
@@ -71,6 +72,7 @@ $('#viewOrderDetailTable').on('click', 'tr', function () {
     clickOrderTableRow = $(this).index();
 
     $('#inputOrderId').val(orderId)
+    $('#dateU').val(date)
     $('#customerNameU').val(cusName)
     $('#inputCityStore').val(cusCity)
     $('#inputTelephone').val(cusTel)
@@ -143,6 +145,7 @@ function loadTable() {
     orders.map(function (orderDetails){
         let record = `<tr>
                     <th class="o-orderId orderTableBody" scope="row">${orderDetails.orderId}</th>
+                    <th class="o-date orderTableBody" scope="row">${orderDetails.date}</th>
                     <td class="o-cusName orderTableBody">${orderDetails.cusName}</td>
                     <td class="o-city orderTableBody">${orderDetails.cusCity}</td>
                     <td class="o-tel orderTableBody">${orderDetails.cusTel}</td>
