@@ -133,7 +133,10 @@ var generateOrderId = 1;
 
     $('#cancelBtn').on('click',()=>{
         cancel()
-
+        subTotal = 0;
+        discount = 0;
+        console.log(subTotal)
+        console.log(discount)
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
     })
@@ -174,6 +177,9 @@ var generateOrderId = 1;
     }
 
     function cancel(){
+        $('#subTotal').text('0.00');
+        $('#discount').text('0.00');
+        $('#balance').text('0.00');
         $('#itemNameLabel').empty();
         $('#itemPriceListMainDiv').empty();
     }
