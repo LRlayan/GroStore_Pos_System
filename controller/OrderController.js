@@ -22,7 +22,7 @@ var generateOrderId = 1;
     $('#cancelBtn').prop('disabled', true);
 
     $('#orderQTYP').change(function() {
-        let orderId = $('#orderId').val()
+
         let cusId = $('#selectCustomerId').val()
         let cusName = $('#cusName').val()
         let cusCity = $('#cusCity').val()
