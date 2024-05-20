@@ -50,6 +50,7 @@ $('#placeOrder-tab').on('click' , () => {
     // var selectedValue = $(this).val();
 
     customer.map(function (cus){
+             $('#selectCustomerId').val(cus.id)
             $('#cusName').val(cus.name);
             $('#cusCity').val(cus.city);
             $('#cusTel').val(cus.tel);
