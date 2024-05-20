@@ -94,7 +94,7 @@ var generateOrderId = 1;
 
         var dis = 0;
 
-        if (subTotal >= 5000){
+        if (subTotal >= 8000){
             dis = subTotal*discount/100;
             $('#discount').text(dis);
         }
