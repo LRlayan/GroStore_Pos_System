@@ -40,6 +40,7 @@ $('#store-tab').on('click' , () => {
 })
 
 $('#placeOrder-sec').css({display:'none'})
+
 $('#placeOrder-tab').on('click' , () => {
     $('#placeOrder-sec').css({display:'block'})
     $('#store-sec').css({display:'none'})
@@ -54,6 +55,13 @@ $('#placeOrder-tab').on('click' , () => {
             $('#cusName').val(cus.name);
             $('#cusCity').val(cus.city);
             $('#cusTel').val(cus.tel);
+    })
+
+    store.map(function (store){
+        $('#selectItemCode').val(store.itemCode)
+        $('#itemNameP').val(store.itemName);
+        $('#qtyOnHandP').val(store.QTYOnHand);
+        $('#inputPriceP').val(store.unitPrice);
     })
 })
 

@@ -9,6 +9,10 @@ var generateOrderId = 1;
 
     $('#placeOrder-tab').on('click',()=>{
         validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP')
+        store.map(function (store){
+            unitPrice = store.unitPrice;
+            console.log(unitPrice);
+        })
     })
 
     $('#orderId').val('O0-' + generateOrderId)
