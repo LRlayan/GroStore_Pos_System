@@ -209,3 +209,17 @@ function clearBorderColor(code,name,qty,price){
     $(qty).css({ border: '1px solid #cfcfcf'});
     $(price).css({ border: '1px solid #cfcfcf'});
 }
+
+$('#purchaseBtn').on('click',function (){
+
+    let orderQTY = $('#orderQTYP').val();
+    let code = $('#selectItemCode').val();
+
+    store.forEach((item) => {
+        if (item.itemCode === code) {
+            item.QTYOnHand -= orderQTY;
+        }
+    });
+
+    loadTable();
+})
