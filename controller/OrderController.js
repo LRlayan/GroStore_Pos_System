@@ -1,5 +1,6 @@
 import Order from "../model/Order.js";
 import {orders,store,customer} from "../db/DB.js"
+// import { updateStoreQuantities } from "./StoreController";
 
 let unitPrice = 0;
 var subTotal = 0;
@@ -11,7 +12,6 @@ var generateOrderId = 1;
         validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP')
         store.map(function (store){
             unitPrice = store.unitPrice;
-            console.log(unitPrice);
         })
     })
 
@@ -127,7 +127,8 @@ var generateOrderId = 1;
     $('#purchaseBtn').on('click',()=>{
         generateOrderId++;
         $('#orderId').val('O0-' + generateOrderId)
-         loadTable()
+
+        loadTable()
          clear()
 
         $('#purchaseBtn').prop('disabled', true);
@@ -304,13 +305,9 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                         let qtyOnHand = $(sQTY).val();
 
                         if (qty.length <= 15 && /^[0-9]+$/.test(qty) && parseInt(qtyOnHand) >= parseInt(qty)) {
-                            console.log('green'+qty)
-                            console.log('green'+qtyOnHand)
                             $('.s-qtyOrder').css({ display: 'none' });
                             $(orderQty).css({ border: '1px solid green' });
                         } else {
-                            console.log('red'+qty)
-                            console.log('red'+qtyOnHand)
                             $('.s-qtyOrder').css({ display: 'block' });
                             $(orderQty).css({ border: '1px solid red' });
                         }
