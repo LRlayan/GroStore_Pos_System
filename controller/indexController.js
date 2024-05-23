@@ -47,22 +47,8 @@ $('#placeOrder-tab').on('click' , () => {
     $('#customer-sec').css({display:'none'})
     $('#dash-sec').css({display:'none'})
     $('#footer').css({display:'none'})
-
-    // var selectedValue = $(this).val();
-
-    customer.map(function (cus){
-             $('#selectCustomerId').val(cus.id)
-            $('#cusName').val(cus.name);
-            $('#cusCity').val(cus.city);
-            $('#cusTel').val(cus.tel);
-    })
-
-    store.map(function (store){
-        $('#selectItemCode').val(store.itemCode)
-        $('#itemNameP').val(store.itemName);
-        $('#qtyOnHandP').val(store.QTYOnHand);
-        $('#inputPriceP').val(store.unitPrice);
-    })
+    $('#selectCustomerId').trigger('change');
+    $('#selectItemCode').trigger('change');
 })
 
 $('#viewOrderDetailTable').on('click', 'tr', function () {

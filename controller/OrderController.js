@@ -40,6 +40,7 @@ var generateOrderId = 1;
         }
     })
 
+$(document).ready(function() {
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
         var selectedValue = $(this).val();
@@ -67,6 +68,7 @@ var generateOrderId = 1;
             }
         })
     });
+});
 
     $('#orderQTYP').change(function (){
         let selectedValue = $(this).val();
