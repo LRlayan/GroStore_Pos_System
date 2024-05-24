@@ -193,9 +193,6 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
     (() => {
         'use strict'
 
-        $('.c-id').css({display: 'none'});
-        // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
-
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
