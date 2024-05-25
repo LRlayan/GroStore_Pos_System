@@ -112,8 +112,13 @@ function validation(cId,cName,cCity,cTel,btnId){
     (() => {
          'use strict'
 
+        var checkId = false;
+        var checkName = false;
+        var checkCity = false;
+        var checkTel = false;
+
         $('.c-id').css({display: 'none'});
-        checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+        // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
@@ -131,18 +136,23 @@ function validation(cId,cName,cCity,cTel,btnId){
                         if (!(/^\d+$/.test(numericPart))) {
                             $('.c-id').text('Customer ID must be minimum 3 digit value followed by C00- format.');
                             $('.c-id').css({ display: 'block' });
+                            $(cId).css({border:'1px solid red'});
                             event.preventDefault();
                             event.stopPropagation();
+                            checkId = false;
                         } else {
                             $('.c-id').css({ display: 'none' });
                             $(cId).css({border:'1px solid green'});
+                            checkId = true;
                         }
                     } else {
                         $('.c-id').css({ display: 'block' });
                         $(cId).css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
+                        checkId = false;
                     }
+                    checkEmptyInputFields(checkId,checkName,checkCity,checkTel,btnId);
                 });
 
                 $(cName).on('input' ,()=>{
@@ -150,10 +160,13 @@ function validation(cId,cName,cCity,cTel,btnId){
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
                         $('.c-name').css({ display: 'none' });
                         $(cName).css({ border: '1px solid green' });
+                        checkName = true;
                     } else {
                         $('.c-name').css({ display: 'block' });
                         $(cName).css({ border: '1px solid red' });
+                        checkName = false;
                     }
+                    checkEmptyInputFields(checkId,checkName,checkCity,checkTel,btnId);
                 });
 
                 $(cCity).on('input' ,()=> {
@@ -162,10 +175,13 @@ function validation(cId,cName,cCity,cTel,btnId){
                     if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
                         $('.c-city').css({ display: 'none' });
                         $(cCity).css({ border: '1px solid green' });
+                        checkCity = true;
                     } else {
                         $('.c-city').css({ display: 'block' });
                         $(cCity).css({ border: '1px solid red' });
+                        checkCity = false;
                     }
+                    checkEmptyInputFields(checkId,checkName,checkCity,checkTel,btnId);
                 });
 
                 $(cTel).on('input' ,()=> {
@@ -174,13 +190,15 @@ function validation(cId,cName,cCity,cTel,btnId){
                     if (tel.length === 10 && /^[0-9]+$/.test(tel)) {
                         $('.c-tel').css({ display: 'none' });
                         $(cTel).css({ border: '1px solid green' });
+                        checkTel = true;
                     } else {
                         $('.c-tel').css({ display: 'block' });
                         $(cTel).css({ border: '1px solid red' });
+                        checkTel = false;
                     }
+                    checkEmptyInputFields(checkId,checkName,checkCity,checkTel,btnId);
                 });
 
-                checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
                 $(btnId).on('click',()=>{
                     clearBorderColor(cId,cName,cCity,cTel);
                 })
@@ -191,16 +209,11 @@ function validation(cId,cName,cCity,cTel,btnId){
 
 function checkEmptyInputFields(cId,cName,cCity,cTel,btnId){
 
-    var id = $(cId).val();
-    var name = $(cName).val();
-    var city = $(cCity).val();
-    var tel = $(cTel).val();
-
-   if (id !== '' && name !== '' && city !== '' && tel !== ''){
-       $(btnId).prop('disabled' , false);
-   }else {
-       $(btnId).prop('disabled' , true);
-   }
+    if (cId && cName && cCity && cTel){
+        $(btnId).prop('disabled' , false);
+    }else {
+        $(btnId).prop('disabled' , true);
+    }
 }
 
 function clearBorderColor(id,name,city,tel){
