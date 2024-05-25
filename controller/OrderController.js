@@ -6,10 +6,29 @@ let unitPrice = 0;
 var subTotal = 0;
 let discount = 0;
 
+var checkOrderId = false;
+var checkDate = false;
+var checkName = false;
+var checkCity = false;
+var checkTel = false;
+var checkSName = false;
+var checkSQTY = false;
+var checkSOrderQTY = false;
+var checkSPrice = false;
+var checkSDiscount = false;
+
 var generateOrderId = 1;
 
     $('#placeOrder-tab').on('click',()=>{
-        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP')
+        checkOrderId = true;
+        checkName = true;
+        checkCity = true;
+        checkTel = true;
+        checkSName = true;
+        checkSQTY = true;
+        checkSPrice = true;
+
+        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP','#addToCartBtn')
         store.map(function (store){
             unitPrice = store.unitPrice;
         })
@@ -17,27 +36,26 @@ var generateOrderId = 1;
 
     $('#orderId').val('O0-' + generateOrderId)
 
-    $('#addToCartBtn').prop('disabled' , true);
     $('#purchaseBtn').prop('disabled', true);
     $('#cancelBtn').prop('disabled', true);
 
     $('#orderQTYP').change(function() {
 
-        let cusId = $('#selectCustomerId').val()
-        let cusName = $('#cusName').val()
-        let cusCity = $('#cusCity').val()
-        let cusTel = $('#cusTel').val()
-        let code = $('#selectItemCode').val()
-        let iName = $('#itemNameP').val()
-        let qtyOnHand = $('#qtyOnHandP').val()
-        let qty = $('#orderQTYP').val()
-        let price = $('#inputPriceP').val()
-
-        if (cusId !== '' && cusName !== '' && cusCity !== '' && cusTel !== '' && code !== '' && iName !== '' && qtyOnHand !== '' && qty !== '' && price !== '') {
-            $('#addToCartBtn').prop('disabled', false);
-        }else {
-            $('#addToCartBtn').prop('disabled', true);
-        }
+        // let cusId = $('#selectCustomerId').val()
+        // let cusName = $('#cusName').val()
+        // let cusCity = $('#cusCity').val()
+        // let cusTel = $('#cusTel').val()
+        // let code = $('#selectItemCode').val()
+        // let iName = $('#itemNameP').val()
+        // let qtyOnHand = $('#qtyOnHandP').val()
+        // let qty = $('#orderQTYP').val()
+        // let price = $('#inputPriceP').val()
+        //
+        // if (cusId !== '' && cusName !== '' && cusCity !== '' && cusTel !== '' && code !== '' && iName !== '' && qtyOnHand !== '' && qty !== '' && price !== '') {
+        //     $('#addToCartBtn').prop('disabled', false);
+        // }else {
+        //     $('#addToCartBtn').prop('disabled', true);
+        // }
     })
 
 $(document).ready(function() {
@@ -189,9 +207,11 @@ $(document).ready(function() {
         $('#itemPriceListMainDiv').empty();
     }
 
-function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,orderQty){
+function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,orderQty,btnId){
     (() => {
         'use strict'
+
+        $('#addToCartBtn').prop('disabled' , true);
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
@@ -211,16 +231,20 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                             $('.o-id').css({ display: 'block' });
                             event.preventDefault();
                             event.stopPropagation();
+                            checkOrderId = false;
                         } else {
                             $('.o-id').css({ display: 'none' });
                             $(orderId).css({border:'1px solid green'});
+                            checkOrderId = true;
                         }
                     } else {
                         $('.o-id').css({ display: 'block' });
                         $(orderId).css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
+                        checkOrderId = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(today).change(function (){
@@ -234,10 +258,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (date === year+"-"+ month + "-" + day){
                         $('.o-date').css({ display: 'none' });
                         $(today).css({ border: '1px solid green' });
+                        checkDate = true;
                     }else {
                         $('.o-date').css({ display: 'block' });
                         $(today).css({ border: '1px solid red' });
+                        checkDate = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 })
 
                 $(cName).on('input' ,()=>{
@@ -245,10 +272,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
                         $('.c-name').css({ display: 'none' });
                         $(cName).css({ border: '1px solid green' });
+                        checkName = true;
                     } else {
                         $('.c-name').css({ display: 'block' });
                         $(cName).css({ border: '1px solid red' });
+                        checkName = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(cCity).on('input' ,()=> {
@@ -257,10 +287,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
                         $('.c-city').css({ display: 'none' });
                         $(cCity).css({ border: '1px solid green' });
+                        checkCity = true;
                     } else {
                         $('.c-city').css({ display: 'block' });
                         $(cCity).css({ border: '1px solid red' });
+                        checkCity = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(cTel).on('input' ,()=> {
@@ -269,10 +302,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
                         $('.c-tel').css({ display: 'none' });
                         $(cTel).css({ border: '1px solid green' });
+                        checkTel = true;
                     } else {
                         $('.c-tel').css({ display: 'block' });
                         $(cTel).css({ border: '1px solid red' });
+                        checkTel = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
 
@@ -281,10 +317,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
                         $('.s-name').css({ display: 'none' });
                         $(sName).css({ border: '1px solid green' });
+                        checkSName = true;
                     } else {
                         $('.s-name').css({ display: 'block' });
                         $(sName).css({ border: '1px solid red' });
+                        checkSName = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(sQTY).on('input' ,()=> {
@@ -293,10 +332,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (qty.length <= 15 && /^[0-9]+$/.test(qty)) {
                         $('.s-qty').css({ display: 'none' });
                         $(sQTY).css({ border: '1px solid green' });
+                        checkSQTY = true;
                     } else {
                         $('.s-qty').css({ display: 'block' });
                         $(sQTY).css({ border: '1px solid red' });
+                        checkSQTY = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(orderQty).on('input' ,()=> {
@@ -306,10 +348,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                         if (qty.length <= 15 && /^[0-9]+$/.test(qty) && parseInt(qtyOnHand) >= parseInt(qty)) {
                             $('.s-qtyOrder').css({ display: 'none' });
                             $(orderQty).css({ border: '1px solid green' });
+                            checkSOrderQTY = true;
                         } else {
                             $('.s-qtyOrder').css({ display: 'block' });
                             $(orderQty).css({ border: '1px solid red' });
+                            checkSOrderQTY = false;
                         }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(sPrice).on('input' ,()=> {
@@ -318,10 +363,13 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
                         $('.s-price').css({ display: 'none' });
                         $(sPrice).css({ border: '1px solid green' });
+                        checkSPrice = true;
                     } else {
                         $('.s-price').css({ display: 'block' });
                         $(sPrice).css({ border: '1px solid red' });
+                        checkSPrice = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId);
                 });
 
                 $(discount).on('input' ,()=> {
@@ -330,17 +378,32 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
                     if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
                         $('.s-discount').css({ display: 'none' });
                         $(discount).css({ border: '1px solid green' });
+                        checkSDiscount = true;
                     } else {
                         $('.s-discount').css({ display: 'block' });
                         $(discount).css({ border: '1px solid red' });
+                        checkSDiscount = false;
                     }
+                    checkDiscountField(checkSDiscount,btnId);
                 });
-
-                // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
-                // $(btnId).on('click',()=>{
-                //     clearBorderColor(cId,cName,cCity,cTel);
-                // })
             }, false)
         })
     })()
+}
+
+function checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId){
+
+    if (checkOrderId && checkDate && checkName && checkCity && checkTel && checkSName && checkSQTY && checkSOrderQTY && checkSPrice){
+        $(btnId).prop('disabled' , false);
+    }else {
+        $(btnId).prop('disabled' , true);
+    }
+}
+
+function checkDiscountField(checkSDiscount,btnId){
+    if (!checkSDiscount){
+        $(btnId).prop('disabled' , true);
+    }else {
+        $(btnId).prop('disabled' , false);
+    }
 }
