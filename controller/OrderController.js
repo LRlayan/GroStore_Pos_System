@@ -39,25 +39,6 @@ var generateOrderId = 1;
     $('#purchaseBtn').prop('disabled', true);
     $('#cancelBtn').prop('disabled', true);
 
-    $('#orderQTYP').change(function() {
-
-        // let cusId = $('#selectCustomerId').val()
-        // let cusName = $('#cusName').val()
-        // let cusCity = $('#cusCity').val()
-        // let cusTel = $('#cusTel').val()
-        // let code = $('#selectItemCode').val()
-        // let iName = $('#itemNameP').val()
-        // let qtyOnHand = $('#qtyOnHandP').val()
-        // let qty = $('#orderQTYP').val()
-        // let price = $('#inputPriceP').val()
-        //
-        // if (cusId !== '' && cusName !== '' && cusCity !== '' && cusTel !== '' && code !== '' && iName !== '' && qtyOnHand !== '' && qty !== '' && price !== '') {
-        //     $('#addToCartBtn').prop('disabled', false);
-        // }else {
-        //     $('#addToCartBtn').prop('disabled', true);
-        // }
-    })
-
 $(document).ready(function() {
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
