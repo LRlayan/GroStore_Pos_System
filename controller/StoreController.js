@@ -111,8 +111,12 @@ function validation(sCode,sName,sQty,sPrice,btnId){
     (() => {
         'use strict'
 
+        var checkCode = false;
+        var checkName = false;
+        var checkQTY = false;
+        var checkPrice = false;
+
         $('.s-code').css({display: 'none'});
-        checkEmptyInputFields(sCode,sName,sQty,sPrice,btnId);
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
@@ -132,16 +136,20 @@ function validation(sCode,sName,sQty,sPrice,btnId){
                             $('.s-code').css({ display: 'block' });
                             event.preventDefault();
                             event.stopPropagation();
+                            checkCode = false;
                         } else {
                             $('.s-code').css({ display: 'none' });
                             $(sCode).css({border:'1px solid green'});
+                            checkCode = true;
                         }
                     } else {
                         $('.s-code').css({ display: 'block' });
                         $(sCode).css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
+                        checkCode = false;
                     }
+                    checkEmptyInputFields(checkCode,checkName,checkQTY,checkPrice,btnId);
                 });
 
                 $(sName).on('input' ,()=>{
@@ -149,10 +157,13 @@ function validation(sCode,sName,sQty,sPrice,btnId){
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
                         $('.s-name').css({ display: 'none' });
                         $(sName).css({ border: '1px solid green' });
+                        checkName = true;
                     } else {
                         $('.s-name').css({ display: 'block' });
                         $(sName).css({ border: '1px solid red' });
+                        checkName = false;
                     }
+                    checkEmptyInputFields(checkCode,checkName,checkQTY,checkPrice,btnId);
                 });
 
                 $(sQty).on('input' ,()=> {
@@ -161,10 +172,13 @@ function validation(sCode,sName,sQty,sPrice,btnId){
                     if (qty.length <= 15 && /^[0-9]+$/.test(qty)) {
                         $('.s-qty').css({ display: 'none' });
                         $(sQty).css({ border: '1px solid green' });
+                        checkQTY = true;
                     } else {
                         $('.s-qty').css({ display: 'block' });
                         $(sQty).css({ border: '1px solid red' });
+                        checkQTY = false;
                     }
+                    checkEmptyInputFields(checkCode,checkName,checkQTY,checkPrice,btnId);
                 });
 
                 $(sPrice).on('input' ,()=> {
@@ -173,13 +187,14 @@ function validation(sCode,sName,sQty,sPrice,btnId){
                     if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
                         $('.s-price').css({ display: 'none' });
                         $(sPrice).css({ border: '1px solid green' });
+                        checkPrice = true;
                     } else {
                         $('.s-price').css({ display: 'block' });
                         $(sPrice).css({ border: '1px solid red' });
+                        checkPrice = false;
                     }
+                    checkEmptyInputFields(checkCode,checkName,checkQTY,checkPrice,btnId);
                 });
-
-                checkEmptyInputFields(sCode,sName,sQty,sPrice,btnId);
 
                 $(btnId).on('click',()=>{
                     clearBorderColor(sCode,sName,sQty,sPrice);
@@ -191,12 +206,7 @@ function validation(sCode,sName,sQty,sPrice,btnId){
 
 function checkEmptyInputFields(sCode,sName,sQTY,sPrice,btnId){
 
-    var code = $(sCode).val();
-    var name = $(sName).val();
-    var qty = $(sQTY).val();
-    var price = $(sPrice).val();
-
-    if (code !== '' && name !== '' && qty !== '' && price !== ''){
+    if (sCode && sName && sQTY && sPrice){
         $(btnId).prop('disabled' , false);
     }else {
         $(btnId).prop('disabled' , true);
