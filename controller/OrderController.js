@@ -84,20 +84,51 @@ $(document).ready(function() {
         var qty = $('#orderQTYP').val();
         discount = $('#discountOrder').val();
 
+        // Create a container for each item detail
+        var itemContainer = $('<div class="item-container"></div>').css({display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'});
+
         // Create a new paragraph element with item details
         var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty).css({marginBottom:'5px'});
         var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
         var img = $('<img src="../assets/image/remove.png">').css({display:'block' , width:'24px' , height:'24px' , border:'none' , borderRadius:'5px' , marginBottom:'5px'}).click(function (){
-            $('#itemNameLabel').empty();
-            $('#itemPriceListMainDiv').empty();
-            $('#orderRemove').empty();
-            console.log("remove order!")
+            // $('#itemNameLabel').empty();
+            // $('#itemPriceListMainDiv').empty();
+            // $('#orderRemove').empty();
+            // console.log("remove order!")
+
+            // Remove only the container of the clicked remove button
+            $(this).closest('.item-container').remove();
+
+            // Update the subtotal and balance after removing the item
+            subTotal -= parseFloat(newItemPrice.text());
+            $('#subTotal').text(subTotal);
+
+            var dis = 0;
+            if (subTotal >= 8000){
+                dis = subTotal * discount / 100;
+                $('#discount').text(dis);
+            } else {
+                $('#discount').text(0);
+            }
+
+            $('#balance').text(subTotal - dis);
+
+            // Disable buttons if cart is empty
+            if ($('#itemNameLabel').children().length === 0) {
+                $('#purchaseBtn').prop('disabled', true);
+                $('#cancelBtn').prop('disabled', true);
+            }
         });
 
+        // Append elements to the container
+        itemContainer.append(newItemParagraph);
+        itemContainer.append(newItemPrice);
+        itemContainer.append(img);
+
         // Append the new paragraph to the cart container
-        $('#itemNameLabel').append(newItemParagraph);
-        $('#itemPriceListMainDiv').append(newItemPrice);
-        $('#orderRemove').append(img);
+        $('#itemNameLabel').append(itemContainer);
+        $('#itemPriceListMainDiv').append(itemContainer);
+        $('#orderRemove').append(itemContainer);
 
         var value = parseFloat(newItemPrice.text());
         subTotal += value;

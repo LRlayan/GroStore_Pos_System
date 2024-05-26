@@ -160,3 +160,23 @@
 .purpleTextColor{
     border: 0;
 }
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.item-container p {
+    margin: 0;
+}
+
+.item-container img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
