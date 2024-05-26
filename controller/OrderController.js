@@ -87,7 +87,12 @@ $(document).ready(function() {
         // Create a new paragraph element with item details
         var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty).css({marginBottom:'5px'});
         var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
-        var img = $('<img src="../assets/image/profile.jpg">').css({display:'block' , width:'24px' , height:'24px' , border:'none' , borderRadius:'5px' , marginBottom:'5px'});
+        var img = $('<img src="../assets/image/remove.png">').css({display:'block' , width:'24px' , height:'24px' , border:'none' , borderRadius:'5px' , marginBottom:'5px'}).click(function (){
+            $('#itemNameLabel').empty();
+            $('#itemPriceListMainDiv').empty();
+            $('#orderRemove').empty();
+            console.log("remove order!")
+        });
 
         // Append the new paragraph to the cart container
         $('#itemNameLabel').append(newItemParagraph);
@@ -132,7 +137,7 @@ $(document).ready(function() {
         $('#orderId').val('O0-' + generateOrderId)
 
         loadTable()
-         clear()
+        clear()
 
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
