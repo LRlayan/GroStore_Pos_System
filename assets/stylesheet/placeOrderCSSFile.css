@@ -91,6 +91,13 @@
 #itemPriceListMainDiv{
     position: absolute;
     top: 0;
+    left: 10rem;
+    margin-right: 38px;
+}
+
+#orderRemove{
+    position: absolute;
+    top: 0;
     right: 0;
     margin-right: 38px;
 }
