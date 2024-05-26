@@ -85,12 +85,14 @@ $(document).ready(function() {
         discount = $('#discountOrder').val();
 
         // Create a new paragraph element with item details
-        var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty);
-        var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right"});
+        var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty).css({marginBottom:'5px'});
+        var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
+        var img = $('<img src="../assets/image/profile.jpg">').css({display:'block' , width:'24px' , height:'24px' , border:'none' , borderRadius:'5px' , marginBottom:'5px'});
 
         // Append the new paragraph to the cart container
         $('#itemNameLabel').append(newItemParagraph);
         $('#itemPriceListMainDiv').append(newItemPrice);
+        $('#orderRemove').append(img);
 
         var value = parseFloat(newItemPrice.text());
         subTotal += value;
@@ -375,9 +377,6 @@ function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,or
 }
 
 function checkEmptyInputFields(checkOrderId,checkDate,checkName,checkCity,checkTel,checkSName,checkSQTY,checkSOrderQTY,checkSPrice,checkSDiscount,btnId,orderQty){
-    // let value = $('#orderQTYP').val();
-    // let check = !value.startsWith('0');
-    // console.log(check);
     if (checkOrderId && checkDate && checkName && checkCity && checkTel && checkSName && checkSQTY && checkSOrderQTY && checkSPrice){
         $(btnId).prop('disabled' , false);
     }else {
