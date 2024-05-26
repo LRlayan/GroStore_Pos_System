@@ -3,7 +3,18 @@ import {store} from "../db/DB.js"
 
 let clickTableRow = 0;
 
+let checkCode = false;
+let checkName = false;
+let checkQTY = false;
+let checkPrice = false;
+
 $('#submitStore').on('click' , ()=>{
+    $('#submitStore').prop('disabled' , true);
+    checkCode = false;
+    checkName = false;
+    checkQTY = false;
+    checkPrice = false;
+
     let itemCode = $('#itemCode').val();
     let itemName = $('#itemName').val();
     let QTYOnHand = $('#inputQTY').val();
@@ -96,6 +107,7 @@ function clearForm(){
 }
 
 $('#newModal').on('shown.bs.modal', function() {
+    $('#submitStore').prop('disabled' , true);
     validation('#itemCode','#itemName','#inputQTY','#unitPrice','#submitStore');
 });
 
@@ -110,11 +122,6 @@ $('#removeModalStore').on('shown.bs.modal', function() {
 function validation(sCode,sName,sQty,sPrice,btnId){
     (() => {
         'use strict'
-
-        var checkCode = false;
-        var checkName = false;
-        var checkQTY = false;
-        var checkPrice = false;
 
         $('.s-code').css({display: 'none'});
 

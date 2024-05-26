@@ -2,9 +2,21 @@ import Customer from "../model/Customer.js";
 import {customer} from "../db/DB.js"
 
 let clickTableRow = 0;
-$('#submitC').prop('disabled' , true);
+
+let checkId = false;
+let checkName = false;
+let checkCity = false;
+let checkTel = false;
 
 $('#submitC').on('click' , ()=>{
+
+    $('#submitC').prop('disabled' , true);
+
+    checkId = false;
+    checkName = false;
+    checkCity = false;
+    checkTel = false;
+
     let cId = $('#-inputCustomerId').val();
     let cName = $('#_inputCustomerName').val();
     let city = $('#inputCityC').val();
@@ -112,13 +124,8 @@ function validation(cId,cName,cCity,cTel,btnId){
     (() => {
          'use strict'
 
-        var checkId = false;
-        var checkName = false;
-        var checkCity = false;
-        var checkTel = false;
-
         $('.c-id').css({display: 'none'});
-        // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
+        $(btnId).prop('disabled' , true);
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
