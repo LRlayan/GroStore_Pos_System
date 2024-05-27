@@ -88,7 +88,7 @@ $(document).ready(function() {
         var itemContainer = $('<div class="item-container"></div>').css({display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'});
 
         // Create a new paragraph element with item details
-        var newItemParagraph = $('<p>').text(inputName + " " + " x" + qty).css({marginBottom:'5px'});
+        var newItemParagraph = $('<p>').text(inputName + " x" + qty + ' rs : ' + unitPrice).css({marginBottom:'5px'});
         var newItemPrice = $('<p class="price">').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
         var img = $('<img src="../assets/image/remove.png">').click(function (){
 
@@ -110,7 +110,7 @@ $(document).ready(function() {
             $('#balance').text(subTotal - dis);
 
             // Disable buttons if cart is empty
-            if ($('#itemNameLabel').children().length === 0) {
+            if ($('.item-container').children().length === 0) {
                 $('#purchaseBtn').prop('disabled', true);
                 $('#cancelBtn').prop('disabled', true);
             }
