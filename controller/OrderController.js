@@ -88,7 +88,9 @@ $(document).ready(function() {
         var itemContainer = $('<div class="item-container"></div>').css({display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'});
 
         // Create a new paragraph element with item details
-        var newItemParagraph = $('<p>').text(inputName + " x" + qty + ' rs : ' + unitPrice).css({marginBottom:'5px'});
+        var itemName = $('<p>').text(inputName).css({marginBottom:'5px' , marginRight:'15px'});
+        var itemUnitPrice = $('<p>').text(' rs : ' + unitPrice + ' x').css({marginBottom:'5px' , marginRight:'5px'});
+        var itemQTY = $('<p>').text(qty).css({marginBottom:'5px'});
         var newItemPrice = $('<p class="price">').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
         var img = $('<img src="../assets/image/remove.png">').click(function (){
 
@@ -109,6 +111,9 @@ $(document).ready(function() {
 
             $('#balance').text(subTotal - dis);
 
+            //When removing items from the cart, the content is increased
+            $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) + parseInt(itemQTY.text()));
+
             // Disable buttons if cart is empty
             if ($('.item-container').children().length === 0) {
                 $('#purchaseBtn').prop('disabled', true);
@@ -117,12 +122,16 @@ $(document).ready(function() {
         });
 
         // Append elements to the container
-        itemContainer.append(newItemParagraph);
+        itemContainer.append(itemName);
+        itemContainer.append(itemUnitPrice);
+        itemContainer.append(itemQTY);
         itemContainer.append(newItemPrice);
         itemContainer.append(img);
 
         // Append the new paragraph to the cart container
         $('#itemNameLabel').append(itemContainer);
+        $('#unit-price').append(itemContainer);
+        $('#itemQty').append(itemContainer);
         $('#itemPriceListMainDiv').append(itemContainer);
         $('#orderRemove').append(itemContainer);
 
@@ -140,10 +149,25 @@ $(document).ready(function() {
 
         $('#balance').text(subTotal-dis);
 
-        if (newItemParagraph !== '' && newItemPrice !== ''){
+        if (itemName !== '' && newItemPrice !== ''){
             $('#purchaseBtn').prop('disabled', false);
             $('#cancelBtn').prop('disabled', false);
         }
+
+        var QtyOnHand = $('#qtyOnHandP').val();
+        var newQtyOnHand = QtyOnHand - qty;
+        $('#qtyOnHandP').val(newQtyOnHand);
+
+        $('#selectItemCode').change(function () {
+
+            let selectedValue = $(this).val();
+            console.log(selectedValue)
+
+                if (selectedValue === itemName.text()){
+                    $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) - parseInt(itemQTY.text()));
+                }
+            });
+
 
         let orderId = $('#orderId').val();
         let date = $('#date').val();
@@ -219,7 +243,16 @@ $(document).ready(function() {
         $('#discount').text('0.00');
         $('#balance').text('0.00');
         $('#itemNameLabel').empty();
+        $('#unit-price').empty();
+        $('#itemQty').empty();
         $('#itemPriceListMainDiv').empty();
+        $('#orderRemove').empty();
+
+        store.map(function (items){
+            if (items.itemCode === $('#selectItemCode').val()){
+                $('#qtyOnHandP').val(items.QTYOnHand);
+            }
+        })
     }
 
 function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,orderQty,btnId){
