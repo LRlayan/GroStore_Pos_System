@@ -1,5 +1,5 @@
 import Order from "../model/Order.js";
-import {orders,store,customer} from "../db/DB.js"
+import {orders,store,customer,itemNames} from "../db/DB.js"
 // import { updateStoreQuantities } from "./StoreController";
 
 let unitPrice = 0;
@@ -121,6 +121,8 @@ $(document).ready(function() {
             }
         });
 
+        itemNames.push(itemName.text());
+
         // Append elements to the container
         itemContainer.append(itemName);
         itemContainer.append(itemUnitPrice);
@@ -158,16 +160,20 @@ $(document).ready(function() {
         var newQtyOnHand = QtyOnHand - qty;
         $('#qtyOnHandP').val(newQtyOnHand);
 
-        $('#selectItemCode').change(function () {
+        $('#selectItemCode').on('change', ()=> {
+            var amountQty = itemQTY.text();
 
-            let selectedValue = $(this).val();
-            console.log(selectedValue)
-
-                if (selectedValue === itemName.text()){
-                    $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) - parseInt(itemQTY.text()));
+            let selectedItemName = $('#itemNameP').val();
+                for (let i = 0; i < itemNames.length; i++) {
+                    if (selectedItemName === itemNames[i]){
+                        if (itemName.text() === itemNames[i]){
+                            console.log(itemQTY.text());
+                            $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) - parseInt(amountQty));
+                            amountQty = 0;
+                        }
+                    }
                 }
             });
-
 
         let orderId = $('#orderId').val();
         let date = $('#date').val();
