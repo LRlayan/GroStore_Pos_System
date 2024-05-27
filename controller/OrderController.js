@@ -89,12 +89,8 @@ $(document).ready(function() {
 
         // Create a new paragraph element with item details
         var newItemParagraph = $('<p>').text(inputName + " " + "x" + qty).css({marginBottom:'5px'});
-        var newItemPrice = $('<p>').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
+        var newItemPrice = $('<p class="price">').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
         var img = $('<img src="../assets/image/remove.png">').css({display:'block' , width:'24px' , height:'24px' , border:'none' , borderRadius:'5px' , marginBottom:'5px'}).click(function (){
-            // $('#itemNameLabel').empty();
-            // $('#itemPriceListMainDiv').empty();
-            // $('#orderRemove').empty();
-            // console.log("remove order!")
 
             // Remove only the container of the clicked remove button
             $(this).closest('.item-container').remove();
