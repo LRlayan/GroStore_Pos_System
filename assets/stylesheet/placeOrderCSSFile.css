@@ -162,6 +162,12 @@
     display: block;
     position: absolute;
     right: 13px;
+
+    width:24px;
+    height:24px;
+    border:none;
+    border-radius:5px;
+    margin-bottom:5px;
 }
 
 .price{
