@@ -88,20 +88,6 @@
     overflow-y: scroll;
 }
 
-#itemPriceListMainDiv{
-    position: absolute;
-    top: 0;
-    left: 18rem;
-    margin-right: 38px;
-}
-
-#orderRemove{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 38px;
-}
-
 .prices{
     text-align: right;
 }
@@ -161,22 +147,23 @@
     border: 0;
 }
 
-.item-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+#itemPriceListMainDiv{
+    position: absolute;
+    top: 0;
+    left: 13rem;
+    margin-right: 38px;
 }
 
-.item-container p {
-    margin: 0;
+.item-container {
+    width: 500px;
 }
 
 .item-container img {
     display: block;
-    width: 24px;
-    height: 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    position: absolute;
+    right: 13px;
+}
+
+.price{
+    margin-left: 345px;
 }
