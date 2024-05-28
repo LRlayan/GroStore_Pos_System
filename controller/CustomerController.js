@@ -113,7 +113,7 @@ $('#newModalCus').on('shown.bs.modal', function() {
 });
 
 $('#updateModalCus').on('shown.bs.modal', function() {
-    checkEmptyField('#updateC');
+    checkEmptyFieldUpdateModal('#updateC');
     validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU','#updateC')
 });
 
@@ -122,7 +122,7 @@ $('#removeModal').on('shown.bs.modal', function() {
     validation('#inputCustomerId','#inputCustomerName','','','#deleteC')
 });
 
-function checkEmptyField(btn){
+function checkEmptyFieldUpdateModal(btn){
     var c_id = $('#inputCustomerIdU').val();
     var c_name = $('#inputCustomerNameU').val();
     var c_city = $('#inputCityU').val();
