@@ -5,6 +5,8 @@ import {orders,store,customer,itemNames} from "../db/DB.js"
 let unitPrice = 0;
 var subTotal = 0;
 let discount = 0;
+var setReduceQTY = 0;
+var canselBtnIncrement = 0
 
 var checkOrderId = false;
 var checkDate = false;
@@ -39,7 +41,7 @@ var generateOrderId = 1;
     $('#purchaseBtn').prop('disabled', true);
     $('#cancelBtn').prop('disabled', true);
 
-$(document).ready(function() {
+
     $('#selectCustomerId').change(function() {
         // Get the selected value using val()
         var selectedValue = $(this).val();
@@ -59,6 +61,8 @@ $(document).ready(function() {
 
         store.map(function (store){
             if (selectedValue === store.itemCode){
+                console.log('change item code')
+                console.log('QTY : ' + store.QTYOnHand)
                 $('#itemNameP').val(store.itemName);
                 $('#qtyOnHandP').val(store.QTYOnHand);
                 $('#inputPriceP').val(store.unitPrice);
@@ -67,7 +71,6 @@ $(document).ready(function() {
             }
         })
     });
-});
 
     $('#orderQTYP').change(function (){
         let selectedValue = $(this).val();
@@ -75,7 +78,6 @@ $(document).ready(function() {
         let total = (selectedValue*unitPrice);
         $('#inputPriceP').val(total);
     })
-
 
     $('#addToCartBtn').click(function() {
 
@@ -112,7 +114,11 @@ $(document).ready(function() {
             $('#balance').text(subTotal - dis);
 
             //When removing items from the cart, the content is increased
-            $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) + parseInt(itemQTY.text()));
+             for (let i = 0; i < itemNames.length; i++) {
+                if (itemName.text() === itemNames[i]) {
+                    $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) + parseInt(itemQTY.text()));
+                }
+            }
 
             // Disable buttons if cart is empty
             if ($('.item-container').children().length === 0) {
@@ -160,15 +166,16 @@ $(document).ready(function() {
         var newQtyOnHand = QtyOnHand - qty;
         $('#qtyOnHandP').val(newQtyOnHand);
 
-        $('#selectItemCode').on('change', ()=> {
+        $('#selectItemCode').change(function (){
             var amountQty = itemQTY.text();
 
             let selectedItemName = $('#itemNameP').val();
                 for (let i = 0; i < itemNames.length; i++) {
                     if (selectedItemName === itemNames[i]){
                         if (itemName.text() === itemNames[i]){
-                            console.log(itemQTY.text());
-                            $('#qtyOnHandP').val(parseInt($('#qtyOnHandP').val()) - parseInt(amountQty));
+                            console.log("second change");
+                            setReduceQTY = $('#qtyOnHandP').val() - parseInt(amountQty)
+                            $('#qtyOnHandP').val(parseInt(setReduceQTY));
                             amountQty = 0;
                         }
                     }
@@ -187,6 +194,8 @@ $(document).ready(function() {
 
         let orderDetail = new Order(orderId,date,cusName,cusCity,cusTel,code,inputName,qty,discounts,totalPrice);
         orders.push(orderDetail);
+
+        $('#orderQTYP').val(0);
     });
 
     $('#purchaseBtn').on('click',()=>{
@@ -203,6 +212,7 @@ $(document).ready(function() {
 
     $('#cancelBtn').on('click',()=>{
         cancel()
+        canselBtnIncrement++;
         subTotal = 0;
         discount = 0;
         $('#purchaseBtn').prop('disabled', true);
@@ -253,12 +263,17 @@ $(document).ready(function() {
         $('#itemQty').empty();
         $('#itemPriceListMainDiv').empty();
         $('#orderRemove').empty();
+        $('#orderQTYP').val(0);
 
-        store.map(function (items){
-            if (items.itemCode === $('#selectItemCode').val()){
-                $('#qtyOnHandP').val(items.QTYOnHand);
+        for (let i = 0; i < store.length; i++) {
+            if ($('#selectItemCode').val() === store[i].itemCode){
+                console.log('awa');
+                console.log(store[i].itemCode);
+                $('#QTYOnHandP').empty();
+                $('#qtyOnHandP').val(store[i].QTYOnHand);
+                setReduceQTY = store[i].QTYOnHand;
             }
-        })
+        }
     }
 
 function validation(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,orderQty,btnId){

@@ -357,11 +357,6 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(discount).css({ border: '1px solid red' });
                     }
                 });
-
-                // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
-                // $(btnId).on('click',()=>{
-                //     clearBorderColor(cId,cName,cCity,cTel);
-                // })
             }, false)
         })
     })()
