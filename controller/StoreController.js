@@ -1,5 +1,5 @@
 import Store from "../model/Store.js";
-import {store} from "../db/DB.js"
+import {customer, store} from "../db/DB.js"
 
 let clickTableRow = 0;
 
@@ -7,6 +7,11 @@ let checkCode = false;
 let checkName = false;
 let checkQTY = false;
 let checkPrice = false;
+
+let code = $('#itemCodeS').val()
+let itemName = $('#itemNameS').val()
+let qty = $('#qty').val()
+let price = $('#priceS').val()
 
 $('#submitStore').on('click' , ()=>{
     $('#submitStore').prop('disabled' , true);
@@ -78,6 +83,13 @@ $('#updateS').on('click' , ()=>{
 
 $('#deleteS').on('click',()=>{
     store.splice(clickTableRow , 1);
+
+    $('#selectItemCode').empty();
+
+    for (let i = 0; i < store.length; i++) {
+        $('#selectItemCode').append($('<option>').text(store[i].itemCode));
+    }
+
     loadTable();
     clearForm();
 })
@@ -112,12 +124,31 @@ $('#newModal').on('shown.bs.modal', function() {
 });
 
 $('#updateModal').on('shown.bs.modal', function() {
+    checkEmptyFieldUpdateModal('#updateS');
     validation('#itemCodeS','#itemNameS','#qty','#priceS','#updateS');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
     validation('#itemCodeR','#itemNameR','','','#deleteS');
 });
+
+function checkEmptyFieldUpdateModal(btn){
+    code = $('#itemCodeS').val();
+    itemName = $('#itemNameS').val();
+    qty = $('#qty').val();
+    price = $('#priceS').val();
+
+    if (code == '' && itemName == '' && qty == '' && price == ''){
+        $(btn).prop('disabled' , true);
+    }else {
+        $(btn).prop('disabled' , false);
+
+        checkCode = true;
+        checkName = true;
+        checkQTY = true;
+        checkPrice = true;
+    }
+}
 
 function validation(sCode,sName,sQty,sPrice,btnId){
     (() => {
