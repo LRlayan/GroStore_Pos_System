@@ -92,7 +92,7 @@ $('#deleteS').on('click',()=>{
         $('#selectItemCode').append($('<option>').text(store[i].itemCode));
     }
 
-    $('#updateS').prop('disabled' , true);
+    $('#deleteS').prop('disabled' , true);
     loadTable();
     clearForm();
 })
@@ -128,10 +128,11 @@ $('#newModal').on('shown.bs.modal', function() {
 
 $('#updateModal').on('shown.bs.modal', function() {
     checkEmptyFieldUpdateModal('#updateS');
-    validation('#itemCodeS','#itemNameS','#qty','#priceS','#updateS');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
+    $('#itemCodeR').prop('disabled' , true);
+    $('#itemNameR').prop('disabled' , true);
     checkEmptyFieldRemoveModal('#deleteS');
     validation('#itemCodeR','#itemNameR','','','#deleteS');
 });
@@ -155,8 +156,9 @@ function checkEmptyFieldUpdateModal(btn){
 }
 
 function checkEmptyFieldRemoveModal(btn){
-    code = $('#itemCodeS').val();
-    itemName = $('#itemNameS').val();
+
+    code = $('#itemCodeR').val();
+    itemName = $('#itemNameR').val();
 
     if (code == '' && itemName == ''){
         $(btn).prop('disabled' , true);
