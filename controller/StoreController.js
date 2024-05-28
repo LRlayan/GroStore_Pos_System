@@ -129,6 +129,7 @@ $('#updateModal').on('shown.bs.modal', function() {
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
+    checkEmptyFieldRemoveModal('#deleteS');
     validation('#itemCodeR','#itemNameR','','','#deleteS');
 });
 
@@ -139,6 +140,22 @@ function checkEmptyFieldUpdateModal(btn){
     price = $('#priceS').val();
 
     if (code == '' && itemName == '' && qty == '' && price == ''){
+        $(btn).prop('disabled' , true);
+    }else {
+        $(btn).prop('disabled' , false);
+
+        checkCode = true;
+        checkName = true;
+        checkQTY = true;
+        checkPrice = true;
+    }
+}
+
+function checkEmptyFieldRemoveModal(btn){
+    code = $('#itemCodeS').val();
+    itemName = $('#itemNameS').val();
+
+    if (code == '' && itemName == ''){
         $(btn).prop('disabled' , true);
     }else {
         $(btn).prop('disabled' , false);
