@@ -118,6 +118,7 @@ $('#updateModalCus').on('shown.bs.modal', function() {
 });
 
 $('#removeModal').on('shown.bs.modal', function() {
+    checkEmptyFieldRemoveModal('#deleteC');
     validation('#inputCustomerId','#inputCustomerName','','','#deleteC')
 });
 
@@ -128,6 +129,22 @@ function checkEmptyField(btn){
     var c_tel = $('#inputTelephoneU').val();
 
      if (c_id == '' && c_name == '' && c_city == '' && c_tel == ''){
+         $(btn).prop('disabled' , true);
+     }else {
+         $(btn).prop('disabled' , false);
+
+         checkId = true;
+         checkName = true;
+         checkCity = true;
+         checkTel = true;
+     }
+}
+
+function checkEmptyFieldRemoveModal(btn){
+    var c_id = $('#inputCustomerId').val();
+    var c_name = $('#inputCustomerName').val();
+
+     if (c_id == '' && c_name == ''){
          $(btn).prop('disabled' , true);
      }else {
          $(btn).prop('disabled' , false);
