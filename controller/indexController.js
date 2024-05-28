@@ -3,7 +3,20 @@ import {orders,store,customer} from "../db/DB.js"
 let clickOrderTableRow = null
 var discount = parseFloat($('#rate').val());
 
+var checkOrderId = false;
+var checkDate = false;
+var checkCusName = false;
+var checkCity = false;
+var checkTel = false;
+var checkCode = false;
+var checkItemName = false;
+var checkOrderQty = false;
+var checkRate = false;
+var checkDis = false;
+var checkPrice = false;
+
 $('#updateOrderModal').on('shown.bs.modal', function() {
+    checkEmptyFieldUpdateModal('#updateOrderDetail');
     validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY','#rate');
 });
 
@@ -11,6 +24,37 @@ $('#removeModalStore').on('shown.bs.modal', function() {
     validationModel('#itemCodeR','#itemNameR','','','#deleteS');
 });
 
+function checkEmptyFieldUpdateModal(btn){
+    var orderId = $('#inputOrderId').val();
+    var date = $('#dateU').val();
+    var cusName = $('#customerNameU').val();
+    var city = $('#inputCityStore').val();
+    var tel = $('#inputTelephone').val();
+    var code = $('#inputItemCode').val();
+    var itemName = $('#inputItemName').val();
+    var orderQty = $('#orderQTY').val();
+    var rate = $('#rate').val();
+    var dis = $('#inputDiscount').val();
+    var price = $('#inputPrice').val();
+
+    if (orderId == '' && date == '' && cusName == '' && city == '' && tel == '' && code == '' && itemName == '' && orderQty == '' && rate == '' && dis == '' && price == ''){
+        $(btn).prop('disabled' , true);
+    }else {
+        $(btn).prop('disabled' , false);
+
+        checkOrderId = true;
+        checkDate = true;
+        checkCusName = true;
+        checkCity = true;
+        checkTel = true;
+        checkCode = true;
+        checkItemName = true;
+        checkOrderQty = true;
+        checkRate = true;
+        checkDis = true;
+        checkPrice = true;
+    }
+}
 
 $('#customer-sec').css({display:'none'})
 
@@ -211,16 +255,20 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                             $('.o-idD').css({ display: 'block' });
                             event.preventDefault();
                             event.stopPropagation();
+                            checkOrderId = false;
                         } else {
                             $('.o-idD').css({ display: 'none' });
                             $(orderId).css({border:'1px solid green'});
+                            checkOrderId = true;
                         }
                     } else {
                         $('.o-idD').css({ display: 'block' });
                         $(orderId).css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
+                        checkOrderId = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(today).change(function (){
@@ -234,10 +282,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (date === year+"-"+ month + "-" + day){
                         $('.o-dateD').css({ display: 'none' });
                         $(today).css({ border: '1px solid green' });
+                        checkDate = true;
                     }else {
                         $('.o-dateD').css({ display: 'block' });
                         $(today).css({ border: '1px solid red' });
+                        checkDate = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 })
 
                 $(cName).on('input' ,()=>{
@@ -245,10 +296,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
                         $('.c-nameD').css({ display: 'none' });
                         $(cName).css({ border: '1px solid green' });
+                        checkCusName = true;
                     } else {
                         $('.c-nameD').css({ display: 'block' });
                         $(cName).css({ border: '1px solid red' });
+                        checkCusName = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(cCity).on('input' ,()=> {
@@ -257,10 +311,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (city.length <= 25 && /^[a-zA-Z]+$/.test(city)) {
                         $('.c-cityD').css({ display: 'none' });
                         $(cCity).css({ border: '1px solid green' });
+                        checkCity = true;
                     } else {
                         $('.c-cityD').css({ display: 'block' });
                         $(cCity).css({ border: '1px solid red' });
+                        checkCity = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(cTel).on('input' ,()=> {
@@ -269,10 +326,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (tel.length <= 10 && /^[0-9]+$/.test(tel)) {
                         $('.c-telD').css({ display: 'none' });
                         $(cTel).css({ border: '1px solid green' });
+                        checkTel = true;
                     } else {
                         $('.c-telD').css({ display: 'block' });
                         $(cTel).css({ border: '1px solid red' });
+                        checkTel = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(sCode).on('input',()=>{
@@ -286,16 +346,20 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                             $('.s-codeD').css({ display: 'block' });
                             event.preventDefault();
                             event.stopPropagation();
+                            checkCode = false;
                         } else {
                             $('.s-codeD').css({ display: 'none' });
                             $(sCode).css({border:'1px solid green'});
+                            checkCode = true;
                         }
                     } else {
                         $('.s-codeD').css({ display: 'block' });
                         $(sCode).css({border:'1px solid red'});
                         event.preventDefault();
                         event.stopPropagation();
+                        checkCode = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 })
 
                 $(sName).on('input' ,()=>{
@@ -303,10 +367,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (name.length >= 5 && name.length <= 20 && /^[a-zA-Z ]+$/.test(name)) {
                         $('.s-nameD').css({ display: 'none' });
                         $(sName).css({ border: '1px solid green' });
+                        checkItemName = true;
                     } else {
                         $('.s-nameD').css({ display: 'block' });
                         $(sName).css({ border: '1px solid red' });
+                        checkItemName = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(sQTY).on('input' ,()=> {
@@ -319,6 +386,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $('.s-qtyD').css({ display: 'block' });
                         $(sQTY).css({ border: '1px solid red' });
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(orderQty).on('input' ,()=> {
@@ -328,10 +396,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (qty.length <= 15 && /^[0-9]+$/.test(qty) && parseInt(qtyOnHand) >= parseInt(qty)) {
                         $('.s-qtyOrderD').css({ display: 'none' });
                         $(orderQty).css({ border: '1px solid green' });
+                        checkOrderQty = true;
                     } else {
                         $('.s-qtyOrderD').css({ display: 'block' });
                         $(orderQty).css({ border: '1px solid red' });
+                        checkOrderQty = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(sPrice).on('input' ,()=> {
@@ -340,10 +411,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
                         $('.s-priceD').css({ display: 'none' });
                         $(sPrice).css({ border: '1px solid green' });
+                        checkPrice = true;
                     } else {
                         $('.s-priceD').css({ display: 'block' });
                         $(sPrice).css({ border: '1px solid red' });
+                        checkPrice = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(discount).on('input' ,()=> {
@@ -352,10 +426,13 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (price.length <= 10 && /^[0-9.]+$/.test(price)) {
                         $('.s-discountD').css({ display: 'none' });
                         $(discount).css({ border: '1px solid green' });
+                        checkDis = true;
                     } else {
                         $('.s-discountD').css({ display: 'block' });
                         $(discount).css({ border: '1px solid red' });
+                        checkDis = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
 
                 $(rate).on('input' ,()=> {
@@ -364,12 +441,23 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     if (rateDis.length <= 3 && /^[0-9.]+$/.test(rateDis)) {
                         $('.s-discountRate').css({ display: 'none' });
                         $(rate).css({ border: '1px solid green' });
+                        checkRate = true;
                     } else {
                         $('.s-discountRate').css({ display: 'block' });
                         $(rate).css({ border: '1px solid red' });
+                        checkRate = false;
                     }
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
                 });
             }, false)
         })
     })()
+}
+
+function checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice){
+    if (checkOrderId && checkDate && checkCusName && checkCity && checkTel && checkCode && checkItemName && checkOrderQty && checkRate && checkDis && checkPrice){
+        $(btnId).prop('disabled' , false);
+    }else {
+        $(btnId).prop('disabled' , true);
+    }
 }
