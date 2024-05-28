@@ -26,7 +26,6 @@ $('#removeOrderModal').on('shown.bs.modal', function() {
     $('#itemNameRe').prop('disabled' , true);
     $('#inputPriceR').prop('disabled' , true);
     checkEmptyFieldRemoveModal('#removeOrder');
-    // validationModel('#itemCodeR','#itemNameR','','','#deleteS');
 });
 
 function checkEmptyFieldRemoveModal(btn){
@@ -157,7 +156,7 @@ $('#viewOrderDetailTable').on('click', 'tr', function () {
     $('#inputPriceR').val(price);
 });
 
-$('#orderQTY').change(function (){
+$('#orderQTY').on('input', ()=>{
     let selectedValue = $(this).val();
     let total = 0;
     orders.map(function (order){
