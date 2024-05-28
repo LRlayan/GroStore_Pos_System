@@ -20,12 +20,12 @@ $('#updateOrderModal').on('shown.bs.modal', function() {
     validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY','#rate');
 });
 
-$('#removeModalStore').on('shown.bs.modal', function() {
+$('#removeOrderModal').on('shown.bs.modal', function() {
     $('#orderIdR').prop('disabled' , true);
     $('#customerName').prop('disabled' , true);
     $('#itemNameRe').prop('disabled' , true);
     $('#inputPriceR').prop('disabled' , true);
-    checkEmptyFieldRemoveModal('#updateOrderDetail');
+    checkEmptyFieldRemoveModal('#removeOrder');
     // validationModel('#itemCodeR','#itemNameR','','','#deleteS');
 });
 
@@ -35,7 +35,7 @@ function checkEmptyFieldRemoveModal(btn){
     var itemName = $('#itemNameRe').val();
     var price = $('#inputPriceR').val();
 
-    if (code == '' && cusName == '' && itemName == '' && price){
+    if (code == '' && cusName == '' && itemName == '' && price == ''){
         $(btn).prop('disabled' , true);
     }else {
         $(btn).prop('disabled' , false);
