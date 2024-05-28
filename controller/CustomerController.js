@@ -113,6 +113,7 @@ $('#newModalCus').on('shown.bs.modal', function() {
 });
 
 $('#updateModalCus').on('shown.bs.modal', function() {
+    checkEmptyField('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU','#updateC');
     validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU','#updateC')
 });
 
@@ -120,12 +121,27 @@ $('#removeModal').on('shown.bs.modal', function() {
     validation('#inputCustomerId','#inputCustomerName','','','#deleteC')
 });
 
+function checkEmptyField(btn){
+    var c_id = $('#inputCustomerIdU').val();
+    var c_name = $('#inputCustomerNameU').val();
+    var c_city = $('#inputCityU').val();
+    var c_tel = $('#inputTelephoneU').val();
+
+     if (c_id == '' && c_name == '' && c_city == '' && c_tel == ''){
+         $(btn).prop('disabled' , true);
+         console.log("true")
+     }else {
+         $(btn).prop('disabled' , false);
+         console.log("false")
+     }
+}
+
 function validation(cId,cName,cCity,cTel,btnId){
     (() => {
          'use strict'
 
         $('.c-id').css({display: 'none'});
-        $(btnId).prop('disabled' , true);
+        // $(btnId).prop('disabled' , true);
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
