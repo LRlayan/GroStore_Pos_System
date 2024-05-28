@@ -208,6 +208,12 @@ var generateOrderId = 1;
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
         $('#addToCartBtn').prop('disabled', true);
+
+        $('#itemNameLabel').empty();
+        $('#unit-price').empty();
+        $('#itemQty').empty();
+        $('#itemPriceListMainDiv').empty();
+        $('#orderRemove').empty();
     })
 
     $('#cancelBtn').on('click',()=>{
