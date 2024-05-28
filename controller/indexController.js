@@ -1,10 +1,10 @@
 import {orders,store,customer} from "../db/DB.js"
 
 let clickOrderTableRow = null
-var discount = 5;
+var discount = parseFloat($('#rate').val());
 
 $('#updateOrderModal').on('shown.bs.modal', function() {
-    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY');
+    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY','#rate');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
@@ -186,7 +186,7 @@ $(document).on('keydown', function(event) {
     }
 });
 
-function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty,itemCode){
+function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty,rate){
     (() => {
         'use strict'
 
@@ -355,6 +355,18 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                     } else {
                         $('.s-discountD').css({ display: 'block' });
                         $(discount).css({ border: '1px solid red' });
+                    }
+                });
+
+                $(rate).on('input' ,()=> {
+                    var rateDis = $(rate).val();
+
+                    if (rateDis.length <= 3 && /^[0-9.]+$/.test(rateDis)) {
+                        $('.s-discountRate').css({ display: 'none' });
+                        $(rate).css({ border: '1px solid green' });
+                    } else {
+                        $('.s-discountRate').css({ display: 'block' });
+                        $(rate).css({ border: '1px solid red' });
                     }
                 });
             }, false)
