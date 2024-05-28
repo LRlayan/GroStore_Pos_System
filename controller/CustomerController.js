@@ -79,6 +79,8 @@ $('#updateC').on('click' , ()=>{
     cus.city = cCity
     cus.tel = cTel
 
+    $('#updateC').prop('disabled' , true);
+
     loadTable()
     clearForm()
 })
@@ -91,6 +93,8 @@ $('#deleteC').on('click',()=>{
     for (let i = 0; i < customer.length; i++) {
         $('#selectCustomerId').append($('<option>').text(customer[i].id));
     }
+
+    $('#deleteC').prop('disabled' , true);
 
     loadTable()
     clearForm()

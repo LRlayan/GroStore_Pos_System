@@ -79,6 +79,8 @@ $('#updateS').on('click' , ()=>{
 
     loadTable();
     clearForm();
+
+    $('#updateS').prop('disabled' , true);
 })
 
 $('#deleteS').on('click',()=>{
@@ -90,6 +92,7 @@ $('#deleteS').on('click',()=>{
         $('#selectItemCode').append($('<option>').text(store[i].itemCode));
     }
 
+    $('#updateS').prop('disabled' , true);
     loadTable();
     clearForm();
 })
