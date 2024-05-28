@@ -1,5 +1,5 @@
 import Customer from "../model/Customer.js";
-import {customer} from "../db/DB.js"
+import {customer, store} from "../db/DB.js"
 
 let clickTableRow = 0;
 
@@ -7,6 +7,11 @@ let checkId = false;
 let checkName = false;
 let checkCity = false;
 let checkTel = false;
+
+let cId = $('#inputCustomerIdU').val()
+let cName = $('#inputCustomerNameU').val()
+let cCity = $('#inputCityU').val()
+let cTel = $('#inputTelephoneU').val()
 
 $('#submitC').on('click' , ()=>{
 
@@ -26,7 +31,7 @@ $('#submitC').on('click' , ()=>{
     customer.push(customerDetail)
     loadTable()
 
-    $('#selectCustomerId').append($('<option>').text(cId)); // place order item code comboBox set item code
+    $('#selectCustomerId').append($('<option>').text(cId)); // place order customer id comboBox set item code
 
     $('#customerTable').on('click', 'tr', function () {
 
@@ -63,10 +68,10 @@ function loadTable(){
 }
 
 $('#updateC').on('click' , ()=>{
-    let cId = $('#inputCustomerIdU').val()
-    let cName = $('#inputCustomerNameU').val()
-    let cCity = $('#inputCityU').val()
-    let cTel = $('#inputTelephoneU').val()
+    cId = $('#inputCustomerIdU').val()
+    cName = $('#inputCustomerNameU').val()
+    cCity = $('#inputCityU').val()
+    cTel = $('#inputTelephoneU').val()
 
     let cus = customer[clickTableRow]
     cus.id = cId
@@ -79,9 +84,16 @@ $('#updateC').on('click' , ()=>{
 })
 
 $('#deleteC').on('click',()=>{
-    customer.splice(clickTableRow , 1)
+    customer.splice(clickTableRow , 1);
+
+    $('#selectCustomerId').empty();
+
+    for (let i = 0; i < customer.length; i++) {
+        $('#selectCustomerId').append($('<option>').text(customer[i].id));
+    }
+
     loadTable()
-     clearForm()
+    clearForm()
 })
 
 $(document).ready(function(){
@@ -123,12 +135,12 @@ $('#removeModal').on('shown.bs.modal', function() {
 });
 
 function checkEmptyFieldUpdateModal(btn){
-    var c_id = $('#inputCustomerIdU').val();
-    var c_name = $('#inputCustomerNameU').val();
-    var c_city = $('#inputCityU').val();
-    var c_tel = $('#inputTelephoneU').val();
+     cId = $('#inputCustomerIdU').val();
+     cName = $('#inputCustomerNameU').val();
+     cCity = $('#inputCityU').val();
+     cTel = $('#inputTelephoneU').val();
 
-     if (c_id == '' && c_name == '' && c_city == '' && c_tel == ''){
+     if (cId == '' && cName == '' && cCity == '' && cTel == ''){
          $(btn).prop('disabled' , true);
      }else {
          $(btn).prop('disabled' , false);
@@ -141,10 +153,10 @@ function checkEmptyFieldUpdateModal(btn){
 }
 
 function checkEmptyFieldRemoveModal(btn){
-    var c_id = $('#inputCustomerId').val();
-    var c_name = $('#inputCustomerName').val();
+     cId = $('#inputCustomerId').val();
+     cName = $('#inputCustomerName').val();
 
-     if (c_id == '' && c_name == ''){
+     if (cId == '' && cName == ''){
          $(btn).prop('disabled' , true);
      }else {
          $(btn).prop('disabled' , false);
