@@ -113,7 +113,7 @@ $('#newModalCus').on('shown.bs.modal', function() {
 });
 
 $('#updateModalCus').on('shown.bs.modal', function() {
-    checkEmptyField('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU','#updateC');
+    checkEmptyField('#updateC');
     validation('#inputCustomerIdU','#inputCustomerNameU','#inputCityU','#inputTelephoneU','#updateC')
 });
 
@@ -129,19 +129,19 @@ function checkEmptyField(btn){
 
      if (c_id == '' && c_name == '' && c_city == '' && c_tel == ''){
          $(btn).prop('disabled' , true);
-         console.log("true")
      }else {
          $(btn).prop('disabled' , false);
-         console.log("false")
+
+         checkId = true;
+         checkName = true;
+         checkCity = true;
+         checkTel = true;
      }
 }
 
 function validation(cId,cName,cCity,cTel,btnId){
     (() => {
          'use strict'
-
-        $('.c-id').css({display: 'none'});
-        // $(btnId).prop('disabled' , true);
 
          // Fetch all the forms we want to apply custom Bootstrap validation styles to
          const forms = document.querySelectorAll('.needs-validation')
