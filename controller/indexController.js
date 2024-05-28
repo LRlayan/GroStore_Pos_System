@@ -1,6 +1,6 @@
 import {orders,store,customer} from "../db/DB.js"
 
-let clickOrderTableRow = null
+let clickOrderTableRow = null;
 var discount = parseFloat($('#rate').val());
 
 var checkOrderId = false;
@@ -21,8 +21,38 @@ $('#updateOrderModal').on('shown.bs.modal', function() {
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
-    validationModel('#itemCodeR','#itemNameR','','','#deleteS');
+    $('#orderIdR').prop('disabled' , true);
+    $('#customerName').prop('disabled' , true);
+    $('#itemNameRe').prop('disabled' , true);
+    $('#inputPriceR').prop('disabled' , true);
+    checkEmptyFieldRemoveModal('#updateOrderDetail');
+    // validationModel('#itemCodeR','#itemNameR','','','#deleteS');
 });
+
+function checkEmptyFieldRemoveModal(btn){
+    var code = $('#orderIdR').val();
+    var cusName = $('#customerName').val();
+    var itemName = $('#itemNameRe').val();
+    var price = $('#inputPriceR').val();
+
+    if (code == '' && cusName == '' && itemName == '' && price){
+        $(btn).prop('disabled' , true);
+    }else {
+        $(btn).prop('disabled' , false);
+
+        checkOrderId = true;
+        checkDate = true;
+        checkCusName = true;
+        checkCity = true;
+        checkTel = true;
+        checkCode = true;
+        checkItemName = true;
+        checkOrderQty = true;
+        checkRate = true;
+        checkDis = true;
+        checkPrice = true;
+    }
+}
 
 function checkEmptyFieldUpdateModal(btn){
     var orderId = $('#inputOrderId').val();
@@ -56,75 +86,75 @@ function checkEmptyFieldUpdateModal(btn){
     }
 }
 
-$('#customer-sec').css({display:'none'})
+$('#customer-sec').css({display:'none'});
 
 $('#dashboard-tab').on('click' , () =>{
-    $('#dash-sec').css({display:'block'})
-    $('#footer').css({display: 'block'})
-    $('#customer-sec').css({display:'none'})
-    $('#store-sec').css({display:'none'})
-    $('#placeOrder-sec').css({display:'none'})
+    $('#dash-sec').css({display:'block'});
+    $('#footer').css({display: 'block'});
+    $('#customer-sec').css({display:'none'});
+    $('#store-sec').css({display:'none'});
+    $('#placeOrder-sec').css({display:'none'});
 })
 
 $('#customer-tab').on('click' , () =>{
-    $('#customer-sec').css({display:'block'})
-    $('#placeOrder-sec').css({display:'none'})
-    $('#dash-sec').css({display:'none'})
-    $('#footer').css({display: 'none'})
-    $('#store-sec').css({display:'none'})
-})
+    $('#customer-sec').css({display:'block'});
+    $('#placeOrder-sec').css({display:'none'});
+    $('#dash-sec').css({display:'none'});
+    $('#footer').css({display: 'none'});
+    $('#store-sec').css({display:'none'});
+});
 
 $('#store-sec').css({display:'none'})
 $('#store-tab').on('click' , () => {
-    $('#store-sec').css({display:'block'})
-    $('#placeOrder-sec').css({display:'none'})
-    $('#customer-sec').css({display:'none'})
-    $('#dash-sec').css({display:'none'})
-    $('#footer').css({display:'none'})
-})
+    $('#store-sec').css({display:'block'});
+    $('#placeOrder-sec').css({display:'none'});
+    $('#customer-sec').css({display:'none'});
+    $('#dash-sec').css({display:'none'});
+    $('#footer').css({display:'none'});
+});
 
-$('#placeOrder-sec').css({display:'none'})
+$('#placeOrder-sec').css({display:'none'});
 
 $('#placeOrder-tab').on('click' , () => {
-    $('#placeOrder-sec').css({display:'block'})
-    $('#store-sec').css({display:'none'})
-    $('#customer-sec').css({display:'none'})
-    $('#dash-sec').css({display:'none'})
-    $('#footer').css({display:'none'})
+    $('#placeOrder-sec').css({display:'block'});
+    $('#store-sec').css({display:'none'});
+    $('#customer-sec').css({display:'none'});
+    $('#dash-sec').css({display:'none'});
+    $('#footer').css({display:'none'});
     $('#selectCustomerId').trigger('change');
     $('#selectItemCode').trigger('change');
 })
 
 $('#viewOrderDetailTable').on('click', 'tr', function () {
 
-    let orderId = $(this).find(".o-orderId").text()
-    let date = $(this).find(".o-date").text()
-    let cusName = $(this).find(".o-cusName").text()
-    let cusCity = $(this).find(".o-city").text()
-    let cusTel = $(this).find(".o-tel").text()
-    let code = $(this).find(".o-code").text()
-    let iName = $(this).find(".o-iName").text()
-    let qty = $(this).find(".o-qty").text()
-    let dis = $(this).find(".o-dis").text()
-    let price = $(this).find(".o-price").text()
+    let orderId = $(this).find(".o-orderId").text();
+    let date = $(this).find(".o-date").text();
+    let cusName = $(this).find(".o-cusName").text();
+    let cusCity = $(this).find(".o-city").text();
+    let cusTel = $(this).find(".o-tel").text();
+    let code = $(this).find(".o-code").text();
+    let iName = $(this).find(".o-iName").text();
+    let qty = $(this).find(".o-qty").text();
+    let dis = $(this).find(".o-dis").text();
+    let price = $(this).find(".o-price").text();
 
     clickOrderTableRow = $(this).index();
 
-    $('#inputOrderId').val(orderId)
-    $('#dateU').val(date)
-    $('#customerNameU').val(cusName)
-    $('#inputCityStore').val(cusCity)
-    $('#inputTelephone').val(cusTel)
-    $('#inputItemCode').val(code)
-    $('#inputItemName').val(iName)
-    $('#orderQTY').val(qty)
-    $('#inputDiscount').val(dis)
-    $('#inputPrice').val(price)
+    $('#inputOrderId').val(orderId);
+    $('#dateU').val(date);
+    $('#customerNameU').val(cusName);
+    $('#inputCityStore').val(cusCity);
+    $('#inputTelephone').val(cusTel);
+    $('#inputItemCode').val(code);
+    $('#inputItemName').val(iName);
+    $('#orderQTY').val(qty);
+    $('#inputDiscount').val(dis);
+    $('#inputPrice').val(price);
 
-    $('#orderIdR').val(orderId)
-    $('#customerName').val(cusName)
-    $('#itemNameRe').val(iName)
-    $('#inputPriceR').val(price)
+    $('#orderIdR').val(orderId);
+    $('#customerName').val(cusName);
+    $('#itemNameRe').val(iName);
+    $('#inputPriceR').val(price);
 });
 
 $('#orderQTY').change(function (){
@@ -136,8 +166,8 @@ $('#orderQTY').change(function (){
                 total = (selectedValue*stores.unitPrice);
                 $('#inputPrice').val(total);
             }
-        })
-    })
+        });
+    });
 
     if (total >= 5000){
         $('#inputDiscount').val(total*discount/100);
@@ -147,16 +177,18 @@ $('#orderQTY').change(function (){
 })
 
 $('#updateOrderDetail').on('click' , ()=>{
-    let orderId = $('#inputOrderId').val()
-    let date = $('#dateU').val()
-    let cusName = $('#customerNameU').val()
-    let cusCity = $('#inputCityStore').val()
-    let cusTel = $('#inputTelephone').val()
-    let code = $('#inputItemCode').val()
-    let iName = $('#inputItemName').val()
-    let qty = $('#orderQTY').val()
-    let dis = $('#inputDiscount').val()
-    let price = $('#inputPrice').val()
+    $('#updateOrderDetail').prop('disabled' , true);
+
+    let orderId = $('#inputOrderId').val();
+    let date = $('#dateU').val();
+    let cusName = $('#customerNameU').val();
+    let cusCity = $('#inputCityStore').val();
+    let cusTel = $('#inputTelephone').val();
+    let code = $('#inputItemCode').val();
+    let iName = $('#inputItemName').val();
+    let qty = $('#orderQTY').val();
+    let dis = $('#inputDiscount').val();
+    let price = $('#inputPrice').val();
 
     let orderDetail = orders[clickOrderTableRow]
     orderDetail.orderId = orderId;
@@ -169,14 +201,15 @@ $('#updateOrderDetail').on('click' , ()=>{
     orderDetail.orderQTY = qty;
     orderDetail.discount = dis;
     orderDetail.unitPrice = price;
-    loadTable()
-    clearForm()
+    loadTable();
+    clearForm();
 })
 
 $('#removeOrder').on('click',()=>{
-    orders.splice(clickOrderTableRow , 1)
-    loadTable()
-    clearForm()
+    $('#removeOrder').prop('disabled' , true);
+    orders.splice(clickOrderTableRow , 1);
+    loadTable();
+    clearForm();
 })
 
 function loadTable() {
