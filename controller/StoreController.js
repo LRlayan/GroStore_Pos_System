@@ -128,13 +128,13 @@ $('#newModal').on('shown.bs.modal', function() {
 
 $('#updateModal').on('shown.bs.modal', function() {
     checkEmptyFieldUpdateModal('#updateS');
+    validation('#itemCodeS','#itemNameS','#qty','#priceS','#updateS');
 });
 
 $('#removeModalStore').on('shown.bs.modal', function() {
     $('#itemCodeR').prop('disabled' , true);
     $('#itemNameR').prop('disabled' , true);
     checkEmptyFieldRemoveModal('#deleteS');
-    validation('#itemCodeR','#itemNameR','','','#deleteS');
 });
 
 function checkEmptyFieldUpdateModal(btn){
