@@ -235,26 +235,25 @@ $(document).ready(function(){
     $("#dashStore").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("#viewOrderDetailTable tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
         });
     });
 });
 
 function clearForm(){
-    $('#inputOrderId').val('')
-    $('#customerNameU').val('')
-    $('#inputCityStore').val('')
-    $('#inputTelephone').val('')
-    $('#inputItemCode').val('')
-    $('#inputItemName').val('')
-    $('#orderQTY').val('')
-    $('#inputDiscount').val('')
-    $('#inputPrice').val('')
+    $('#inputOrderId').val('');
+    $('#inputCityStore').val('');
+    $('#inputTelephone').val('');
+    $('#inputItemCode').val('');
+    $('#inputItemName').val('');
+    $('#orderQTY').val('');
+    $('#inputDiscount').val('');
+    $('#inputPrice').val('');
 
-    $('#orderIdR').val('')
-    $('#customerName').val('')
-    $('#itemNameRe').val('')
-    $('#inputPriceR').val('')
+    $('#orderIdR').val('');
+    $('#customerName').val('');
+    $('#itemNameRe').val('');
+    $('#inputPriceR').val('');
 }
 
 $(document).on('keydown', function(event) {
@@ -271,7 +270,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
         // checkEmptyInputFields(cId,cName,cCity,cTel,btnId);
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
+        const forms = document.querySelectorAll('.needs-validation');
 
         // Loop over them and prevent submission
         Array.from(forms).forEach(form => {
@@ -305,7 +304,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                 });
 
                 $(today).change(function (){
-                    var date = $(today).val()
+                    var date = $(today).val();
                     var currentDate = new Date();
 
                     var year = currentDate.getFullYear();
