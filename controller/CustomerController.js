@@ -134,8 +134,9 @@ $('#updateModalCus').on('shown.bs.modal', function() {
 });
 
 $('#removeModal').on('shown.bs.modal', function() {
+    $('#inputCustomerId').prop('disabled' , true);
+    $('#inputCustomerName').prop('disabled' , true);
     checkEmptyFieldRemoveModal('#deleteC');
-    validation('#inputCustomerId','#inputCustomerName','','','#deleteC')
 });
 
 function checkEmptyFieldUpdateModal(btn){
