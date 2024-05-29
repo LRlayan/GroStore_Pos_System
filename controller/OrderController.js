@@ -30,7 +30,7 @@ var generateOrderId = 1;
         checkSQTY = true;
         checkSPrice = true;
 
-        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP','#addToCartBtn')
+        validation('#orderId','#date','#cusName','#cusCity','#cusTel','#itemNameP','#qtyOnHandP','#inputPriceP','#discountOrder','#orderQTYP','#addToCartBtn');
         store.map(function (store){
             unitPrice = store.unitPrice;
         })
@@ -193,6 +193,12 @@ var generateOrderId = 1;
         orders.push(orderDetail);
 
         $('#orderQTYP').val(0);
+        var orderQty = $('#orderQTYP').val();
+        if (orderQty < 1){
+            $('#addToCartBtn').prop('disabled',true);
+        }else {
+            $('#addToCartBtn').prop('disabled',false);
+        }
     });
 
     $('#purchaseBtn').on('click',()=>{
@@ -220,6 +226,7 @@ var generateOrderId = 1;
         discount = 0;
         $('#purchaseBtn').prop('disabled', true);
         $('#cancelBtn').prop('disabled', true);
+        $('#addToCartBtn').prop('disabled',true);
     })
 
     function loadTable() {
