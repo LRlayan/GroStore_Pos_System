@@ -89,8 +89,8 @@ var generateOrderId = 1;
 
         // Create a new paragraph element with item details
         var itemName = $('<p>').text(inputName).css({marginBottom:'5px' , marginRight:'15px'});
-        var itemUnitPrice = $('<p>').text(' rs : ' + unitPrice + ' x').css({marginBottom:'5px' , marginRight:'5px'});
-        var itemQTY = $('<p>').text(qty).css({marginBottom:'5px'});
+        var itemUnitPrice = $('<p class="unit-price">').text(' rs : ' + unitPrice + ' x').css({marginBottom:'5px' , marginRight:'5px'});
+        var itemQTY = $('<p class="qty">').text(qty).css({marginBottom:'5px'});
         var newItemPrice = $('<p class="price">').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
         var img = $('<img src="../assets/image/remove.png">').click(function (){
 
