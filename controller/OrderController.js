@@ -1,5 +1,5 @@
 import Order from "../model/Order.js";
-import {orders,store,customer,itemNames,qtyAr} from "../db/DB.js"
+import {orders,store,customer,itemNames} from "../db/DB.js"
 // import { updateStoreQuantities } from "./StoreController";
 
 let unitPrice = 0;
@@ -126,7 +126,6 @@ var generateOrderId = 1;
         });
 
         itemNames.push(itemName.text());
-        qtyAr.push(itemQTY.text());
 
         // Append elements to the container
         itemContainer.append(itemName);
