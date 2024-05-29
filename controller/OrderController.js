@@ -70,8 +70,8 @@ var generateOrderId = 1;
         })
     });
 
-    $('#orderQTYP').change(function (){
-        let selectedValue = $(this).val();
+    $('#orderQTYP').on('input', ()=>{
+        let selectedValue = $("#orderQTYP").val();
 
         let total = (selectedValue*unitPrice);
         $('#inputPriceP').val(total);
