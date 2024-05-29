@@ -171,5 +171,17 @@
 }
 
 .price{
-    margin-left: 320px;
+    /*margin-left: 320px;*/
+    position: absolute;
+    left: 24rem;
+}
+
+.unit-price{
+    position: absolute;
+    left: 9rem;
+}
+
+.qty{
+    position: absolute;
+    left: 13.5rem;
 }
