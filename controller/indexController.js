@@ -1,7 +1,8 @@
 import {orders,store,customer} from "../db/DB.js"
 
 let clickOrderTableRow = null;
-var discount = parseFloat($('#rate').val());
+var rate = 0;
+let total = 0;
 
 var checkOrderId = false;
 var checkDate = false;
@@ -17,7 +18,7 @@ var checkPrice = false;
 
 $('#updateOrderModal').on('shown.bs.modal', function() {
     checkEmptyFieldUpdateModal('#updateOrderDetail');
-    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY','#rate');
+    validationModel('#inputOrderId','#dateU','#customerNameU','#inputCityStore','#inputTelephone','#inputItemName','#orderQTY','#inputPrice','#inputDiscount','#inputItemCode','#orderQTY','#rate','#updateOrderDetail');
 });
 
 $('#removeOrderModal').on('shown.bs.modal', function() {
@@ -157,8 +158,7 @@ $('#viewOrderDetailTable').on('click', 'tr', function () {
 });
 
 $('#orderQTY').on('input', ()=>{
-    let selectedValue = $(this).val();
-    let total = 0;
+    let selectedValue = $('#orderQTY').val();
     orders.map(function (order){
         store.map(function (stores){
             if (stores.itemCode === order.itemCode){
@@ -167,9 +167,20 @@ $('#orderQTY').on('input', ()=>{
             }
         });
     });
+    if (total < 8000){
+        $('#inputDiscount').val(0);
+        $('#rate').val(0);
+    }
+})
 
-    if (total >= 5000){
-        $('#inputDiscount').val(total*discount/100);
+$('#rate').on('input',()=>{
+    rate = $('#rate').val()
+
+    total = parseFloat($('#inputPrice').val());
+
+    if (total >= 8000){
+        console.log("if Rate : " + rate);
+        $('#inputDiscount').val(total*rate/100);
     }else {
         $('#inputDiscount').val('0.00');
     }
@@ -261,7 +272,7 @@ $(document).on('keydown', function(event) {
     }
 });
 
-function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty,rate){
+function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discount,sCode,orderQty,rate,btnId){
     (() => {
         'use strict'
 
@@ -299,7 +310,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         event.stopPropagation();
                         checkOrderId = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(today).change(function (){
@@ -319,7 +330,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(today).css({ border: '1px solid red' });
                         checkDate = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 })
 
                 $(cName).on('input' ,()=>{
@@ -333,7 +344,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(cName).css({ border: '1px solid red' });
                         checkCusName = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(cCity).on('input' ,()=> {
@@ -348,7 +359,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(cCity).css({ border: '1px solid red' });
                         checkCity = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(cTel).on('input' ,()=> {
@@ -363,7 +374,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(cTel).css({ border: '1px solid red' });
                         checkTel = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(sCode).on('input',()=>{
@@ -390,7 +401,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         event.stopPropagation();
                         checkCode = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 })
 
                 $(sName).on('input' ,()=>{
@@ -404,7 +415,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(sName).css({ border: '1px solid red' });
                         checkItemName = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(sQTY).on('input' ,()=> {
@@ -417,7 +428,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $('.s-qtyD').css({ display: 'block' });
                         $(sQTY).css({ border: '1px solid red' });
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(orderQty).on('input' ,()=> {
@@ -433,7 +444,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(orderQty).css({ border: '1px solid red' });
                         checkOrderQty = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(sPrice).on('input' ,()=> {
@@ -448,7 +459,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(sPrice).css({ border: '1px solid red' });
                         checkPrice = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(discount).on('input' ,()=> {
@@ -463,7 +474,7 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(discount).css({ border: '1px solid red' });
                         checkDis = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
 
                 $(rate).on('input' ,()=> {
@@ -478,14 +489,14 @@ function validationModel(orderId,today,cName,cCity,cTel,sName,sQTY,sPrice,discou
                         $(rate).css({ border: '1px solid red' });
                         checkRate = false;
                     }
-                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice);
+                    checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId);
                 });
             }, false)
         })
     })()
 }
 
-function checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice){
+function checkEmptyInputFields(checkOrderId,checkDate,checkCusName,checkCity,checkTel,checkCode,checkItemName,checkOrderQty,checkRate,checkDis,checkPrice,btnId){
     if (checkOrderId && checkDate && checkCusName && checkCity && checkTel && checkCode && checkItemName && checkOrderQty && checkRate && checkDis && checkPrice){
         $(btnId).prop('disabled' , false);
     }else {
