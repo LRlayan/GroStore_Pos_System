@@ -1,5 +1,5 @@
 import Order from "../model/Order.js";
-import {orders,store,customer,itemNames} from "../db/DB.js"
+import {orders,store,customer,itemNames,qtyAr} from "../db/DB.js"
 // import { updateStoreQuantities } from "./StoreController";
 
 let unitPrice = 0;
@@ -64,7 +64,7 @@ var generateOrderId = 1;
                 $('#itemNameP').val(store.itemName);
                 $('#qtyOnHandP').val(store.QTYOnHand);
                 $('#inputPriceP').val(store.unitPrice);
-
+                console.log("first" + store.QTYOnHand)
                 unitPrice = store.unitPrice;
             }
         })
@@ -126,6 +126,7 @@ var generateOrderId = 1;
         });
 
         itemNames.push(itemName.text());
+        qtyAr.push(itemQTY.text());
 
         // Append elements to the container
         itemContainer.append(itemName);
@@ -174,6 +175,7 @@ var generateOrderId = 1;
                             setReduceQTY = $('#qtyOnHandP').val() - parseInt(amountQty)
                             $('#qtyOnHandP').val(parseInt(setReduceQTY));
                             amountQty = 0;
+                            console.log("second : " + setReduceQTY)
                         }
                     }
                 }
@@ -192,13 +194,7 @@ var generateOrderId = 1;
         let orderDetail = new Order(orderId,date,cusName,cusCity,cusTel,code,inputName,qty,discounts,totalPrice);
         orders.push(orderDetail);
 
-        $('#orderQTYP').val(0);
-        var orderQty = $('#orderQTYP').val();
-        if (orderQty < 1){
-            $('#addToCartBtn').prop('disabled',true);
-        }else {
-            $('#addToCartBtn').prop('disabled',false);
-        }
+        $('#orderQTYP').val('');
     });
 
     $('#purchaseBtn').on('click',()=>{

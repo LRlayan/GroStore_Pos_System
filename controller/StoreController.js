@@ -1,5 +1,5 @@
 import Store from "../model/Store.js";
-import {customer, store} from "../db/DB.js"
+import {customer, orders, store} from "../db/DB.js"
 
 let clickTableRow = 0;
 
@@ -12,6 +12,7 @@ let code = $('#itemCodeS').val()
 let itemName = $('#itemNameS').val()
 let qty = $('#qty').val()
 let price = $('#priceS').val()
+var orderQTY = 0;
 
 $('#submitStore').on('click' , ()=>{
     $('#submitStore').prop('disabled' , true);
@@ -282,14 +283,13 @@ function clearBorderColor(code,name,qty,price){
 
 $('#purchaseBtn').on('click',function (){
 
-    let orderQTY = $('#orderQTYP').val();
-    let code = $('#selectItemCode').val();
-
-    store.forEach((item) => {
-        if (item.itemCode === code) {
-            item.QTYOnHand -= orderQTY;
-        }
-    });
+    store.map(function (items){
+        orders.map(function (order){
+            if (items.itemCode === order.itemCode){
+                items.QTYOnHand -= order.orderQTY;
+            }
+        })
+    })
 
     loadTable();
 })
