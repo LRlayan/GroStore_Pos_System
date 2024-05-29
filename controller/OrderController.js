@@ -61,8 +61,6 @@ var generateOrderId = 1;
 
         store.map(function (store){
             if (selectedValue === store.itemCode){
-                console.log('change item code')
-                console.log('QTY : ' + store.QTYOnHand)
                 $('#itemNameP').val(store.itemName);
                 $('#qtyOnHandP').val(store.QTYOnHand);
                 $('#inputPriceP').val(store.unitPrice);
@@ -173,7 +171,6 @@ var generateOrderId = 1;
                 for (let i = 0; i < itemNames.length; i++) {
                     if (selectedItemName === itemNames[i]){
                         if (itemName.text() === itemNames[i]){
-                            console.log("second change");
                             setReduceQTY = $('#qtyOnHandP').val() - parseInt(amountQty)
                             $('#qtyOnHandP').val(parseInt(setReduceQTY));
                             amountQty = 0;
@@ -273,8 +270,6 @@ var generateOrderId = 1;
 
         for (let i = 0; i < store.length; i++) {
             if ($('#selectItemCode').val() === store[i].itemCode){
-                console.log('awa');
-                console.log(store[i].itemCode);
                 $('#QTYOnHandP').empty();
                 $('#qtyOnHandP').val(store[i].QTYOnHand);
                 setReduceQTY = store[i].QTYOnHand;
