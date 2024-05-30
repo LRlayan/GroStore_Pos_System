@@ -94,6 +94,10 @@ var generateOrderId = 1;
         var newItemPrice = $('<p class="price">').text(inputPrice).css({textAlign:"right" , marginBottom:'5px'});
         var img = $('<img src="../assets/image/remove.png">').click(function (){
 
+            for (let i = 0; i < orders.length; i++) {
+                orders.shift();
+            }
+
             // Remove only the container of the clicked remove button
             $(this).closest('.item-container').remove();
 
@@ -174,7 +178,6 @@ var generateOrderId = 1;
                             setReduceQTY = $('#qtyOnHandP').val() - parseInt(amountQty)
                             $('#qtyOnHandP').val(parseInt(setReduceQTY));
                             amountQty = 0;
-                            console.log("second : " + setReduceQTY)
                         }
                     }
                 }
@@ -191,7 +194,7 @@ var generateOrderId = 1;
         let discounts = $('#discount').text();
 
         let orderDetail = new Order(orderId,date,cusName,cusCity,cusTel,code,inputName,qty,discounts,totalPrice);
-        orders.push(orderDetail);
+        orders.unshift(orderDetail);
 
         $('#orderQTYP').val('');
     });
