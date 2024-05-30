@@ -125,6 +125,7 @@ function clearForm(){
 }
 
 $('#newModalCus').on('shown.bs.modal', function() {
+    $('#submitC').prop('disabled',true);
     validation('#-inputCustomerId','#_inputCustomerName','#inputCityC','#inputTelephoneC','#submitC')
 });
 
