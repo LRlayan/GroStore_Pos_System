@@ -187,16 +187,20 @@ function validation(sCode,sName,sQty,sPrice,btnId){
             form.addEventListener('click', event => {
 
                 $(sCode).on('input' , ()=>{
-                    var code = $(sCode).val();
+                var code = $(sCode).val();
 
-                    if (code.startsWith('I00-')) {
+                if(isDuplicated(code)){
+                        $('.s-code').text('Duplicate item code. Please enter a unique item code.');
+                        $('.s-code').css({ display: 'block' });
+                        $(sCode).css({ border: '1px solid red' });
+                        checkCode = false;
+                } else if (code.startsWith('I00-')) {
                         const numericPart = code.substring(6);
 
                         if (!(/^\d+$/.test(numericPart))) {
                             $('.s-code').text('Item Code must be minimum 3 digit value followed by I00- format.');
                             $('.s-code').css({ display: 'block' });
-                            event.preventDefault();
-                            event.stopPropagation();
+                            $(sCode).css({border:'1px solid red'});
                             checkCode = false;
                         } else {
                             $('.s-code').css({ display: 'none' });
@@ -206,8 +210,6 @@ function validation(sCode,sName,sQty,sPrice,btnId){
                     } else {
                         $('.s-code').css({ display: 'block' });
                         $(sCode).css({border:'1px solid red'});
-                        event.preventDefault();
-                        event.stopPropagation();
                         checkCode = false;
                     }
                     checkEmptyInputFields(checkCode,checkName,checkQTY,checkPrice,btnId);
@@ -290,6 +292,14 @@ $('#purchaseBtn').on('click',function (){
             }
         })
     })
-
     loadTable();
 })
+
+function isDuplicated(itemCode){
+    for (let i = 0; i < store.length; i++) {
+        if (store[i].itemCode === itemCode){
+            return true;
+        }
+    }
+    return false;
+}

@@ -187,7 +187,12 @@ function validation(cId,cName,cCity,cTel,btnId){
                 $(cId).on('input' , ()=>{
                     var id = $(cId).val();
 
-                    if (id.startsWith('C00-')) {
+                    if(isDuplicated(id)){
+                        $('.c-id').text('Duplicate customer id. Please enter a unique customer id.');
+                        $('.c-id').css({ display: 'block' });
+                        $(cId).css({ border: '1px solid red' });
+                        checkId = false;
+                    } else if (id.startsWith('C00-')) {
                         const numericPart = id.substring(6);
 
                         if (!(/^\d+$/.test(numericPart))) {
@@ -278,4 +283,13 @@ function clearBorderColor(id,name,city,tel){
     $(name).css({ border: '1px solid #cfcfcf'});
     $(city).css({ border: '1px solid #cfcfcf'});
     $(tel).css({ border: '1px solid #cfcfcf'});
+}
+
+function isDuplicated(id){
+    for (let i = 0; i < customer.length; i++) {
+        if (customer[i].id === id){
+            return true;
+        }
+    }
+    return false;
 }
