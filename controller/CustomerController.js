@@ -31,7 +31,7 @@ $('#submitC').on('click' , ()=>{
     customer.push(customerDetail)
     loadTable()
 
-    $('#selectCustomerId').append($('<option>').text(cId)); // place order customer id comboBox set item code
+    $('#selectCustomerId').append($('<option>').text(cId)); // place order customer id comboBox set customer code
 
     $('#customerTable').on('click', 'tr', function () {
 
